@@ -403,3 +403,18 @@ Levies: '+fmt(levAmt+extra)+'
 Shipping: '+fmt(shipCost)+'
 TOTAL: '+fmt(total)+'
 Transit: '+c.days+'
+
+Please confirm exact quote.';document.getElementById('r-wa').href='https://wa.me/971521948311?text='+encodeURIComponent(msg);document.getElementById('calc-res').classList.add('show');}
+function sendWA(){var n=document.getElementById('cf-n').value;var s=document.getElementById('cf-s').value;if(!n||!s){alert('Please enter your name and select a service.');return;}var msg='Hello Elvis! autobyelvis.com
+
+Name: '+n+'
+Country: '+document.getElementById('cf-c').value+'
+Phone: '+document.getElementById('cf-p').value+'
+Service: '+s+'
+Details: '+document.getElementById('cf-d').value;window.open('https://wa.me/971521948311?text='+encodeURIComponent(msg),'_blank');}
+function lbClose(){document.getElementById('lb').classList.remove('open');document.body.style.overflow='';}
+document.getElementById('lb').addEventListener('click',function(e){if(e.target===this)lbClose();});
+document.querySelectorAll('a[href^="#"]').forEach(function(a){a.addEventListener('click',function(e){var t=document.querySelector(a.getAttribute('href'));if(t){e.preventDefault();t.scrollIntoView({behavior:'smooth'});}});});
+</script>
+</body>
+</html>
