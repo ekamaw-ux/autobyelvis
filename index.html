@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -304,11 +305,15 @@ footer{background:var(--ob);border-top:1px solid rgba(191,149,63,.08);padding:20
     <button class="dtab rhd-t on" onclick="setDrive('rhd',this)"><span class="dtab-title">RHD Markets</span><span class="dtab-sub">Kenya Uganda Tanzania S.Africa UK Australia + more</span></button>
     <button class="dtab lhd-t" onclick="setDrive('lhd',this)"><span class="dtab-title">LHD Markets</span><span class="dtab-sub">USA Sweden Germany Nigeria Ghana Saudi Canada + more</span></button>
   </div>
-  <div class="clist" id="clist"></div>
+  <div style="margin-bottom:16px">
+<p style="font-size:9px;color:var(--sm);margin-bottom:8px">RHD countries: Kenya, Uganda, Tanzania, Rwanda, Zambia, Zimbabwe, South Africa, Mozambique, UK, Australia</p>
+<p style="font-size:9px;color:var(--sm)">LHD countries: USA, Sweden, Germany, France, Netherlands, Nigeria, Ghana, Saudi Arabia, Canada</p>
+</div>
   <div class="calc-box">
     <div class="calc-title">Cost Calculator</div>
     <div class="calc-sub">Select country above then fill details to calculate</div>
-    <div class="fg"><label>Country</label><select id="ci-c"><option value="">Select Country</option></select></div>
+    <div class="fg"><label>Country</label><input type="text" id="ci-c" placeholder="e.g. Kenya, USA, Germany..." style="text-transform:capitalize" oninput="suggestCountry(this.value)"></div>
+<div id="suggest-box" style="display:none;background:#181818;border:1px solid rgba(191,149,63,.2);margin-top:-10px;margin-bottom:11px;max-height:180px;overflow-y:auto"></div>
     <div class="fg"><label>Vehicle Type</label><select id="ci-t"><option value="economy">Economy</option><option value="suv" selected>SUV / 4x4</option><option value="luxury">Luxury</option><option value="exotic">Exotic / Supercar</option><option value="parts">Parts Only</option></select></div>
     <div class="fg"><label>Value USD</label><input type="number" id="ci-v" placeholder="e.g. 25000" inputmode="numeric"></div>
     <div class="fg"><label>Engine</label><select id="ci-e"><option value="small">Under 1500cc</option><option value="med" selected>1500-2500cc</option><option value="large">2500-4000cc</option><option value="xl">Over 4000cc</option></select></div>
@@ -445,17 +450,56 @@ activeDrive=drive;
 var tabs=document.querySelectorAll(”.dtab”);
 for(var i=0;i<tabs.length;i++)tabs[i].classList.remove(“on”);
 btn.classList.add(“on”);
-buildList(drive);
 document.getElementById(“calc-res”).classList.remove(“show”);
 }
 
-buildList(“rhd”);
-
 function fmt(n){return “$”+Math.round(n).toLocaleString();}
 
+var selectedCode=””;
+
+function suggestCountry(val){
+var box=document.getElementById(“suggest-box”);
+if(!val||val.length<2){box.style.display=“none”;return;}
+val=val.toLowerCase();
+var matches=[];
+var keys=Object.keys(CD);
+for(var i=0;i<keys.length;i++){
+var c=CD[keys[i]];
+if(c.n.toLowerCase().indexOf(val)===0)matches.push({code:keys[i],c:c});
+}
+if(matches.length===0){box.style.display=“none”;return;}
+box.innerHTML=””;
+box.style.display=“block”;
+for(var j=0;j<matches.length;j++){
+(function(m){
+var item=document.createElement(“div”);
+item.style.cssText=“padding:10px 14px;cursor:pointer;font-size:12px;border-bottom:1px solid rgba(191,149,63,.08);color:#F8F7F4”;
+item.textContent=m.c.n+” (”+m.c.d+”)”;
+item.onclick=function(){
+document.getElementById(“ci-c”).value=m.c.n;
+selectedCode=m.code;
+box.style.display=“none”;
+};
+item.onmouseover=function(){this.style.background=“rgba(191,149,63,.08)”};
+item.onmouseout=function(){this.style.background=“none”};
+box.appendChild(item);
+})(matches[j]);
+}
+}
+
+function getCode(){
+if(selectedCode)return selectedCode;
+var val=document.getElementById(“ci-c”).value.toLowerCase().trim();
+var keys=Object.keys(CD);
+for(var i=0;i<keys.length;i++){
+if(CD[keys[i]].n.toLowerCase()===val)return keys[i];
+}
+return null;
+}
+
 function runCalc(){
-var code=document.getElementById(“ci-c”).value;
-if(!code){alert(“Please select a country.”);return;}
+var code=getCode();
+if(!code){alert(“Please type and select a country from the list.”);return;}
 var c=CD[code];
 var val=parseFloat(document.getElementById(“ci-v”).value)||0;
 var type=document.getElementById(“ci-t”).value;
