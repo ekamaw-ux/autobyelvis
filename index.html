@@ -56,10 +56,10 @@
     }
 
     .section-title {
-      font-size: clamp(2rem, 4vw, 3.5rem);
-      line-height: 1.05;
+      font-size: clamp(1.8rem, 3.2vw, 2.6rem);
+      line-height: 1.1;
       margin: 14px 0 12px;
-      letter-spacing: -0.03em;
+      letter-spacing: -0.025em;
     }
 
     .section-copy {
@@ -125,12 +125,12 @@
     }
 
     .logo strong {
-      font-size: 1.15rem;
+      font-size: 1.05rem;
       letter-spacing: 0.08em;
     }
 
     .logo span {
-      font-size: 0.84rem;
+      font-size: 0.78rem;
       color: var(--muted);
     }
 
@@ -232,10 +232,10 @@
 
     .hero h1 {
       margin: 18px 0 16px;
-      font-size: clamp(2.7rem, 6vw, 5.8rem);
-      line-height: 0.95;
-      letter-spacing: -0.05em;
-      max-width: 10ch;
+      font-size: clamp(2.4rem, 4.4vw, 4rem);
+      line-height: 1.02;
+      letter-spacing: -0.04em;
+      max-width: 18ch;
     }
 
     .hero p {
@@ -384,10 +384,52 @@
     .service-card h3,
     .inventory-card h3,
     .step h3,
-    .contact-card h3 {
+    .contact-card h3,
+    .gallery-card h3 {
       margin: 0 0 10px;
-      font-size: 1.25rem;
-      letter-spacing: -0.02em;
+      font-size: 1.15rem;
+      line-height: 1.25;
+      letter-spacing: -0.015em;
+    }
+
+    .feature-card-body h3 {
+      font-size: 1.6rem;
+      line-height: 1.15;
+      margin: 6px 0 10px;
+    }
+
+    .tax-fields {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+    .tax-fields .full { grid-column: 1 / -1; }
+    .tax-fields label {
+      display: block;
+      margin-bottom: 6px;
+      color: var(--text);
+      font-weight: 600;
+      font-size: 0.92rem;
+    }
+    .tax-fields select,
+    .tax-fields input {
+      width: 100%;
+      min-height: 48px;
+      border-radius: 14px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,0.03);
+      color: var(--text);
+      padding: 0 14px;
+      font: inherit;
+      font-size: 0.95rem;
+    }
+    .tax-fields select:focus,
+    .tax-fields input:focus {
+      outline: 2px solid var(--gold);
+      outline-offset: 2px;
+    }
+    @media (max-width: 760px) {
+      .tax-fields { grid-template-columns: 1fr; gap: 12px; }
     }
 
     .inventory-meta {
@@ -894,19 +936,19 @@
         </div>
       </div>
     </section>
-      <section id="tax-calculator">
+    <section id="tax-calculator">
       <div class="container">
         <span class="eyebrow">Import cost tool</span>
         <h2 class="section-title">Smart import tax calculator.</h2>
-        <p class="section-copy">Choose a country to auto-load a matching estimate profile, or use Custom to enter your own rates. This tool is built for lead generation and fast buyer estimates, with country-specific logic where applicable.</p>
+        <p class="section-copy">Pick a destination country for a country-specific estimate, or use Custom to enter your own rates. Fast estimates for buyers planning a Dubai-sourced import.</p>
 
         <div class="contact-grid">
           <div class="contact-card">
             <h3>Vehicle details</h3>
-            <div class="contact-points" style="gap:14px;">
-              <div>
-                <label for="countryProfile" style="display:block; margin-bottom:8px; color:#f5f7fb; font-weight:600;">Destination country</label>
-                <select id="countryProfile" style="width:100%; min-height:52px; border-radius:16px; border:1px solid var(--line); background:rgba(255,255,255,0.03); color:var(--text); padding:0 16px; font:inherit;">
+            <div class="tax-fields">
+              <div class="full">
+                <label for="countryProfile">Destination country</label>
+                <select id="countryProfile">
                   <option value="custom">Custom / Other Country</option>
                   <option value="kenya">Kenya</option>
                   <option value="uganda">Uganda</option>
@@ -920,9 +962,9 @@
                   <option value="australia">Australia</option>
                 </select>
               </div>
-              <div>
-                <label for="vehicleType" style="display:block; margin-bottom:8px; color:#f5f7fb; font-weight:600;">Vehicle type</label>
-                <select id="vehicleType" style="width:100%; min-height:52px; border-radius:16px; border:1px solid var(--line); background:rgba(255,255,255,0.03); color:var(--text); padding:0 16px; font:inherit;">
+              <div class="full">
+                <label for="vehicleType">Vehicle type</label>
+                <select id="vehicleType">
                   <option value="passenger">Passenger car</option>
                   <option value="suv">SUV / 4x4</option>
                   <option value="pickup">Pickup / utility</option>
@@ -932,40 +974,40 @@
                 </select>
               </div>
               <div>
-                <label for="carPrice" style="display:block; margin-bottom:8px; color:#f5f7fb; font-weight:600;">Vehicle price (USD)</label>
-                <input id="carPrice" type="number" min="0" step="0.01" placeholder="e.g. 25000" style="width:100%; min-height:52px; border-radius:16px; border:1px solid var(--line); background:rgba(255,255,255,0.03); color:var(--text); padding:0 16px; font:inherit;" />
+                <label for="carPrice">Vehicle price (USD)</label>
+                <input id="carPrice" type="number" min="0" step="0.01" placeholder="e.g. 25000" />
               </div>
               <div>
-                <label for="shippingCost" style="display:block; margin-bottom:8px; color:#f5f7fb; font-weight:600;">Shipping cost (USD)</label>
-                <input id="shippingCost" type="number" min="0" step="0.01" placeholder="e.g. 1800" style="width:100%; min-height:52px; border-radius:16px; border:1px solid var(--line); background:rgba(255,255,255,0.03); color:var(--text); padding:0 16px; font:inherit;" />
+                <label for="shippingCost">Shipping (USD)</label>
+                <input id="shippingCost" type="number" min="0" step="0.01" placeholder="e.g. 1800" />
               </div>
               <div>
-                <label for="insuranceCost" style="display:block; margin-bottom:8px; color:#f5f7fb; font-weight:600;">Insurance (USD)</label>
-                <input id="insuranceCost" type="number" min="0" step="0.01" placeholder="e.g. 250" style="width:100%; min-height:52px; border-radius:16px; border:1px solid var(--line); background:rgba(255,255,255,0.03); color:var(--text); padding:0 16px; font:inherit;" />
+                <label for="insuranceCost">Insurance (USD)</label>
+                <input id="insuranceCost" type="number" min="0" step="0.01" placeholder="e.g. 250" />
               </div>
               <div>
-                <label for="engineSize" style="display:block; margin-bottom:8px; color:#f5f7fb; font-weight:600;">Engine size (cc)</label>
-                <input id="engineSize" type="number" min="0" step="1" placeholder="e.g. 2500" style="width:100%; min-height:52px; border-radius:16px; border:1px solid var(--line); background:rgba(255,255,255,0.03); color:var(--text); padding:0 16px; font:inherit;" />
+                <label for="engineSize">Engine size (cc)</label>
+                <input id="engineSize" type="number" min="0" step="1" placeholder="e.g. 2500" />
               </div>
               <div>
-                <label for="vehicleAge" style="display:block; margin-bottom:8px; color:#f5f7fb; font-weight:600;">Vehicle age (years)</label>
-                <input id="vehicleAge" type="number" min="0" step="1" placeholder="e.g. 4" style="width:100%; min-height:52px; border-radius:16px; border:1px solid var(--line); background:rgba(255,255,255,0.03); color:var(--text); padding:0 16px; font:inherit;" />
+                <label for="vehicleAge">Vehicle age (years)</label>
+                <input id="vehicleAge" type="number" min="0" step="1" placeholder="e.g. 4" />
               </div>
               <div>
-                <label for="dutyRate" style="display:block; margin-bottom:8px; color:#f5f7fb; font-weight:600;">Import duty (%)</label>
-                <input id="dutyRate" type="number" min="0" step="0.01" value="25" style="width:100%; min-height:52px; border-radius:16px; border:1px solid var(--line); background:rgba(255,255,255,0.03); color:var(--text); padding:0 16px; font:inherit;" />
+                <label for="dutyRate">Import duty (%)</label>
+                <input id="dutyRate" type="number" min="0" step="0.01" value="25" />
               </div>
               <div>
-                <label for="exciseRate" style="display:block; margin-bottom:8px; color:#f5f7fb; font-weight:600;">Excise / additional tax (%)</label>
-                <input id="exciseRate" type="number" min="0" step="0.01" value="20" style="width:100%; min-height:52px; border-radius:16px; border:1px solid var(--line); background:rgba(255,255,255,0.03); color:var(--text); padding:0 16px; font:inherit;" />
+                <label for="exciseRate">Excise (%)</label>
+                <input id="exciseRate" type="number" min="0" step="0.01" value="20" />
               </div>
               <div>
-                <label for="vatRate" style="display:block; margin-bottom:8px; color:#f5f7fb; font-weight:600;">VAT / sales tax (%)</label>
-                <input id="vatRate" type="number" min="0" step="0.01" value="16" style="width:100%; min-height:52px; border-radius:16px; border:1px solid var(--line); background:rgba(255,255,255,0.03); color:var(--text); padding:0 16px; font:inherit;" />
+                <label for="vatRate">VAT (%)</label>
+                <input id="vatRate" type="number" min="0" step="0.01" value="16" />
               </div>
-              <div>
-                <label for="otherFees" style="display:block; margin-bottom:8px; color:#f5f7fb; font-weight:600;">Other fees (USD)</label>
-                <input id="otherFees" type="number" min="0" step="0.01" value="0" style="width:100%; min-height:52px; border-radius:16px; border:1px solid var(--line); background:rgba(255,255,255,0.03); color:var(--text); padding:0 16px; font:inherit;" />
+              <div class="full">
+                <label for="otherFees">Other fees (USD)</label>
+                <input id="otherFees" type="number" min="0" step="0.01" value="0" />
               </div>
             </div>
             <div class="btn-row">
