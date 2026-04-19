@@ -264,13 +264,20 @@
       overflow: hidden;
       position: relative;
       min-height: 100%;
+      background:
+        radial-gradient(circle at 60% 40%, rgba(214,163,84,0.18), transparent 55%),
+        linear-gradient(140deg, #14110c 0%, #0c0c0e 70%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
     .hero-card img {
       width: 100%;
-      height: 100%;
-      object-fit: cover;
-      min-height: 440px;
+      height: auto;
+      max-height: 100%;
+      object-fit: contain;
+      display: block;
     }
 
     .hero-overlay {
@@ -607,7 +614,8 @@
       .inventory-card,
       .step { padding: 22px; }
 
-      .hero-card img { min-height: 240px; max-height: 320px; }
+      .hero-card { min-height: 220px; }
+      .hero-card img { max-height: 320px; }
       .hero-overlay { inset: auto 12px 12px 12px; padding: 14px; }
       .hero-overlay p { font-size: 0.88rem; }
 
