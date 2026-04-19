@@ -115,6 +115,7 @@
       align-items: center;
       justify-content: space-between;
       gap: 18px;
+      position: relative;
     }
 
     .logo {
@@ -142,6 +143,63 @@
     }
 
     .nav-links a:hover { color: var(--text); }
+
+    .nav-toggle {
+      display: none;
+      width: 44px;
+      height: 44px;
+      align-items: center;
+      justify-content: center;
+      border-radius: 12px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,0.03);
+      color: var(--text);
+      cursor: pointer;
+    }
+    .nav-toggle span {
+      display: block;
+      width: 20px;
+      height: 2px;
+      background: currentColor;
+      position: relative;
+    }
+    .nav-toggle span::before,
+    .nav-toggle span::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      width: 20px;
+      height: 2px;
+      background: currentColor;
+    }
+    .nav-toggle span::before { top: -6px; }
+    .nav-toggle span::after { top: 6px; }
+
+    .feature-card { padding: 0; overflow: hidden; grid-column: span 3; }
+    .feature-card-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 0;
+      min-height: 100%;
+    }
+    .feature-card-img {
+      min-height: 360px;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+    .feature-card-body { padding: 28px; }
+
+    .image-card { padding: 0; overflow: hidden; display: flex; flex-direction: column; }
+    .image-card-img {
+      width: 100%;
+      height: 220px;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+    .image-card-body { padding: 22px; flex: 1; display: flex; flex-direction: column; }
+    .image-card-body .btn { margin-top: auto; }
 
     .hero {
       padding: 72px 0 50px;
@@ -443,13 +501,47 @@
         grid-template-columns: 1fr 1fr;
       }
 
+      .feature-card { grid-column: span 2; }
       .steps-grid { grid-template-columns: repeat(2, 1fr); }
     }
 
     @media (max-width: 760px) {
-      .nav { min-height: 70px; }
-      .nav-links { display: none; }
-      .hero { padding-top: 34px; }
+      .nav { min-height: 64px; }
+      .nav-toggle { display: inline-flex; }
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 64px;
+        left: 12px;
+        right: 12px;
+        flex-direction: column;
+        gap: 4px;
+        padding: 14px;
+        background: rgba(15,15,18,0.97);
+        border: 1px solid var(--line);
+        border-radius: 18px;
+        box-shadow: 0 24px 60px rgba(0,0,0,0.55);
+        backdrop-filter: blur(18px);
+      }
+      .nav-links.open { display: flex; }
+      .nav-links a {
+        padding: 12px 14px;
+        border-radius: 12px;
+        color: var(--text);
+        font-size: 1rem;
+      }
+      .nav-links a:hover { background: rgba(255,255,255,0.04); }
+      .nav .btn { padding: 0 16px; min-height: 44px; font-size: 0.92rem; }
+
+      .hero { padding: 26px 0 36px; }
+      .hero-copy { padding: 22px; }
+      .hero h1 { font-size: clamp(2.2rem, 9vw, 3rem); max-width: none; margin: 12px 0; }
+      .hero p { font-size: 0.98rem; }
+      .section-title { font-size: clamp(1.7rem, 7vw, 2.4rem); margin: 10px 0 8px; }
+      .section-copy { font-size: 0.98rem; }
+      .eyebrow { font-size: 0.78rem; padding: 6px 12px; }
+      section { padding: 16px 0 50px; }
+
       .hero-grid,
       .about-grid,
       .contact-grid,
@@ -459,20 +551,47 @@
       .steps-grid,
       .stats {
         grid-template-columns: 1fr;
+        gap: 16px;
       }
+
+      .stats { grid-template-columns: repeat(2, 1fr); margin: 14px 0 40px; }
+      .card { padding: 18px; }
+      .stat-value { font-size: 1.6rem; }
 
       .hero-copy,
       .about-panel,
       .contact-card,
-      .card,
       .service-card,
       .inventory-card,
-      .step,
-      .gallery-card { padding: 22px; }
+      .step { padding: 22px; }
 
-      .hero-card img { min-height: 320px; }
+      .hero-card img { min-height: 240px; max-height: 320px; }
+      .hero-overlay { inset: auto 12px 12px 12px; padding: 14px; }
+      .hero-overlay p { font-size: 0.88rem; }
+
+      .feature-card,
+      .feature-card.inventory-card { grid-column: span 1; padding: 0; }
+      .feature-card-grid { grid-template-columns: 1fr; }
+      .feature-card-img { min-height: 220px; }
+      .feature-card-body { padding: 22px; }
+
+      .image-card { padding: 0; }
+      .image-card-img { height: 200px; }
+
+      .gallery-card { min-height: 200px; padding: 16px; }
+      .gallery-card h3 { font-size: 1.05rem; margin: 0 0 4px; }
+      .gallery-card p { font-size: 0.86rem; }
+
+      .btn-row { gap: 10px; }
+      .btn { min-height: 48px; padding: 0 18px; font-size: 0.95rem; }
+
       .sticky-cta { display: block; }
       footer { padding-bottom: 90px; }
+
+      #tax-calculator .contact-points { gap: 12px; }
+      #tax-calculator label { font-size: 0.92rem; }
+      #tax-calculator select,
+      #tax-calculator input { min-height: 46px !important; font-size: 0.95rem; }
     }
   </style>
 </head>
@@ -483,14 +602,15 @@
         <strong>AUTO by Elvis</strong>
         <span>Dubai · Luxury Cars · Rare Parts · Global Export</span>
       </a>
-      <nav class="nav-links" aria-label="Primary">
+      <nav class="nav-links" id="navLinks" aria-label="Primary">
         <a href="#about">About</a>
         <a href="#inventory">Inventory</a>
         <a href="#services">Services</a>
         <a href="#process">How it Works</a>
         <a href="#contact">Contact</a>
       </nav>
-      <a class="btn btn-secondary" href="https://wa.me/971521948311" target="_blank" rel="noopener">WhatsApp Elvis</a>
+      <a class="btn btn-secondary" href="https://wa.me/971521948311" target="_blank" rel="noopener">WhatsApp</a>
+      <button class="nav-toggle" id="navToggle" type="button" aria-label="Open menu" aria-controls="navLinks" aria-expanded="false"><span></span></button>
     </div>
   </header>
 
@@ -516,7 +636,7 @@
         </div>
 
         <div class="hero-card">
-          <img src="Hero.png" alt="Luxury vehicle supplied by Auto by Elvis" />
+          <img src="Hero.png" alt="Luxury vehicle supplied by Auto by Elvis" loading="eager" decoding="async" />
           <div class="hero-overlay">
             <strong>Built on trust, not showroom talk.</strong>
             <p>From Ferrari engines to export-ready Land Cruisers, every deal is handled personally and transparently.</p>
@@ -608,20 +728,50 @@
         <p class="section-copy">Auto by Elvis is built around selective sourcing, not endless listings. A small number of strong featured vehicles, plus direct access to classics, sports cars, SUVs, VIP carriers, and rare spare parts.</p>
 
         <div class="inventory-grid">
-          <article class="inventory-card" style="padding:0; overflow:hidden; grid-column: span 2;">
-            <div style="display:grid; grid-template-columns:1.1fr 0.9fr; gap:0; min-height:100%;">
-              <div style="min-height:340px; background:url('Hero.png') center/cover no-repeat;"></div>
-              <div style="padding:28px;">
-                <span class="inventory-meta">Featured now · VIP / Executive</span>
-                <h3>Mercedes-Maybach V-Class VIP Edition</h3>
-                <p>Executive mobile lounge with a full luxury conversion, quilted leather interior, rear entertainment setup, chauffeur-style privacy, and presence that fits premium hospitality, diplomatic movement, and elite private transport.</p>
+          <article class="inventory-card feature-card">
+            <div class="feature-card-grid">
+              <div class="feature-card-img" style="background-image:url('lambo-urus-side.jpg');" role="img" aria-label="Lamborghini Urus, grey, sourced in Dubai"></div>
+              <div class="feature-card-body">
+                <span class="inventory-meta">Featured now · Sports / SUV</span>
+                <h3>Lamborghini Urus</h3>
+                <p>Grey Lamborghini Urus sourced from Dubai's exotic market. Twin-turbo V8 super-SUV with supercar performance, full luxury cabin, and unmistakable presence. Available for direct sale or RHD export.</p>
                 <div class="check-list" style="margin:18px 0 0;">
-                  <div><span class="check">✓</span><span>Luxury conversion with executive rear seating</span></div>
-                  <div><span class="check">✓</span><span>Rear entertainment and lounge-style comfort</span></div>
-                  <div><span class="check">✓</span><span>Ideal for VIP transport, hotels, family office, or business travel</span></div>
+                  <div><span class="check">✓</span><span>Twin-turbo V8 with supercar acceleration</span></div>
+                  <div><span class="check">✓</span><span>Full luxury cabin · factory Lamborghini specification</span></div>
+                  <div><span class="check">✓</span><span>Direct from Dubai · LHD or RHD export support</span></div>
                 </div>
-                <a class="btn btn-primary" style="margin-top:22px;" href="https://wa.me/971521948311?text=Hi%20Elvis%2C%20I%20want%20the%20Mercedes-Maybach%20V-Class%20VIP%20Edition" target="_blank" rel="noopener">Request This Vehicle</a>
+                <a class="btn btn-primary" style="margin-top:22px;" href="https://wa.me/971521948311?text=Hi%20Elvis%2C%20I%20want%20the%20Lamborghini%20Urus" target="_blank" rel="noopener">Request This Vehicle</a>
               </div>
+            </div>
+          </article>
+
+          <article class="inventory-card image-card">
+            <div class="image-card-img" style="background-image:url('mercedes-cle.jpg');" role="img" aria-label="White Mercedes-Benz CLE Coupe ready for export"></div>
+            <div class="image-card-body">
+              <span class="inventory-meta">In stock · Coupe</span>
+              <h3>Mercedes-Benz CLE Coupe</h3>
+              <p>White CLE 4MATIC coupe, export-ready, sourced for clients who want a sharp daily driver with proper Mercedes presence.</p>
+              <a class="btn btn-secondary" href="https://wa.me/971521948311?text=Hi%20Elvis%2C%20I%20want%20the%20Mercedes-Benz%20CLE%20Coupe" target="_blank" rel="noopener">Request This Vehicle</a>
+            </div>
+          </article>
+
+          <article class="inventory-card image-card">
+            <div class="image-card-img" style="background-image:url('hummer-h3-side.jpg');" role="img" aria-label="Custom Hummer H3 with off-road build"></div>
+            <div class="image-card-body">
+              <span class="inventory-meta">In stock · Custom 4x4</span>
+              <h3>Hummer H3 · Custom Build</h3>
+              <p>Tactical-style Hummer H3 with custom decals, roof rack, and off-road wheels. A standout SUV with character and presence.</p>
+              <a class="btn btn-secondary" href="https://wa.me/971521948311?text=Hi%20Elvis%2C%20I%20want%20the%20custom%20Hummer%20H3" target="_blank" rel="noopener">Request This Vehicle</a>
+            </div>
+          </article>
+
+          <article class="inventory-card image-card">
+            <div class="image-card-img" style="background-image:url('amg-engine.jpg');" role="img" aria-label="Mercedes-AMG V8 engine"></div>
+            <div class="image-card-body">
+              <span class="inventory-meta">Rare part · AMG</span>
+              <h3>Mercedes-AMG V8 Engine</h3>
+              <p>Genuine AMG V8 engine, sourced for builds, restorations, and replacements. Hard-to-find OEM hardware, handled personally.</p>
+              <a class="btn btn-secondary" href="https://wa.me/971521948311?text=Hi%20Elvis%2C%20I%20want%20the%20AMG%20V8%20engine" target="_blank" rel="noopener">Request This Part</a>
             </div>
           </article>
 
@@ -633,24 +783,10 @@
           </article>
 
           <article class="inventory-card">
-            <span class="inventory-meta">Category · Sports</span>
-            <h3>Sports & Performance</h3>
-            <p>AMG, M, RS, exotics, special trims, and cars chosen for speed, sound, and presence. For clients who want something sharper than ordinary.</p>
-            <a class="btn btn-secondary" href="https://wa.me/971521948311?text=Hi%20Elvis%2C%20I%20am%20looking%20for%20a%20sports%20car" target="_blank" rel="noopener">Source a Sports Car</a>
-          </article>
-
-          <article class="inventory-card">
             <span class="inventory-meta">Category · SUV</span>
             <h3>SUVs & 4x4 Builds</h3>
             <p>From luxury daily drivers to export-ready 4x4s, this category covers Range Rover, G-Class, Land Cruiser, Patrol, Prado, Hilux, and other strong-market SUVs.</p>
             <a class="btn btn-secondary" href="https://wa.me/971521948311?text=Hi%20Elvis%2C%20I%20am%20looking%20for%20an%20SUV%20or%204x4" target="_blank" rel="noopener">Source an SUV</a>
-          </article>
-
-          <article class="inventory-card">
-            <span class="inventory-meta">Category · VIP / Executive</span>
-            <h3>VIP & Executive Carriers</h3>
-            <p>Luxury vans, chauffeur vehicles, and high-comfort transport setups designed for hotels, corporate transport, high-net-worth families, and discreet premium mobility.</p>
-            <a class="btn btn-secondary" href="https://wa.me/971521948311?text=Hi%20Elvis%2C%20I%20am%20looking%20for%20a%20VIP%20or%20executive%20carrier" target="_blank" rel="noopener">Source a VIP Carrier</a>
           </article>
 
           <article class="inventory-card">
@@ -670,21 +806,29 @@
         <p class="section-copy">Your gallery now supports a more curated luxury feel. When you add more images later, this section will naturally grow around featured stock instead of looking like a random upload dump.</p>
 
         <div class="gallery-grid">
-          <div class="gallery-card" style="background-image:url('Hero.png')">
-            <h3>Featured exterior</h3>
-            <p>Lead with the strongest vehicle image.</p>
+          <div class="gallery-card" style="background-image:url('lambo-urus-front.jpg')">
+            <h3>Lamborghini Urus</h3>
+            <p>Direct from Dubai's exotic market.</p>
           </div>
-          <div class="gallery-card" style="background:linear-gradient(135deg, #1c1612, #0d0c0c)">
-            <h3>Executive interior</h3>
-            <p>Use your VIP rear-seat images here.</p>
+          <div class="gallery-card" style="background-image:url('hummer-h3-rear.jpg')">
+            <h3>Hummer H3 · Custom</h3>
+            <p>Standout 4x4 with Dubai skyline backdrop.</p>
           </div>
-          <div class="gallery-card" style="background:linear-gradient(135deg, #17191f, #0e1014)">
-            <h3>Curated stock</h3>
-            <p>Show selected classics, sports cars, or SUVs only.</p>
+          <div class="gallery-card" style="background-image:url('mercedes-cle.jpg')">
+            <h3>Mercedes-Benz CLE Coupe</h3>
+            <p>White CLE 4MATIC, ready for export.</p>
           </div>
-          <div class="gallery-card" style="background:linear-gradient(135deg, #171514, #0e0b09)">
-            <h3>Rare spare parts</h3>
-            <p>Add clean detail shots of hard-to-find components.</p>
+          <div class="gallery-card" style="background-image:url('lambo-engine.jpg')">
+            <h3>Lamborghini powertrain</h3>
+            <p>Rare engine bay access for builds and restorations.</p>
+          </div>
+          <div class="gallery-card" style="background-image:url('amg-engine.jpg')">
+            <h3>Mercedes-AMG V8</h3>
+            <p>Genuine AMG hardware sourced personally.</p>
+          </div>
+          <div class="gallery-card" style="background-image:url('hummer-h3-tan.jpg')">
+            <h3>Off-road presence</h3>
+            <p>Custom builds for clients who want character.</p>
           </div>
         </div>
       </div>
@@ -861,6 +1005,23 @@
     <a href="https://wa.me/971521948311?text=Hi%20Elvis%2C%20I%20want%20help%20finding%20a%20car%20or%20part" target="_blank" rel="noopener">WhatsApp Elvis Now</a>
   </div>
   <script>
+    const navToggle = document.getElementById('navToggle');
+    const navLinks = document.getElementById('navLinks');
+    if (navToggle && navLinks) {
+      navToggle.addEventListener('click', () => {
+        const open = navLinks.classList.toggle('open');
+        navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+        navToggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+      });
+      navLinks.querySelectorAll('a').forEach((link) => {
+        link.addEventListener('click', () => {
+          navLinks.classList.remove('open');
+          navToggle.setAttribute('aria-expanded', 'false');
+          navToggle.setAttribute('aria-label', 'Open menu');
+        });
+      });
+    }
+
     const money = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' });
 
     const countryProfiles = {
