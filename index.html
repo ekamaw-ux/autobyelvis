@@ -490,6 +490,59 @@
       z-index: 1;
     }
 
+    .inventory-subhead {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 16px;
+      margin: 44px 0 4px;
+      padding-top: 22px;
+      border-top: 1px solid var(--line);
+    }
+    .inventory-subhead:first-child { margin-top: 28px; border-top: 0; padding-top: 0; }
+    .inventory-subhead h3 {
+      font-size: 1.35rem;
+      font-weight: 700;
+      margin: 0;
+      letter-spacing: -0.01em;
+      color: var(--text);
+    }
+    .inventory-subhead .subhead-meta {
+      font-size: 0.78rem;
+      color: var(--muted);
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+
+    .vehicles-grid,
+    .parts-grid {
+      display: grid;
+      gap: 20px;
+      margin-top: 18px;
+    }
+    .vehicles-grid { grid-template-columns: 1fr; }
+    .parts-grid { grid-template-columns: repeat(2, 1fr); }
+
+    .category-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      margin-top: 18px;
+    }
+    .category-card {
+      padding: 20px;
+      background: rgba(255,255,255,0.018);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+    }
+    .category-card .inventory-meta {
+      font-size: 0.72rem;
+      padding: 5px 10px;
+    }
+    .category-card h3 { font-size: 1.1rem; margin: 10px 0 8px; }
+    .category-card p { font-size: 0.92rem; margin: 0 0 14px; line-height: 1.5; }
+    .category-card .btn { font-size: 0.88rem; min-height: 40px; padding: 0 16px; }
+
     .contact-grid {
       grid-template-columns: 1fr 1fr;
     }
@@ -552,6 +605,7 @@
 
       .feature-card { grid-column: span 2; }
       .steps-grid { grid-template-columns: repeat(2, 1fr); }
+      .category-grid { grid-template-columns: repeat(3, 1fr); }
     }
 
     @media (max-width: 760px) {
@@ -597,11 +651,16 @@
       .gallery-grid,
       .services-grid,
       .inventory-grid,
+      .parts-grid,
+      .category-grid,
       .steps-grid,
       .stats {
         grid-template-columns: 1fr;
         gap: 16px;
       }
+
+      .inventory-subhead { margin-top: 32px; padding-top: 18px; }
+      .inventory-subhead h3 { font-size: 1.15rem; }
 
       .stats { grid-template-columns: repeat(2, 1fr); margin: 14px 0 40px; }
       .card { padding: 18px; }
@@ -775,9 +834,13 @@
       <div class="container">
         <span class="eyebrow">Curated sourcing</span>
         <h2 class="section-title">Featured vehicles and specialist categories.</h2>
-        <p class="section-copy">Auto by Elvis is built around selective sourcing, not endless listings. A small number of strong featured vehicles, plus direct access to classics, sports cars, SUVs, VIP carriers, and rare spare parts.</p>
+        <p class="section-copy">Auto by Elvis is built around selective sourcing, not endless listings. A small number of strong featured vehicles, direct access to rare OEM parts, and personal sourcing for anything else.</p>
 
-        <div class="inventory-grid">
+        <div class="inventory-subhead">
+          <h3>Vehicles</h3>
+          <span class="subhead-meta">Featured · In stock</span>
+        </div>
+        <div class="vehicles-grid">
           <article class="inventory-card feature-card">
             <div class="feature-card-grid">
               <div class="feature-card-img" style="background-image:url('hummer-h3-rear.jpg');" role="img" aria-label="Custom Hummer H3 against Dubai skyline"></div>
@@ -795,23 +858,31 @@
             </div>
           </article>
 
-          <article class="inventory-card image-card">
-            <div class="image-card-img" style="background-image:url('mercedes-cle.jpg');" role="img" aria-label="White Mercedes-Benz CLE Coupe ready for export"></div>
-            <div class="image-card-body">
-              <span class="inventory-meta">In stock · Coupe</span>
-              <h3>Mercedes-Benz CLE Coupe</h3>
-              <p>White CLE 4MATIC coupe, export-ready, sourced for clients who want a sharp daily driver with proper Mercedes presence.</p>
-              <a class="btn btn-secondary" href="https://wa.me/971521948311?text=Hi%20Elvis%2C%20I%20want%20the%20Mercedes-Benz%20CLE%20Coupe" target="_blank" rel="noopener">Request This Vehicle</a>
+          <article class="inventory-card feature-card">
+            <div class="feature-card-grid">
+              <div class="feature-card-img" style="background-image:url('mercedes-cle.jpg');" role="img" aria-label="White Mercedes-Benz CLE Coupe ready for export"></div>
+              <div class="feature-card-body">
+                <span class="inventory-meta">In stock · Coupe</span>
+                <h3>Mercedes-Benz CLE Coupe</h3>
+                <p>White CLE 4MATIC coupe, export-ready and sourced for clients who want a sharp daily driver with proper Mercedes presence. Clean spec, fresh condition, and direct from Dubai.</p>
+                <a class="btn btn-primary" style="margin-top:22px;" href="https://wa.me/971521948311?text=Hi%20Elvis%2C%20I%20want%20the%20Mercedes-Benz%20CLE%20Coupe" target="_blank" rel="noopener">Request This Vehicle</a>
+              </div>
             </div>
           </article>
+        </div>
 
+        <div class="inventory-subhead">
+          <h3>Rare Parts</h3>
+          <span class="subhead-meta">OEM · Sourced personally</span>
+        </div>
+        <div class="parts-grid">
           <article class="inventory-card image-card">
-            <div class="image-card-img" style="background-image:url('lambo-urus-side.jpg');" role="img" aria-label="Lamborghini Urus front clip, half-cut, for parts"></div>
+            <div class="image-card-img" style="background-image:url('ferrari-v12-f140c.jpg');" role="img" aria-label="Ferrari F140C V12 engine"></div>
             <div class="image-card-body">
-              <span class="inventory-meta">Rare part · Lamborghini</span>
-              <h3>Lamborghini Urus · Front Clip (Half-Cut)</h3>
-              <p>Genuine Urus front clip / half-cut available for builds, repairs, or body work. Full front-end panels, lights, bumper assembly and structure — the hard-to-source side of Urus ownership.</p>
-              <a class="btn btn-secondary" href="https://wa.me/971521948311?text=Hi%20Elvis%2C%20I%20want%20the%20Lamborghini%20Urus%20front%20clip" target="_blank" rel="noopener">Request This Part</a>
+              <span class="inventory-meta">Rare part · Ferrari</span>
+              <h3>Ferrari F140C V12 Engine</h3>
+              <p>Genuine Ferrari F140C 6.0L naturally-aspirated V12 — the powerplant behind the 599 GTB, 612 Scaglietti, and F12 family. Complete unit with Ferrari-branded intake plenums.</p>
+              <a class="btn btn-secondary" href="https://wa.me/971521948311?text=Hi%20Elvis%2C%20I%20want%20the%20Ferrari%20F140C%20V12%20engine" target="_blank" rel="noopener">Request This Engine</a>
             </div>
           </article>
 
@@ -829,85 +900,48 @@
             <div class="image-card-img" style="background-image:url('lambo-engine.jpg');" role="img" aria-label="Lamborghini engine bay"></div>
             <div class="image-card-body">
               <span class="inventory-meta">Rare part · Lamborghini</span>
-              <h3>Lamborghini Engine &amp; Powertrain Parts</h3>
+              <h3>Lamborghini Engine &amp; Powertrain</h3>
               <p>Lamborghini engine, powertrain, and driveline parts sourced personally for restorations, rebuilds, and performance builds.</p>
               <a class="btn btn-secondary" href="https://wa.me/971521948311?text=Hi%20Elvis%2C%20I%20need%20Lamborghini%20engine%20parts" target="_blank" rel="noopener">Request These Parts</a>
             </div>
           </article>
 
           <article class="inventory-card image-card">
-            <div class="image-card-img" style="background-image:url('ferrari-v12-f140c.jpg');" role="img" aria-label="Ferrari F140C V12 engine"></div>
+            <div class="image-card-img" style="background-image:url('lambo-urus-side.jpg');" role="img" aria-label="Lamborghini Urus front clip, half-cut, for parts"></div>
             <div class="image-card-body">
-              <span class="inventory-meta">Rare part · Ferrari</span>
-              <h3>Ferrari F140C V12 Engine</h3>
-              <p>Genuine Ferrari F140C 6.0L naturally-aspirated V12 — the powerplant behind the 599 GTB, 612 Scaglietti, and the F12 family. Complete unit with Ferrari-branded intake plenums, sourced personally for restorations, rebuilds, and collector projects.</p>
-              <a class="btn btn-secondary" href="https://wa.me/971521948311?text=Hi%20Elvis%2C%20I%20want%20the%20Ferrari%20F140C%20V12%20engine" target="_blank" rel="noopener">Request This Engine</a>
+              <span class="inventory-meta">Rare part · Lamborghini</span>
+              <h3>Lamborghini Urus · Front Clip</h3>
+              <p>Genuine Urus front clip / half-cut for builds, repairs, or body work. Full front-end panels, lights, bumper assembly and structure.</p>
+              <a class="btn btn-secondary" href="https://wa.me/971521948311?text=Hi%20Elvis%2C%20I%20want%20the%20Lamborghini%20Urus%20front%20clip" target="_blank" rel="noopener">Request This Part</a>
             </div>
           </article>
+        </div>
 
-          <article class="inventory-card">
-            <span class="inventory-meta">Category · Classic</span>
+        <div class="inventory-subhead">
+          <h3>Also sourcing</h3>
+          <span class="subhead-meta">On request</span>
+        </div>
+        <div class="category-grid">
+          <article class="category-card">
+            <span class="inventory-meta">Classic</span>
             <h3>Classic Vehicles</h3>
-            <p>Timeless icons, collector-oriented luxury cars, and heritage builds sourced for buyers who want character, scarcity, and long-term appeal.</p>
+            <p>Timeless icons and heritage builds sourced for buyers who want character, scarcity, and long-term appeal.</p>
             <a class="btn btn-secondary" href="https://wa.me/971521948311?text=Hi%20Elvis%2C%20I%20am%20looking%20for%20a%20classic%20vehicle" target="_blank" rel="noopener">Source a Classic</a>
           </article>
 
-          <article class="inventory-card">
-            <span class="inventory-meta">Category · SUV</span>
-            <h3>SUVs & 4x4 Builds</h3>
-            <p>From luxury daily drivers to export-ready 4x4s, this category covers Range Rover, G-Class, Land Cruiser, Patrol, Prado, Hilux, and other strong-market SUVs.</p>
+          <article class="category-card">
+            <span class="inventory-meta">SUV</span>
+            <h3>SUVs &amp; 4x4 Builds</h3>
+            <p>Range Rover, G-Class, Land Cruiser, Patrol, Prado, Hilux, and other strong-market 4x4s — luxury daily drivers to export-ready stock.</p>
             <a class="btn btn-secondary" href="https://wa.me/971521948311?text=Hi%20Elvis%2C%20I%20am%20looking%20for%20an%20SUV%20or%204x4" target="_blank" rel="noopener">Source an SUV</a>
           </article>
 
-          <article class="inventory-card">
-            <span class="inventory-meta">Category · Rare Spare Parts</span>
+          <article class="category-card">
+            <span class="inventory-meta">Rare Parts</span>
             <h3>Rare Spare Parts</h3>
-            <p>Hard-to-find OEM and specialist parts for luxury, performance, classic, and export vehicles. When the part is rare, Elvis handles the search personally.</p>
+            <p>Hard-to-find OEM and specialist parts for luxury, performance, classic, and export vehicles. Handled personally.</p>
             <a class="btn btn-secondary" href="https://wa.me/971521948311?text=Hi%20Elvis%2C%20I%20need%20help%20finding%20a%20rare%20spare%20part" target="_blank" rel="noopener">Source Rare Parts</a>
           </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="gallery">
-      <div class="container">
-        <span class="eyebrow">Gallery</span>
-        <h2 class="section-title">Cars, parts, and builds sourced personally.</h2>
-        <p class="section-copy">A closer look at recent vehicles and rare parts handled through Auto by Elvis — from Dubai's exotic market to export-ready stock heading across Africa and beyond.</p>
-
-        <div class="gallery-grid">
-          <div class="gallery-card" style="background-image:url('hummer-h3-side.jpg')">
-            <h3>Hummer H3 · Custom</h3>
-            <p>Featured build, ready in Dubai.</p>
-          </div>
-          <div class="gallery-card" style="background-image:url('mercedes-cle.jpg')">
-            <h3>Mercedes-Benz CLE Coupe</h3>
-            <p>White CLE 4MATIC, ready for export.</p>
-          </div>
-          <div class="gallery-card" style="background-image:url('hummer-h3-tan.jpg')">
-            <h3>Off-road presence</h3>
-            <p>Custom builds for clients who want character.</p>
-          </div>
-          <div class="gallery-card" style="background-image:url('lambo-urus-front.jpg')">
-            <h3>Lamborghini Urus · Front Clip</h3>
-            <p>Half-cut for builds and body work.</p>
-          </div>
-          <div class="gallery-card" style="background-image:url('amg-engine.jpg')">
-            <h3>Mercedes-AMG V8 Engine</h3>
-            <p>Rare OEM powertrain sourced personally.</p>
-          </div>
-          <div class="gallery-card" style="background-image:url('lambo-engine.jpg')">
-            <h3>Lamborghini Powertrain</h3>
-            <p>Engine and driveline parts for restorations.</p>
-          </div>
-          <div class="gallery-card" style="background-image:url('ferrari-v12-f140c.jpg')">
-            <h3>Ferrari F140C V12</h3>
-            <p>Genuine 6.0L V12 from the 599 / F12 family.</p>
-          </div>
-          <div class="gallery-card" style="background-image:url('ferrari-v12-angle.jpg')">
-            <h3>Ferrari V12 · Intake Runners</h3>
-            <p>Tipo F140C 12-cylinder, Ferrari-branded plenums.</p>
-          </div>
         </div>
       </div>
     </section>
