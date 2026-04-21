@@ -4,7 +4,7 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Auto by Elvis | Dubai Luxury Cars, Rare OEM Parts & Global Export</title>
-<meta name="description" content="Dubai-based sourcing of luxury cars, rare OEM parts, and RHD export-ready vehicles. Direct deals with Elvis — no middlemen." />
+<meta name="description" content="Dubai-based sourcing of RHD export vehicles, LHD luxury cars, classics, and rare OEM parts. Cheaper than Japan, faster than the UK." />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;0,9..144,800;1,9..144,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -82,8 +82,6 @@
     border-radius:999px;transition:.2s;
   }
   .nav-links a:hover{opacity:1;background:rgba(255,255,255,.04)}
-  .nav-links a.hot{color:var(--gold);opacity:1;font-weight:600}
-  .nav-links a.hot::before{content:"🔥 ";font-size:12px}
 
   .wa-btn{
     background:var(--gold);color:#1a1208;
@@ -145,14 +143,11 @@
   .btn-primary:hover{background:var(--gold-2);transform:translateY(-1px)}
   .btn-secondary{background:rgba(255,255,255,.04);color:var(--text);border-color:var(--border-2)}
   .btn-secondary:hover{background:rgba(255,255,255,.08);border-color:var(--gold)}
-  .btn-hot{background:var(--hot);color:#fff;box-shadow:0 6px 24px rgba(255,77,46,.35)}
-  .btn-hot:hover{background:var(--hot-2)}
 
   .hero-visual{
     position:relative;aspect-ratio:5/4;
     border-radius:var(--radius);
-    background:
-      linear-gradient(135deg,var(--panel) 0%,var(--panel-2) 100%);
+    background:linear-gradient(135deg,var(--panel) 0%,var(--panel-2) 100%);
     border:1px solid var(--border);
     overflow:hidden;
   }
@@ -160,7 +155,7 @@
     content:"";position:absolute;inset:0;
     background:
       radial-gradient(circle at 30% 20%, rgba(212,168,83,.15), transparent 50%),
-      url('https://images.unsplash.com/photo-1555215695-3004980ad54e?w=1200&q=80') center/cover;
+      url('https://dbz-images.dubizzle.com/images/2026/02/19/dd237c7b1c15434e91bb94f4b2acdf56-.jpeg') center/cover;
     opacity:.55;
   }
   .hero-visual::after{
@@ -199,52 +194,9 @@
   }
 
   /* ============ SECTIONS ============ */
-  .section{padding:100px 0}
+  .section{padding:90px 0}
   .section-title-row{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:40px;gap:24px;flex-wrap:wrap}
   .section-meta{font-size:12px;color:var(--muted);letter-spacing:.1em;text-transform:uppercase}
-
-  /* ============ CATEGORIES ============ */
-  .cat-grid{
-    display:grid;grid-template-columns:repeat(3,1fr);gap:16px;
-  }
-  .cat-card{
-    position:relative;
-    aspect-ratio:5/3;
-    border-radius:var(--radius);
-    overflow:hidden;
-    border:1px solid var(--border);
-    background:var(--panel);
-    transition:.3s;
-    cursor:pointer;
-  }
-  .cat-card::before{
-    content:"";position:absolute;inset:0;
-    background-size:cover;background-position:center;
-    transition:transform .6s;
-    opacity:.4;
-  }
-  .cat-card:hover::before{transform:scale(1.08);opacity:.55}
-  .cat-card::after{
-    content:"";position:absolute;inset:0;
-    background:linear-gradient(180deg,transparent 30%,rgba(10,8,7,.92) 100%);
-  }
-  .cat-card > *{position:relative;z-index:2}
-  .cat-body{
-    position:absolute;bottom:0;left:0;right:0;
-    padding:22px;
-  }
-  .cat-icon{font-size:28px;margin-bottom:6px;display:block}
-  .cat-name{font-family:'Fraunces',serif;font-size:22px;font-weight:600;letter-spacing:-.01em}
-  .cat-count{font-size:12px;color:var(--muted);margin-top:4px}
-  .cat-card:hover{border-color:var(--gold-dim);transform:translateY(-3px)}
-  .cat-card:hover .cat-name{color:var(--gold-2)}
-
-  .cat-1::before{background-image:url('https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=900&q=80')}
-  .cat-2::before{background-image:url('https://images.unsplash.com/photo-1544636331-e26879cd4d9b?w=900&q=80')}
-  .cat-3::before{background-image:url('https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?w=900&q=80')}
-  .cat-4::before{background-image:url('https://images.unsplash.com/photo-1560958089-b8a1929cea89?w=900&q=80')}
-  .cat-5::before{background-image:url('https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?w=900&q=80')}
-  .cat-6::before{background-image:url('https://images.unsplash.com/photo-1632245889029-e406faaa34cd?w=900&q=80')}
 
   /* ============ VS JAPAN BAND (inside RHD) ============ */
   .vs-band{
@@ -286,27 +238,8 @@
     letter-spacing:-.01em;
   }
   .vs-tagline span{color:var(--muted);font-size:14px}
-  @media (max-width:700px){
-    .vs-band{padding:24px 20px}
-    .vs-band-stats{grid-template-columns:1fr;gap:16px}
-  }
 
-  /* ============ HOT DEALS ============ */
-  .hot-section{
-    background:
-      linear-gradient(180deg,var(--bg) 0%,var(--bg-2) 50%,var(--bg) 100%);
-    position:relative;
-  }
-  .hot-section::before{
-    content:"";position:absolute;inset:0;
-    background:radial-gradient(ellipse 700px 400px at 50% 0%, rgba(255,77,46,.06), transparent 60%);
-    pointer-events:none;
-  }
-  .hot-eyebrow{
-    background:rgba(255,77,46,.12);
-    color:var(--hot-2);
-    border-color:rgba(255,77,46,.3);
-  }
+  /* ============ DEAL GRID ============ */
   .deal-grid{
     display:grid;grid-template-columns:repeat(3,1fr);gap:20px;
   }
@@ -336,57 +269,52 @@
     font-size:11px;font-weight:700;letter-spacing:.06em;
     box-shadow:0 4px 12px rgba(255,77,46,.4);
   }
-  .deal-badge.limited{background:var(--gold);color:#1a1208}
-  .deal-badge.steal{background:#4ade80;color:#0a2a1a}
+  .deal-badge.limited{background:var(--gold);color:#1a1208;box-shadow:0 4px 12px rgba(212,168,83,.4)}
+  .deal-badge.steal{background:#4ade80;color:#0a2a1a;box-shadow:0 4px 12px rgba(74,222,128,.4)}
+  .deal-badge.classic{background:#8b5cf6;color:#fff;box-shadow:0 4px 12px rgba(139,92,246,.4)}
   .deal-body{padding:22px;display:flex;flex-direction:column;flex:1;gap:10px}
   .deal-urgency{
-    font-size:12px;color:var(--hot-2);
+    font-size:12px;color:var(--gold-2);
     font-weight:600;letter-spacing:.04em;
     display:flex;align-items:center;gap:6px;
   }
-  .deal-urgency::before{content:"●";animation:pulse 1.5s infinite}
-  @keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}
+  .deal-urgency::before{content:"●";color:var(--gold)}
   .deal-title{font-family:'Fraunces',serif;font-size:20px;font-weight:600;line-height:1.2}
   .deal-desc{color:var(--muted);font-size:14px;flex:1}
-  .deal-footer{display:flex;justify-content:space-between;align-items:center;margin-top:8px;padding-top:16px;border-top:1px solid var(--border)}
+  .deal-footer{display:flex;justify-content:space-between;align-items:center;margin-top:8px;padding-top:16px;border-top:1px solid var(--border);gap:12px}
   .deal-price{font-family:'Fraunces',serif;font-size:20px;font-weight:600;color:var(--gold)}
-  .deal-price.offer{color:var(--text);font-style:italic;font-size:16px}
   .deal-cta{
     background:var(--gold);color:#1a1208;
     padding:9px 16px;border-radius:999px;
     font-size:13px;font-weight:600;
-    transition:.2s;
+    transition:.2s;white-space:nowrap;
   }
   .deal-cta:hover{background:var(--gold-2)}
 
-  /* ============ FEATURED ============ */
-  .featured-hero{
-    display:grid;grid-template-columns:1.2fr 1fr;gap:40px;
-    background:var(--panel);
-    border:1px solid var(--border);
-    border-radius:var(--radius);
-    padding:40px;
-    align-items:center;
+  /* ============ RHD SECTION ============ */
+  .rhd-section{background:var(--bg-2)}
+
+  /* ============ LHD SECTION ============ */
+  .lhd-section{
+    background:linear-gradient(180deg,var(--bg) 0%,#15110c 50%,var(--bg) 100%);
+    position:relative;
   }
-  .featured-img{
-    aspect-ratio:4/3;
-    border-radius:var(--radius-sm);
-    background-size:cover;background-position:center;background-color:#000;
+  .lhd-section::before{
+    content:"";position:absolute;inset:0;
+    background:radial-gradient(ellipse 700px 400px at 50% 0%, rgba(212,168,83,.06), transparent 60%);
+    pointer-events:none;
   }
-  .featured-body .pill{
-    display:inline-block;padding:5px 12px;
-    background:rgba(255,255,255,.06);
-    border:1px solid var(--border-2);
-    border-radius:999px;
-    font-size:12px;margin-bottom:16px;
+
+  /* ============ CLASSICS ============ */
+  .classics-section{background:var(--bg-2)}
+  .classics-eyebrow{
+    background:rgba(139,92,246,.12);
+    color:#c4b5fd;
+    border-color:rgba(139,92,246,.3);
   }
-  .featured-body h3{font-size:32px;margin-bottom:12px}
-  .featured-body p{color:var(--muted);margin-bottom:24px}
-  .spec-row{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-bottom:24px}
-  .spec{padding:10px 14px;background:var(--bg-2);border-radius:var(--radius-sm);font-size:13px}
-  .spec span{color:var(--muted);display:block;font-size:11px;letter-spacing:.05em;text-transform:uppercase;margin-bottom:2px}
 
   /* ============ PARTS ============ */
+  .parts-section{background:var(--bg)}
   .parts-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
   .part-card{
     background:var(--panel);border:1px solid var(--border);
@@ -398,38 +326,6 @@
   .part-tag{font-size:11px;color:var(--gold);letter-spacing:.08em;text-transform:uppercase;margin-bottom:8px}
   .part-card h3{font-size:19px;margin-bottom:8px}
   .part-card p{color:var(--muted);font-size:14px;margin-bottom:16px}
-
-  /* ============ EXPORT ============ */
-  .export-section{
-    background:linear-gradient(180deg,var(--bg-2) 0%,var(--bg) 100%);
-  }
-  .export-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
-  .export-map{
-    aspect-ratio:4/3;border-radius:var(--radius);
-    background:linear-gradient(135deg,var(--panel) 0%,var(--panel-2) 100%);
-    border:1px solid var(--border);
-    position:relative;overflow:hidden;
-    background-image:url('https://images.unsplash.com/photo-1524661135-423995f22d0b?w=1200&q=80');
-    background-size:cover;background-position:center;
-  }
-  .export-map::after{
-    content:"";position:absolute;inset:0;
-    background:linear-gradient(135deg,rgba(10,8,7,.4) 0%,rgba(10,8,7,.85) 100%);
-  }
-  .export-features{list-style:none;margin:24px 0}
-  .export-features li{
-    padding:14px 0;border-bottom:1px solid var(--border);
-    display:flex;gap:14px;align-items:flex-start;
-  }
-  .export-features li:last-child{border-bottom:none}
-  .export-check{
-    width:22px;height:22px;border-radius:50%;
-    background:var(--gold-dim);color:var(--gold);
-    display:grid;place-items:center;font-size:12px;
-    flex-shrink:0;margin-top:2px;font-weight:700;
-  }
-  .export-features strong{display:block;margin-bottom:3px;font-size:15px}
-  .export-features span{color:var(--muted);font-size:13px}
 
   /* ============ CALCULATOR ============ */
   .calc-section{background:var(--bg-2)}
@@ -482,49 +378,8 @@
   .calc-total strong{font-family:'Fraunces',serif;font-size:28px;color:var(--gold)}
   .calc-note{font-size:12px;color:var(--muted);margin-top:14px;text-align:center}
 
-  /* ============ HOW IT WORKS ============ */
-  .steps-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
-  .step{
-    padding:32px;background:var(--panel);
-    border:1px solid var(--border);border-radius:var(--radius);
-    position:relative;
-  }
-  .step-num{
-    font-family:'Fraunces',serif;font-size:48px;font-weight:700;
-    color:var(--gold);line-height:1;margin-bottom:16px;
-    font-style:italic;
-  }
-  .step h3{font-size:20px;margin-bottom:8px}
-  .step p{color:var(--muted);font-size:14px}
-
-  /* ============ ABOUT ============ */
-  .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
-  .about-quote{
-    font-family:'Fraunces',serif;
-    font-size:24px;
-    font-style:italic;
-    color:var(--gold-2);
-    line-height:1.4;
-    margin-bottom:24px;
-    padding-left:20px;
-    border-left:3px solid var(--gold);
-  }
-  .about-bio{color:var(--muted);font-size:16px;line-height:1.7}
-
-  /* ============ FINAL CTA ============ */
-  .final-cta{
-    padding:120px 0;
-    background:
-      radial-gradient(ellipse 600px 400px at 50% 50%, rgba(212,168,83,.1), transparent 60%),
-      var(--bg);
-    text-align:center;
-  }
-  .final-cta h2{font-size:clamp(40px,5vw,64px);margin-bottom:16px}
-  .final-cta p{font-size:18px;color:var(--muted);margin-bottom:32px;max-width:560px;margin-left:auto;margin-right:auto}
-  .final-ctas{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
-
   /* ============ CONTACT ============ */
-  .contact-section{background:var(--bg-2)}
+  .contact-section{background:var(--bg)}
   .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
   .contact-card{
     background:var(--panel);border:1px solid var(--border);
@@ -561,6 +416,8 @@
   }
   footer a{color:var(--gold)}
 
+  .more-cta{text-align:center;margin-top:36px}
+
   /* ============ MOBILE ============ */
   @media (max-width:900px){
     .nav-links{
@@ -571,22 +428,23 @@
     .nav-links.open{display:flex}
     .nav-links a{width:100%;padding:14px}
     .menu-toggle{display:block}
-    .hero-grid,.export-grid,.about-grid,.featured-hero{grid-template-columns:1fr;gap:32px}
-    .cat-grid,.deal-grid,.parts-grid,.steps-grid{grid-template-columns:1fr}
+    .hero-grid{grid-template-columns:1fr;gap:32px}
+    .deal-grid,.parts-grid{grid-template-columns:1fr}
     .trust-grid{grid-template-columns:repeat(2,1fr);gap:14px}
     .trust-item{font-size:13px}
     .contact-grid{grid-template-columns:1fr}
     .calc-row{grid-template-columns:1fr}
-    .section{padding:70px 0}
+    .vs-band{padding:24px 20px}
+    .vs-band-stats{grid-template-columns:1fr;gap:16px}
+    .section{padding:60px 0}
     .hero{padding:50px 0 40px}
     .wrap{padding:0 20px}
     .nav-inner{padding:14px 20px}
-    .calc-box,.step,.contact-card{padding:24px}
-    .featured-hero{padding:24px}
+    .calc-box,.contact-card{padding:24px}
   }
   @media (max-width:600px){
     .trust-grid{grid-template-columns:1fr}
-    .hero-ctas,.final-ctas{flex-direction:column;align-items:stretch}
+    .hero-ctas{flex-direction:column;align-items:stretch}
     .btn{justify-content:center}
   }
 </style>
@@ -598,15 +456,14 @@
   <div class="nav-inner">
     <a href="#home" class="brand">
       <div class="brand-name">AUTO <span>by Elvis</span></div>
-      <div class="brand-tag">Dubai · Rare · Export</div>
+      <div class="brand-tag">Dubai · Export · Rare Parts</div>
     </a>
     <ul class="nav-links" id="navLinks">
       <li><a href="#home">Home</a></li>
-      <li><a href="#inventory">Inventory</a></li>
-      <li><a href="#deals" class="hot">Hot Deals</a></li>
-      <li><a href="#rhd-inventory">RHD Export</a></li>
-      <li><a href="#rare-lhd">Rare Room</a></li>
-      <li><a href="#parts">Parts</a></li>
+      <li><a href="#rhd">RHD Export</a></li>
+      <li><a href="#lhd">LHD Inventory</a></li>
+      <li><a href="#classics">Classics</a></li>
+      <li><a href="#parts">OEM Parts</a></li>
       <li><a href="#calculator">Calculator</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
@@ -621,9 +478,9 @@
     <div>
       <span class="eyebrow">Trusted sourcing · Dubai to the world</span>
       <h1>Where <em>Rare</em> Becomes Reality.</h1>
-      <p class="hero-sub">Luxury vehicles, rare OEM parts, and global export — sourced directly from Dubai. No call centres. No middlemen. Every deal is handled personally by Elvis.</p>
+      <p class="hero-sub">RHD export-ready vehicles, LHD luxury, classics, and rare OEM parts — sourced directly from Dubai. No call centres. No middlemen. Every deal handled personally by Elvis.</p>
       <div class="hero-ctas">
-        <a href="#inventory" class="btn btn-primary">🔥 View Inventory</a>
+        <a href="#rhd" class="btn btn-primary">View Inventory</a>
         <a href="https://wa.me/971521948311" class="btn btn-secondary">💬 Talk to Elvis</a>
       </div>
     </div>
@@ -631,7 +488,7 @@
       <div class="hero-badge">
         <div class="hero-badge-text">
           <strong>Dubai · Est. 2023</strong>
-          Luxury · Exotic · Export
+          RHD · LHD · Classics · Parts
         </div>
       </div>
     </div>
@@ -648,176 +505,14 @@
   </div>
 </div>
 
-<!-- CATEGORIES -->
-<section class="section" id="inventory">
-  <div class="wrap">
-    <div class="section-head">
-      <span class="eyebrow">Shop by category</span>
-      <h2>Find what you're looking for — fast.</h2>
-      <p>Browse curated collections across luxury, exotic, utility, and parts. Every listing is personally verified by Elvis.</p>
-    </div>
-    <div class="cat-grid">
-      <a href="#inventory" class="cat-card cat-1">
-        <div class="cat-body">
-          <span class="cat-icon">🚗</span>
-          <div class="cat-name">Luxury Cars</div>
-          <div class="cat-count">Mercedes · BMW · Audi · Bentley</div>
-        </div>
-      </a>
-      <a href="#inventory" class="cat-card cat-2">
-        <div class="cat-body">
-          <span class="cat-icon">🏎</span>
-          <div class="cat-name">Sports & Exotic</div>
-          <div class="cat-count">Ferrari · Lamborghini · Porsche</div>
-        </div>
-      </a>
-      <a href="#inventory" class="cat-card cat-3">
-        <div class="cat-body">
-          <span class="cat-icon">🚙</span>
-          <div class="cat-name">SUVs & 4×4</div>
-          <div class="cat-count">Range Rover · G-Wagon · Prado</div>
-        </div>
-      </a>
-      <a href="#inventory" class="cat-card cat-4">
-        <div class="cat-body">
-          <span class="cat-icon">⚡</span>
-          <div class="cat-name">EVs & Hybrid</div>
-          <div class="cat-count">Tesla · Lucid · Taycan</div>
-        </div>
-      </a>
-      <a href="#parts" class="cat-card cat-5">
-        <div class="cat-body">
-          <span class="cat-icon">🔧</span>
-          <div class="cat-name">Rare Parts</div>
-          <div class="cat-count">OEM · Performance · Carbon</div>
-        </div>
-      </a>
-      <a href="#parts" class="cat-card cat-6">
-        <div class="cat-body">
-          <span class="cat-icon">🧩</span>
-          <div class="cat-name">Engines & Components</div>
-          <div class="cat-count">V8 · V10 · V12 · Drivetrain</div>
-        </div>
-      </a>
-    </div>
-  </div>
-</section>
-
-<!-- HOT DEALS -->
-<section class="section hot-section" id="deals">
-  <div class="wrap">
-    <div class="section-title-row">
-      <div>
-        <span class="eyebrow hot-eyebrow">🔥 This week only</span>
-        <h2>Hot Deals.</h2>
-        <p class="muted">Rotating inventory priced to move. High-demand units, limited availability, direct from Dubai.</p>
-      </div>
-      <div class="section-meta">Updated weekly</div>
-    </div>
-    <div class="deal-grid">
-
-      <div class="deal-card">
-        <div class="deal-img" style="background-image:url('https://upload.wikimedia.org/wikipedia/commons/thumb/a/a3/Range_Rover_Sport_%282022%29_IMG_0028.jpg/1280px-Range_Rover_Sport_%282022%29_IMG_0028.jpg')">
-          <span class="deal-badge">HOT DEAL</span>
-        </div>
-        <div class="deal-body">
-          <span class="deal-urgency">High demand · 2 left</span>
-          <div class="deal-title">Range Rover Sport · 2020</div>
-          <p class="deal-desc">Clean GCC-spec Sport in dark cherry. Full service history, ready for export or local registration.</p>
-          <div class="deal-footer">
-            <span class="deal-price offer">Special Offer</span>
-            <a href="https://wa.me/971521948311?text=Interested%20in%20the%20Range%20Rover%20Sport%202020" class="deal-cta">Enquire Now</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="deal-card">
-        <div class="deal-img" style="background-image:url('https://upload.wikimedia.org/wikipedia/commons/thumb/7/75/Ferrari_SF90_Stradale_IMG_9236.jpg/1280px-Ferrari_SF90_Stradale_IMG_9236.jpg')">
-          <span class="deal-badge limited">LIMITED</span>
-        </div>
-        <div class="deal-body">
-          <span class="deal-urgency">This week only</span>
-          <div class="deal-title">Ferrari SF90 Stradale</div>
-          <p class="deal-desc">Rosso Corsa SF90, hybrid V8, low kms. Priced competitively for a serious collector or investor.</p>
-          <div class="deal-footer">
-            <span class="deal-price offer">POA</span>
-            <a href="https://wa.me/971521948311?text=Interested%20in%20the%20Ferrari%20SF90" class="deal-cta">Enquire Now</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="deal-card">
-        <div class="deal-img" style="background-image:url('https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/2022_Toyota_RAV4_XLE_Premium_AWD_front_5.2.22.jpg/1280px-2022_Toyota_RAV4_XLE_Premium_AWD_front_5.2.22.jpg')">
-          <span class="deal-badge steal">STEAL</span>
-        </div>
-        <div class="deal-body">
-          <span class="deal-urgency">Priced to move</span>
-          <div class="deal-title">Toyota RAV4 · RHD Export</div>
-          <p class="deal-desc">Export-ready right-hand drive RAV4. Perfect for Kenya, Uganda, Tanzania. Shipping quoted on request.</p>
-          <div class="deal-footer">
-            <span class="deal-price offer">Special Offer</span>
-            <a href="https://wa.me/971521948311?text=Interested%20in%20the%20RAV4%20RHD" class="deal-cta">Enquire Now</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="deal-card">
-        <div class="deal-img" style="background-image:url('https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Mercedes-AMG_GT_%28C_190%29_IMG_8638.jpg/1280px-Mercedes-AMG_GT_%28C_190%29_IMG_8638.jpg')">
-          <span class="deal-badge">HOT DEAL</span>
-        </div>
-        <div class="deal-body">
-          <span class="deal-urgency">Just arrived</span>
-          <div class="deal-title">Mercedes AMG GT</div>
-          <p class="deal-desc">AMG GT with aggressive spec, clean interior, full-option. Ready for immediate handover in Dubai.</p>
-          <div class="deal-footer">
-            <span class="deal-price offer">POA</span>
-            <a href="https://wa.me/971521948311?text=Interested%20in%20the%20AMG%20GT" class="deal-cta">Enquire Now</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="deal-card">
-        <div class="deal-img" style="background-image:url('https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/Bentley_Continental_GT_Convertible_%28III%29_IMG_5517.jpg/1280px-Bentley_Continental_GT_Convertible_%28III%29_IMG_5517.jpg')">
-          <span class="deal-badge limited">LIMITED</span>
-        </div>
-        <div class="deal-body">
-          <span class="deal-urgency">Rare spec</span>
-          <div class="deal-title">Bentley Continental GTC</div>
-          <p class="deal-desc">Convertible GTC, one-owner, immaculate condition. The kind of car that doesn't sit around long.</p>
-          <div class="deal-footer">
-            <span class="deal-price offer">POA</span>
-            <a href="https://wa.me/971521948311?text=Interested%20in%20the%20Bentley%20GTC" class="deal-cta">Enquire Now</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="deal-card">
-        <div class="deal-img" style="background-image:url('https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/2022_BMW_M2_Competition_Coupe.jpg/1280px-2022_BMW_M2_Competition_Coupe.jpg')">
-          <span class="deal-badge steal">STEAL</span>
-        </div>
-        <div class="deal-body">
-          <span class="deal-urgency">Great buy</span>
-          <div class="deal-title">BMW M2 Competition</div>
-          <p class="deal-desc">Clean M2 Comp, manual option available. A driver's car with proper resale. Moves fast at this price.</p>
-          <div class="deal-footer">
-            <span class="deal-price offer">Special Offer</span>
-            <a href="https://wa.me/971521948311?text=Interested%20in%20the%20BMW%20M2" class="deal-cta">Enquire Now</a>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- RHD EXPORT INVENTORY + VS JAPAN -->
-<section class="section" id="rhd-inventory" style="background:var(--bg-2)">
+<!-- ============ RHD EXPORT ============ -->
+<section class="section rhd-section" id="rhd">
   <div class="wrap">
     <div class="section-title-row">
       <div>
         <span class="eyebrow">Right-hand drive · Export only</span>
         <h2>RHD Export Inventory.</h2>
-        <p class="muted">Export-ready vehicles sourced for Kenya, Uganda, Tanzania, Zambia, Zimbabwe, South Africa, Botswana and beyond. Listings refreshed directly from the Dubai market.</p>
+        <p class="muted">Export-ready vehicles for Kenya, Uganda, Tanzania, Zambia, Zimbabwe, South Africa & beyond. Live listings refreshed from the Dubai market.</p>
       </div>
       <div class="section-meta">Jebel Ali · RoRo & Container</div>
     </div>
@@ -847,304 +542,329 @@
     <div class="deal-grid">
 
       <div class="deal-card">
-        <div class="deal-img" style="background-image:url('https://upload.wikimedia.org/wikipedia/commons/thumb/a/a3/2024_Toyota_Land_Cruiser_Prado_Automatic_2.8_Front.jpg/1280px-2024_Toyota_Land_Cruiser_Prado_Automatic_2.8_Front.jpg')">
-          <span class="deal-badge">EXPORT</span>
+        <div class="deal-img" style="background-image:url('https://dbz-images.dubizzle.com/images/2026/02/19/dd237c7b1c15434e91bb94f4b2acdf56-.jpeg')">
+          <span class="deal-badge limited">MAYBACH GRILLE</span>
         </div>
         <div class="deal-body">
-          <span class="deal-urgency">New shape · 0 km</span>
-          <div class="deal-title">Toyota Prado 250 TXL 2.8D · 2025</div>
-          <p class="deal-desc">All-new Prado 250 TXL, 2.8L diesel automatic. Full option spec, export-ready for Kenya, Uganda, Tanzania.</p>
+          <span class="deal-urgency">Red interior · 8+ seater</span>
+          <div class="deal-title">Mercedes-Benz Vito · 2020</div>
+          <p class="deal-desc">80,000 km, 2.0L diesel, executive people-mover with Maybach-style grille conversion. Japanese specs, export-ready.</p>
           <div class="deal-footer">
-            <span class="deal-price">AED 186,000</span>
-            <a href="https://wa.me/971521948311?text=Interested%20in%20Prado%20250%20TXL%202025" class="deal-cta">Enquire Now</a>
+            <span class="deal-price">AED 68,000</span>
+            <a href="https://wa.me/971521948311?text=Interested%20in%20Mercedes%20Vito%202020%20RHD" class="deal-cta">Enquire</a>
           </div>
         </div>
       </div>
 
       <div class="deal-card">
-        <div class="deal-img" style="background-image:url('https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Toyota_Land_Cruiser_Prado_250_First_Edition_%28Japan%29_front.jpg/1280px-Toyota_Land_Cruiser_Prado_250_First_Edition_%28Japan%29_front.jpg')">
-          <span class="deal-badge">EXPORT</span>
+        <div class="deal-img" style="background-image:url('https://dbz-images.dubizzle.com/images/2026/04/15/20a6e64f1ab74a86b9c01ba5f5ac27af-.jpeg')">
+          <span class="deal-badge">HYBRID</span>
         </div>
         <div class="deal-body">
-          <span class="deal-urgency">Launch edition · 0 km</span>
-          <div class="deal-title">Prado 250 First Edition · 2025</div>
-          <p class="deal-desc">Launch-spec Prado 250 First Edition, 2.8 diesel AT in pearl white. The flagship trim of the new generation.</p>
+          <span class="deal-urgency">11,900 km · Brand new feel</span>
+          <div class="deal-title">Lexus NX 350H · 2024</div>
+          <p class="deal-desc">Near-new Lexus NX 350H hybrid SUV. 5-seater, full Lexus refinement, Japanese specs. Premium executive choice.</p>
           <div class="deal-footer">
-            <span class="deal-price">AED 206,000</span>
-            <a href="https://wa.me/971521948311?text=Interested%20in%20Prado%20First%20Edition" class="deal-cta">Enquire Now</a>
+            <span class="deal-price">AED 52,500</span>
+            <a href="https://wa.me/971521948311?text=Interested%20in%20Lexus%20NX%20350H%202024%20RHD" class="deal-cta">Enquire</a>
           </div>
         </div>
       </div>
 
       <div class="deal-card">
-        <div class="deal-img" style="background-image:url('https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/2020_Toyota_Hilux_Invincible_D-4D_2.4_Front.jpg/1280px-2020_Toyota_Hilux_Invincible_D-4D_2.4_Front.jpg')">
+        <div class="deal-img" style="background-image:url('https://dbz-images.dubizzle.com/images/2026/02/03/bdbae9d2b1d94179bf6688c7e1e532cc-.jpeg')">
           <span class="deal-badge steal">STEAL</span>
         </div>
         <div class="deal-body">
-          <span class="deal-urgency">East Africa favourite</span>
+          <span class="deal-urgency">V8 petrol · 8-seater</span>
+          <div class="deal-title">Toyota Land Cruiser 200 · 2012</div>
+          <p class="deal-desc">113,600 km, clean white V8 petrol. Legendary reliability and ground clearance. Built for African terrain.</p>
+          <div class="deal-footer">
+            <span class="deal-price">AED 68,000</span>
+            <a href="https://wa.me/971521948311?text=Interested%20in%20Land%20Cruiser%20V8%202012%20RHD" class="deal-cta">Enquire</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="deal-card">
+        <div class="deal-img" style="background-image:url('https://dbz-images.dubizzle.com/images/2026/04/14/7b89f94cbcbe4e939ef16181424387e3-.jpeg')">
+          <span class="deal-badge limited">GOVT SPEC</span>
+        </div>
+        <div class="deal-body">
+          <span class="deal-urgency">0 km · Brand new build</span>
+          <div class="deal-title">Toyota LC78 Ambulance · 2025</div>
+          <p class="deal-desc">Brand-new LC78 4.2L diesel ambulance build. Hard top, 3-door. Ready for government, NGO, or medical fleet.</p>
+          <div class="deal-footer">
+            <span class="deal-price">AED 185,000</span>
+            <a href="https://wa.me/971521948311?text=Interested%20in%20LC78%20Ambulance%202025%20RHD" class="deal-cta">Enquire</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="deal-card">
+        <div class="deal-img" style="background-image:url('https://dbz-images.dubizzle.com/images/2025/08/26/e9131abd684044698f1f01c2d37c54e2-.jpeg')">
+          <span class="deal-badge">EV · NEW</span>
+        </div>
+        <div class="deal-body">
+          <span class="deal-urgency">0 km · 450–550 km range</span>
+          <div class="deal-title">BYD Sealion 7 Premium · 2025</div>
+          <p class="deal-desc">Brand new electric SUV, 80–90 kWh battery, 5-seater premium spec. The future of executive transport in Africa.</p>
+          <div class="deal-footer">
+            <span class="deal-price">AED 131,000</span>
+            <a href="https://wa.me/971521948311?text=Interested%20in%20BYD%20Sealion%207%20Premium%20RHD" class="deal-cta">Enquire</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="deal-card">
+        <div class="deal-img" style="background-image:url('https://dbz-images.dubizzle.com/images/2026/01/02/32b28bb49e7a42348fdacd7a8acdf564-.jpeg')">
+          <span class="deal-badge">FLEET</span>
+        </div>
+        <div class="deal-body">
+          <span class="deal-urgency">15-seater · High roof</span>
+          <div class="deal-title">Toyota Hiace GLX Commuter · 2025</div>
+          <p class="deal-desc">Brand new 2.8L diesel 15-seater high-roof commuter. Ideal for matatu, shuttle, hotel, or tour operators.</p>
+          <div class="deal-footer">
+            <span class="deal-price">AED 174,500</span>
+            <a href="https://wa.me/971521948311?text=Interested%20in%20Hiace%2015%20Seater%20RHD" class="deal-cta">Enquire</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="deal-card">
+        <div class="deal-img" style="background-image:url('https://dbz-images.dubizzle.com/images/2026/01/26/c968daa79a51465495771348700a2b73-.jpeg')">
+          <span class="deal-badge">NEW SHAPE</span>
+        </div>
+        <div class="deal-body">
+          <span class="deal-urgency">0 km · 7-seater · 2.8 Diesel</span>
+          <div class="deal-title">Toyota Prado 250 AR-TX · 2025</div>
+          <p class="deal-desc">Brand new Prado 250 AR-TX, 2.8L turbo diesel. Two-tone grey, full option, 7-seater. The next-gen flagship.</p>
+          <div class="deal-footer">
+            <span class="deal-price">AED 184,000</span>
+            <a href="https://wa.me/971521948311?text=Interested%20in%20Prado%20250%20AR-TX%202025%20RHD" class="deal-cta">Enquire</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="deal-card">
+        <div class="deal-img" style="background-image:url('https://dbz-images.dubizzle.com/images/2026/03/25/61f9935a5f974d37b71c59886417f3cd-.png')">
+          <span class="deal-badge steal">REVO BUILD</span>
+        </div>
+        <div class="deal-body">
+          <span class="deal-urgency">REVO livery · Canopy · Diesel</span>
           <div class="deal-title">Toyota Hilux GR Sport · 2021</div>
-          <p class="deal-desc">2.8L Diesel, automatic, GR Sport facelift. Leather seats, double cab, export-ready. Built for African roads.</p>
+          <p class="deal-desc">136,000 km, GR Sport diesel with REVO livery, full canopy and aggressive black wheels. Ready for safari work.</p>
           <div class="deal-footer">
-            <span class="deal-price">AED 125,000</span>
-            <a href="https://wa.me/971521948311?text=Interested%20in%20Hilux%20GR%20Sport" class="deal-cta">Enquire Now</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="deal-card">
-        <div class="deal-img" style="background-image:url('https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/2019_Toyota_Land_Cruiser_VX_Automatic_4.5_Front.jpg/1280px-2019_Toyota_Land_Cruiser_VX_Automatic_4.5_Front.jpg')">
-          <span class="deal-badge">V8 DIESEL</span>
-        </div>
-        <div class="deal-body">
-          <span class="deal-urgency">Diff lock · Snorkel</span>
-          <div class="deal-title">Land Cruiser 79 Double Cab · 2020</div>
-          <p class="deal-desc">V8 4.5L Diesel (1VD-FTV), diff lock, snorkel, double cab. The workhorse — built to go anywhere, fix anywhere.</p>
-          <div class="deal-footer">
-            <span class="deal-price">AED 170,000</span>
-            <a href="https://wa.me/971521948311?text=Interested%20in%20LC79%20Double%20Cab" class="deal-cta">Enquire Now</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="deal-card">
-        <div class="deal-img" style="background-image:url('https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/2022_Toyota_RAV4_XLE_Premium_AWD_front_5.2.22.jpg/1280px-2022_Toyota_RAV4_XLE_Premium_AWD_front_5.2.22.jpg')">
-          <span class="deal-badge steal">BEST SELLER</span>
-        </div>
-        <div class="deal-body">
-          <span class="deal-urgency">Fastest reseller · Nairobi</span>
-          <div class="deal-title">Toyota RAV4 Hybrid · 2021</div>
-          <p class="deal-desc">2.5L Hybrid AWD, clean single-owner JDM import. Easiest resale in Nairobi, Kampala, Dar es Salaam.</p>
-          <div class="deal-footer">
-            <span class="deal-price">AED 85,000</span>
-            <a href="https://wa.me/971521948311?text=Interested%20in%20RAV4%20Hybrid" class="deal-cta">Enquire Now</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="deal-card">
-        <div class="deal-img" style="background-image:url('https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/2023_Toyota_Land_Cruiser_300_GR_Sport_%28Japan%29_front.jpg/1280px-2023_Toyota_Land_Cruiser_300_GR_Sport_%28Japan%29_front.jpg')">
-          <span class="deal-badge limited">VIP</span>
-        </div>
-        <div class="deal-body">
-          <span class="deal-urgency">Low kms · Full option</span>
-          <div class="deal-title">Land Cruiser LC300 VX-R · 2023</div>
-          <p class="deal-desc">3.5L Twin-Turbo V6, full option, low kms. The African VIP spec — flagship choice in Nairobi, Dar, Lagos.</p>
-          <div class="deal-footer">
-            <span class="deal-price">AED 380,000</span>
-            <a href="https://wa.me/971521948311?text=Interested%20in%20LC300%20VXR" class="deal-cta">Enquire Now</a>
+            <span class="deal-price">AED 100,000</span>
+            <a href="https://wa.me/971521948311?text=Interested%20in%20Hilux%20GR%20Sport%20REVO%202021%20RHD" class="deal-cta">Enquire</a>
           </div>
         </div>
       </div>
 
     </div>
-    <div style="text-align:center;margin-top:32px">
-      <a href="https://wa.me/971521948311?text=Looking%20for%20an%20RHD%20vehicle%20for%20export" class="btn btn-secondary">Can't see what you need? Message Elvis →</a>
+    <div class="more-cta">
+      <a href="https://wa.me/971521948311?text=Looking%20for%20a%20specific%20RHD%20vehicle" class="btn btn-secondary">Need something specific? Message Elvis →</a>
     </div>
   </div>
 </section>
 
-<!-- RARE & CLASSIC LHD -->
-<section class="section" id="rare-lhd" style="position:relative">
+<!-- ============ LHD INVENTORY ============ -->
+<section class="section lhd-section" id="lhd">
   <div class="wrap">
     <div class="section-title-row">
       <div>
-        <span class="eyebrow">Rare · German · Muscle · Exotic</span>
-        <h2>The Rare Room.</h2>
-        <p class="muted">Trackhawks, Patrols, German performance, and hand-picked exotics — sourced fresh from the Dubai market. All models 2020+ unless stated.</p>
+        <span class="eyebrow">Left-hand drive · GCC & global</span>
+        <h2>LHD Inventory.</h2>
+        <p class="muted">Land Cruisers, Prados, Hiluxes, Fortuners — fresh GCC and European spec stock for local registration or global export.</p>
       </div>
-      <div class="section-meta">Hand-picked · By appointment</div>
+      <div class="section-meta">Dubai stock · Verified</div>
     </div>
+
     <div class="deal-grid">
 
       <div class="deal-card">
-        <div class="deal-img" style="background-image:url('https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/2020_Jeep_Grand_Cherokee_Trackhawk_Front.jpg/1280px-2020_Jeep_Grand_Cherokee_Trackhawk_Front.jpg')">
-          <span class="deal-badge">707 HP</span>
+        <div class="deal-img" style="background-image:url('https://www.dubicars.com/images/cb466f/400x234/target-motors-3/f8fa1198-f2e5-47b3-8464-b384493d0881.jpeg')">
+          <span class="deal-badge">FLAGSHIP</span>
         </div>
         <div class="deal-body">
-          <span class="deal-urgency">Supercharged V8 · Clean title</span>
-          <div class="deal-title">Jeep Grand Cherokee Trackhawk · 2021</div>
-          <p class="deal-desc">6.2L supercharged V8, 707hp. Blue on black, panoramic roof, full option. Full service history, no accidents.</p>
-          <div class="deal-footer">
-            <span class="deal-price">AED 249,000</span>
-            <a href="https://wa.me/971521948311?text=Interested%20in%20the%20Trackhawk%202021" class="deal-cta">Enquire Now</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="deal-card">
-        <div class="deal-img" style="background-image:url('https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/2022_Nissan_Patrol_Nismo_%28Y62_facelift_II%29_front_view.jpg/1280px-2022_Nissan_Patrol_Nismo_%28Y62_facelift_II%29_front_view.jpg')">
-          <span class="deal-badge limited">NISMO</span>
-        </div>
-        <div class="deal-body">
-          <span class="deal-urgency">First owner · Low kms</span>
-          <div class="deal-title">Nissan Patrol Nismo 5.6L · 2021</div>
-          <p class="deal-desc">Grey Nismo, red interior trim, first owner from new. Factory warranty until 2026, maintenance history intact.</p>
-          <div class="deal-footer">
-            <span class="deal-price">AED 299,000</span>
-            <a href="https://wa.me/971521948311?text=Interested%20in%20the%20Patrol%20Nismo%202021" class="deal-cta">Enquire Now</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="deal-card">
-        <div class="deal-img" style="background-image:url('https://upload.wikimedia.org/wikipedia/commons/thumb/6/66/2021_Mercedes-AMG_G_63_4Matic_%28W_463%29_front_view.jpg/1280px-2021_Mercedes-AMG_G_63_4Matic_%28W_463%29_front_view.jpg')">
-          <span class="deal-badge">AMG</span>
-        </div>
-        <div class="deal-body">
-          <span class="deal-urgency">Obsidian Black · Night Package</span>
-          <div class="deal-title">Mercedes-AMG G63 · 2022</div>
-          <p class="deal-desc">Obsidian Black, Night Package, AMG saddle brown interior. GCC-spec full option. The king of Dubai SUVs.</p>
-          <div class="deal-footer">
-            <span class="deal-price">AED 735,000</span>
-            <a href="https://wa.me/971521948311?text=Interested%20in%20the%20G63%202022" class="deal-cta">Enquire Now</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="deal-card">
-        <div class="deal-img" style="background-image:url('https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Porsche_911_GT3_RS_992_IMG_9267.jpg/1280px-Porsche_911_GT3_RS_992_IMG_9267.jpg')">
-          <span class="deal-badge limited">COLLECTOR</span>
-        </div>
-        <div class="deal-body">
-          <span class="deal-urgency">Weissach Package · Full carbon</span>
-          <div class="deal-title">Porsche 911 GT3 RS · 2023</div>
-          <p class="deal-desc">992 GT3 RS with full Weissach Package. Ceramic brakes, lift system, Al Nabooda warranty. Delivery mileage.</p>
+          <span class="deal-urgency">0 km · GXR · 4.0 V6</span>
+          <div class="deal-title">Toyota Land Cruiser LC300 GXR · 2025</div>
+          <p class="deal-desc">Brand new LC300 GXR 4.0L V6 in grey. Full option flagship spec. Dubai's best-priced LC300.</p>
           <div class="deal-footer">
             <span class="deal-price">POA</span>
-            <a href="https://wa.me/971521948311?text=Interested%20in%20the%20GT3%20RS" class="deal-cta">Enquire Now</a>
+            <a href="https://wa.me/971521948311?text=Interested%20in%20LC300%20GXR%202025%20LHD" class="deal-cta">Enquire</a>
           </div>
         </div>
       </div>
 
       <div class="deal-card">
-        <div class="deal-img" style="background-image:url('https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/Audi_RS_6_Avant_performance_%28C8%29_IMG_7700.jpg/1280px-Audi_RS_6_Avant_performance_%28C8%29_IMG_7700.jpg')">
-          <span class="deal-badge">630 HP</span>
+        <div class="deal-img" style="background-image:url('https://www.dubicars.com/images/152ffa/400x234/target-motors-3/231e4845-fa34-42be-a8a9-07a95e044e9f.jpeg')">
+          <span class="deal-badge">LC300</span>
         </div>
         <div class="deal-body">
-          <span class="deal-urgency">Carbon Vorsprung · Nardo Grey</span>
-          <div class="deal-title">Audi RS6 Avant Performance · 2023</div>
-          <p class="deal-desc">Nardo Grey with full Carbon Vorsprung pack. 630hp twin-turbo V8. The sleeper wagon that humbles supercars.</p>
-          <div class="deal-footer">
-            <span class="deal-price">AED 545,000</span>
-            <a href="https://wa.me/971521948311?text=Interested%20in%20the%20RS6%20Performance" class="deal-cta">Enquire Now</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="deal-card">
-        <div class="deal-img" style="background-image:url('https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/2022_BMW_M4_Competition_G82%2C_front_8.11.22.jpg/1280px-2022_BMW_M4_Competition_G82%2C_front_8.11.22.jpg')">
-          <span class="deal-badge limited">1 OF 1,000</span>
-        </div>
-        <div class="deal-body">
-          <span class="deal-urgency">Halo spec · Limited production</span>
-          <div class="deal-title">BMW M4 CSL · 2023</div>
-          <p class="deal-desc">Frozen Brilliant White. 550hp, rear-drive, track tyres, carbon roof. Limited to 1,000 units globally. Instant classic.</p>
+          <span class="deal-urgency">3.3 V6 · GXR2 trim</span>
+          <div class="deal-title">Land Cruiser LC300 GXR2 3.3 · 2025</div>
+          <p class="deal-desc">Brand new LC300 GXR2 with 3.3L V6 twin-turbo diesel. Smart spec, perfect balance of luxury and economy.</p>
           <div class="deal-footer">
             <span class="deal-price">POA</span>
-            <a href="https://wa.me/971521948311?text=Interested%20in%20the%20M4%20CSL" class="deal-cta">Enquire Now</a>
+            <a href="https://wa.me/971521948311?text=Interested%20in%20LC300%20GXR2%203.3%20LHD" class="deal-cta">Enquire</a>
           </div>
         </div>
       </div>
 
       <div class="deal-card">
-        <div class="deal-img" style="background-image:url('https://upload.wikimedia.org/wikipedia/commons/thumb/3/3d/2019_Dodge_Challenger_SRT_Hellcat_Front.jpg/1280px-2019_Dodge_Challenger_SRT_Hellcat_Front.jpg')">
-          <span class="deal-badge">HEMI V8</span>
+        <div class="deal-img" style="background-image:url('https://www.dubicars.com/images/a3bf60/400x234/target-motors-2/ef1c613c-ea00-4450-b39c-16f3a3d29970.jpeg')">
+          <span class="deal-badge">LIMITED</span>
         </div>
         <div class="deal-body">
-          <span class="deal-urgency">Hellcat Redeye · 797 HP</span>
-          <div class="deal-title">Dodge Challenger SRT Hellcat Redeye · 2022</div>
-          <p class="deal-desc">797hp supercharged Hemi. Widebody, TorRed on black. The last true American muscle before the V8 died.</p>
-          <div class="deal-footer">
-            <span class="deal-price">AED 285,000</span>
-            <a href="https://wa.me/971521948311?text=Interested%20in%20the%20Hellcat%20Redeye" class="deal-cta">Enquire Now</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="deal-card">
-        <div class="deal-img" style="background-image:url('https://upload.wikimedia.org/wikipedia/commons/thumb/7/75/Ferrari_SF90_Stradale_IMG_9236.jpg/1280px-Ferrari_SF90_Stradale_IMG_9236.jpg')">
-          <span class="deal-badge limited">HYBRID V8</span>
-        </div>
-        <div class="deal-body">
-          <span class="deal-urgency">Rosso Corsa · Low kms</span>
-          <div class="deal-title">Ferrari SF90 Stradale · 2021</div>
-          <p class="deal-desc">Rosso Corsa over black, hybrid twin-turbo V8, 1,000hp combined. Low kms, immaculate. Investment-grade exotic.</p>
+          <span class="deal-urgency">2.7L petrol · TXL Limited</span>
+          <div class="deal-title">Toyota Prado 250 TXL Limited · 2025</div>
+          <p class="deal-desc">Brand new Prado 250 TXL Limited 2.7L petrol AT in black. The new-shape flagship petrol Prado.</p>
           <div class="deal-footer">
             <span class="deal-price">POA</span>
-            <a href="https://wa.me/971521948311?text=Interested%20in%20the%20SF90" class="deal-cta">Enquire Now</a>
+            <a href="https://wa.me/971521948311?text=Interested%20in%20Prado%20TXL%20Limited%20Black%20LHD" class="deal-cta">Enquire</a>
           </div>
         </div>
       </div>
 
       <div class="deal-card">
-        <div class="deal-img" style="background-image:url('https://upload.wikimedia.org/wikipedia/commons/thumb/a/a3/Range_Rover_Sport_%282022%29_IMG_0028.jpg/1280px-Range_Rover_Sport_%282022%29_IMG_0028.jpg')">
-          <span class="deal-badge">AUTOBIOGRAPHY</span>
+        <div class="deal-img" style="background-image:url('https://www.dubicars.com/images/99bc02/400x234/target-motors-2/9824cad5-110f-422b-9edc-1db0eb788352.jpeg')">
+          <span class="deal-badge">FORTUNER</span>
         </div>
         <div class="deal-body">
-          <span class="deal-urgency">Executive spec · V8</span>
-          <div class="deal-title">Range Rover Autobiography · 2022</div>
-          <p class="deal-desc">5.0L Supercharged V8, Autobiography trim, rear executive seating. Fully loaded, immaculate condition.</p>
+          <span class="deal-urgency">2.7L petrol · V4 · Export</span>
+          <div class="deal-title">Toyota Fortuner 2.7L · 2024</div>
+          <p class="deal-desc">2024 Toyota Fortuner 2.7L V4 petrol, export-only. Practical mid-size SUV with Toyota durability.</p>
           <div class="deal-footer">
-            <span class="deal-price">AED 425,000</span>
-            <a href="https://wa.me/971521948311?text=Interested%20in%20the%20Range%20Rover%20Autobiography" class="deal-cta">Enquire Now</a>
+            <span class="deal-price">POA</span>
+            <a href="https://wa.me/971521948311?text=Interested%20in%20Fortuner%202.7%20LHD" class="deal-cta">Enquire</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="deal-card">
+        <div class="deal-img" style="background-image:url('https://www.dubicars.com/images/ba3ac4/400x234/p-2-p-motors-international/c362eb12-5d40-4fae-9c56-24132a33660a.jpeg')">
+          <span class="deal-badge">ADVENTURE</span>
+        </div>
+        <div class="deal-body">
+          <span class="deal-urgency">4.0L · Adventure spec</span>
+          <div class="deal-title">Toyota Hilux Adventure 4.0L · 2025</div>
+          <p class="deal-desc">Brand new Hilux Adventure 4.0L V6 petrol. Top-of-the-range double cab, ready for any terrain.</p>
+          <div class="deal-footer">
+            <span class="deal-price">POA</span>
+            <a href="https://wa.me/971521948311?text=Interested%20in%20Hilux%20Adventure%204.0%20LHD" class="deal-cta">Enquire</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="deal-card">
+        <div class="deal-img" style="background-image:url('https://www.dubicars.com/images/e4556f/400x234/target-motors-3/1353cc21-a2c0-4985-8f9d-dea8906599d8.jpg')">
+          <span class="deal-badge">V8 DIESEL</span>
+        </div>
+        <div class="deal-body">
+          <span class="deal-urgency">Diff lock · MT · Workhorse</span>
+          <div class="deal-title">Land Cruiser LC79 Pickup DC · 2023</div>
+          <p class="deal-desc">LC79 double cab pickup, 4.2L V6 diesel, manual with diff lock. The ultimate utility build.</p>
+          <div class="deal-footer">
+            <span class="deal-price">POA</span>
+            <a href="https://wa.me/971521948311?text=Interested%20in%20LC79%20Pickup%20DC%20LHD" class="deal-cta">Enquire</a>
           </div>
         </div>
       </div>
 
     </div>
-    <div style="text-align:center;margin-top:40px">
-      <a href="https://wa.me/971521948311?text=Looking%20for%20a%20specific%20rare%20car" class="btn btn-secondary">Hunting something specific? Message Elvis →</a>
+    <div class="more-cta">
+      <a href="https://wa.me/971521948311?text=Looking%20for%20a%20specific%20LHD%20vehicle" class="btn btn-secondary">Looking for something specific? Message Elvis →</a>
     </div>
   </div>
 </section>
 
-<!-- FEATURED -->
-<section class="section">
-  <div class="wrap">
-    <div class="section-head">
-      <span class="eyebrow">Curated sourcing</span>
-      <h2>Featured Vehicles.</h2>
-      <p>A small number of strong, personally-sourced vehicles — each one handpicked before it ever hits the site.</p>
-    </div>
-    <div class="featured-hero">
-      <div class="featured-img" style="background-image:url('https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2?w=1200&q=80')"></div>
-      <div class="featured-body">
-        <span class="pill">In stock · Coupe</span>
-        <h3>Mercedes-Benz CLE Coupe</h3>
-        <p>White CLE 4MATIC coupe — export-ready and sourced for clients who want a sharp daily driver with proper Mercedes presence. Clean spec, fresh condition, direct from Dubai.</p>
-        <div class="spec-row">
-          <div class="spec"><span>Drivetrain</span>4MATIC AWD</div>
-          <div class="spec"><span>Exterior</span>Polar White</div>
-          <div class="spec"><span>Spec</span>Full option</div>
-          <div class="spec"><span>Status</span>Export-ready</div>
-        </div>
-        <a href="https://wa.me/971521948311?text=Interested%20in%20the%20Mercedes%20CLE" class="btn btn-primary">Request This Vehicle</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- PARTS -->
-<section class="section" id="parts" style="background:var(--bg-2)">
+<!-- ============ CLASSICS ============ -->
+<section class="section classics-section" id="classics">
   <div class="wrap">
     <div class="section-title-row">
       <div>
-        <span class="eyebrow">Sourced personally</span>
-        <h2>Rare OEM Parts & Components.</h2>
-        <p class="muted">Impossible-to-find parts across Ferrari, Lamborghini, Mercedes, BMW, Toyota, Nissan, Mazda, Honda and more.</p>
+        <span class="eyebrow classics-eyebrow">Investment-grade · By appointment</span>
+        <h2>Classics.</h2>
+        <p class="muted">Genuine collector-grade classics, JDM legends, and appreciating assets — sourced personally for serious buyers.</p>
+      </div>
+      <div class="section-meta">Hand-picked · Verified provenance</div>
+    </div>
+
+    <div class="deal-grid">
+
+      <div class="deal-card">
+        <div class="deal-img" style="background-image:url('https://dbz-images.dubizzle.com/images/2026/01/31/aa94c598f94147c3b227d31f61581cbc-.jpeg')">
+          <span class="deal-badge classic">CLASSIC</span>
+        </div>
+        <div class="deal-body">
+          <span class="deal-urgency">Japan import · 41,000 km</span>
+          <div class="deal-title">Rover Mini Classic 1.3 · 1996</div>
+          <p class="deal-desc">Stunning blue Rover Mini Classic, Japanese import, only 41,000 km. The icon that defined British motoring.</p>
+          <div class="deal-footer">
+            <span class="deal-price">AED 25,000</span>
+            <a href="https://wa.me/971521948311?text=Interested%20in%20Rover%20Mini%20Classic%201996" class="deal-cta">Enquire</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="deal-card">
+        <div class="deal-img" style="background-image:url('https://dbz-images.dubizzle.com/images/2025/05/14/91293ea388604fd5bde16d42c59dffaf-.jpeg')">
+          <span class="deal-badge classic">JDM ICON</span>
+        </div>
+        <div class="deal-body">
+          <span class="deal-urgency">Skyline · 87,000 km · Twin turbo</span>
+          <div class="deal-title">Nissan Skyline R33 GT-R · 1994</div>
+          <p class="deal-desc">Genuine R33 Skyline GT-R, silver, 87,000 km. RB-series twin-turbo straight-six. Appreciating JDM legend.</p>
+          <div class="deal-footer">
+            <span class="deal-price">AED 49,000</span>
+            <a href="https://wa.me/971521948311?text=Interested%20in%20Nissan%20R33%20GT-R%201994" class="deal-cta">Enquire</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="deal-card">
+        <div class="deal-img" style="background:linear-gradient(135deg,var(--panel) 0%,var(--panel-2) 100%);display:flex;align-items:center;justify-content:center;color:var(--gold);font-family:'Fraunces',serif;font-size:24px;font-style:italic;text-align:center;padding:20px">
+          <div>Your<br>Classic<br>Here</div>
+        </div>
+        <div class="deal-body">
+          <span class="deal-urgency">Sourced on request</span>
+          <div class="deal-title">Hunting a specific classic?</div>
+          <p class="deal-desc">Looking for an air-cooled 911? E30 M3? FD RX-7? Tell Elvis what you want and he'll source it personally.</p>
+          <div class="deal-footer">
+            <span class="deal-price" style="font-size:16px;font-style:italic">By request</span>
+            <a href="https://wa.me/971521948311?text=I'm%20hunting%20a%20specific%20classic" class="deal-cta">Start Hunt</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ OEM SPARE PARTS ============ -->
+<section class="section parts-section" id="parts">
+  <div class="wrap">
+    <div class="section-title-row">
+      <div>
+        <span class="eyebrow">Sourced personally · Hard to find</span>
+        <h2>OEM Spare Parts.</h2>
+        <p class="muted">Genuine, hard-to-find OEM parts across Ferrari, Lamborghini, Mercedes, BMW, Toyota, Nissan, Mazda, Honda and more.</p>
       </div>
       <div class="section-meta">OEM · Verified</div>
     </div>
     <div class="parts-grid">
+
       <div class="part-card">
         <div class="part-img" style="background-image:url('https://images.unsplash.com/photo-1486754735734-325b5831c3ad?w=900&q=80')"></div>
         <div class="part-body">
           <div class="part-tag">Engine · Ferrari</div>
           <h3>Ferrari V12 Engines</h3>
-          <p>Genuine Ferrari V12 blocks and complete powertrains sourced for restorations and builds.</p>
+          <p>Genuine Ferrari V12 blocks and complete powertrains sourced for restorations, rebuilds, and performance builds.</p>
           <a href="https://wa.me/971521948311?text=Looking%20for%20Ferrari%20V12" class="btn btn-secondary">Request This Part</a>
         </div>
       </div>
+
       <div class="part-card">
         <div class="part-img" style="background-image:url('https://images.unsplash.com/photo-1632245889029-e406faaa34cd?w=900&q=80')"></div>
         <div class="part-body">
@@ -1154,6 +874,7 @@
           <a href="https://wa.me/971521948311?text=Looking%20for%20Lamborghini%20parts" class="btn btn-secondary">Request This Part</a>
         </div>
       </div>
+
       <div class="part-card">
         <div class="part-img" style="background-image:url('https://images.unsplash.com/photo-1625231334168-35067f8853ed?w=900&q=80')"></div>
         <div class="part-body">
@@ -1163,6 +884,7 @@
           <a href="https://wa.me/971521948311?text=Looking%20for%20Urus%20front%20clip" class="btn btn-secondary">Request This Part</a>
         </div>
       </div>
+
       <div class="part-card">
         <div class="part-img" style="background-image:url('https://images.unsplash.com/photo-1537984822441-cff330075342?w=900&q=80')"></div>
         <div class="part-body">
@@ -1172,6 +894,7 @@
           <a href="https://wa.me/971521948311?text=Looking%20for%20Mazda%20OEM%20parts" class="btn btn-secondary">Request This Part</a>
         </div>
       </div>
+
       <div class="part-card">
         <div class="part-img" style="background-image:url('https://images.unsplash.com/photo-1621447504864-d8686f215c77?w=900&q=80')"></div>
         <div class="part-body">
@@ -1181,51 +904,22 @@
           <a href="https://wa.me/971521948311?text=Looking%20for%20carbon%20parts" class="btn btn-secondary">Request This Part</a>
         </div>
       </div>
+
       <div class="part-card">
         <div class="part-img" style="background-image:url('https://images.unsplash.com/photo-1617531653332-bd46c24f2068?w=900&q=80')"></div>
         <div class="part-body">
           <div class="part-tag">Multi-brand · OEM</div>
-          <h3>OEM Warehouse Stock</h3>
-          <p>Active warehouse sourcing across major brands — if it's rare or hard-to-find, start the conversation.</p>
+          <h3>OEM Warehouse Sourcing</h3>
+          <p>Active warehouse sourcing across all major brands. If it's rare or hard-to-find, start the conversation.</p>
           <a href="https://wa.me/971521948311?text=Looking%20for%20OEM%20parts" class="btn btn-secondary">Request This Part</a>
         </div>
       </div>
+
     </div>
   </div>
 </section>
 
-<!-- EXPORT -->
-<section class="section export-section" id="export">
-  <div class="wrap export-grid">
-    <div>
-      <span class="eyebrow">Global export</span>
-      <h2>Export-Ready Vehicles for Africa & Beyond.</h2>
-      <p class="muted" style="font-size:17px;margin-bottom:8px">Years of RHD export experience across East, Central, and Southern Africa — plus GCC and select global destinations.</p>
-      <ul class="export-features">
-        <li>
-          <div class="export-check">✓</div>
-          <div><strong>RHD & LHD Availability</strong><span>Right-hand drive for Africa, LHD for GCC, Europe, and the Americas.</span></div>
-        </li>
-        <li>
-          <div class="export-check">✓</div>
-          <div><strong>Full Documentation</strong><span>Export certificates, customs paperwork, shipping invoices — all handled.</span></div>
-        </li>
-        <li>
-          <div class="export-check">✓</div>
-          <div><strong>Shipping Coordination</strong><span>Dubai to port of choice — Mombasa, Dar es Salaam, Durban, and beyond.</span></div>
-        </li>
-        <li>
-          <div class="export-check">✓</div>
-          <div><strong>Transparent Pricing</strong><span>All-in quotes with no surprise fees. Know the cost before you commit.</span></div>
-        </li>
-      </ul>
-      <a href="https://wa.me/971521948311?text=Start%20export%20process" class="btn btn-primary">Start Export Process</a>
-    </div>
-    <div class="export-map"></div>
-  </div>
-</section>
-
-<!-- CALCULATOR -->
+<!-- ============ CALCULATOR ============ -->
 <section class="section calc-section" id="calculator">
   <div class="wrap">
     <div class="section-head" style="text-align:center;margin-left:auto;margin-right:auto">
@@ -1313,68 +1007,13 @@
   </div>
 </section>
 
-<!-- HOW IT WORKS -->
-<section class="section" id="how">
-  <div class="wrap">
-    <div class="section-head">
-      <span class="eyebrow">Simple process</span>
-      <h2>How it works.</h2>
-      <p>Three steps from enquiry to delivery. Every step handled personally.</p>
-    </div>
-    <div class="steps-grid">
-      <div class="step">
-        <div class="step-num">01</div>
-        <h3>Choose vehicle or part</h3>
-        <p>Tell Elvis what you're looking for — a specific model, a rare part, or just a spec and budget.</p>
-      </div>
-      <div class="step">
-        <div class="step-num">02</div>
-        <h3>Confirm the details</h3>
-        <p>Elvis sources options, sends photos, confirms pricing and timeline. You approve before anything moves.</p>
-      </div>
-      <div class="step">
-        <div class="step-num">03</div>
-        <h3>Shipping & delivery</h3>
-        <p>Export docs, shipping, and port coordination — all handled. You receive tracking from Dubai to your door.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ABOUT -->
-<section class="section" id="about" style="background:var(--bg-2)">
-  <div class="wrap about-grid">
-    <div>
-      <span class="eyebrow">About Elvis</span>
-      <h2>The personal network behind every deal.</h2>
-    </div>
-    <div>
-      <p class="about-quote">"Every deal I've done has been built on trust. No shortcuts. No hidden agendas. Just good cars, fair prices, and real relationships."</p>
-      <p class="about-bio">Based in Dubai with deep roots in Kenya, Elvis Kamau has built a network across the automotive world that helps clients move quickly and confidently. Whether it's an exotic part that seems impossible to find or an export-ready vehicle for East Africa, Elvis handles the process personally — from first enquiry to final delivery.</p>
-    </div>
-  </div>
-</section>
-
-<!-- FINAL CTA -->
-<section class="final-cta">
-  <div class="wrap">
-    <span class="eyebrow">Ready when you are</span>
-    <h2>Ready to secure your vehicle?</h2>
-    <p>One message to Elvis is all it takes. No forms, no call centres — just a direct conversation.</p>
-    <div class="final-ctas">
-      <a href="https://wa.me/971521948311" class="btn btn-primary">💬 Message on WhatsApp</a>
-      <a href="#contact" class="btn btn-secondary">Request a Quote</a>
-    </div>
-  </div>
-</section>
-
-<!-- CONTACT -->
+<!-- ============ CONTACT ============ -->
 <section class="section contact-section" id="contact">
   <div class="wrap">
     <div class="section-head">
       <span class="eyebrow">Contact</span>
       <h2>Talk to Elvis directly.</h2>
-      <p>No bots. No generic sales desk. All messages go directly to Elvis for a personal reply.</p>
+      <p>No bots. No generic sales desk. Every message goes directly to Elvis for a personal reply.</p>
     </div>
     <div class="contact-grid">
       <div class="contact-card">
@@ -1400,7 +1039,7 @@
 <!-- FOOTER -->
 <footer>
   <div class="wrap">
-    <p>© 2026 Auto by Elvis · Dubai · Rare Parts · Global Export</p>
+    <p>© 2026 Auto by Elvis · Dubai · RHD Export · LHD · Classics · Rare OEM Parts</p>
     <p style="margin-top:6px">
       <a href="https://instagram.com/autobyelvis">@autobyelvis</a> ·
       <a href="https://wa.me/971521948311">WhatsApp</a> ·
