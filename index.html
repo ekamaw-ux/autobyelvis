@@ -379,6 +379,24 @@
   .calc-total strong{font-family:'Fraunces',serif;font-size:28px;color:var(--gold)}
   .calc-note{font-size:12px;color:var(--muted);margin-top:14px;text-align:center}
 
+
+  .calc-helper{font-size:13px;color:var(--muted);margin-top:-10px;margin-bottom:18px}
+  .calc-subtitle{color:var(--muted);max-width:720px;margin:0 auto}
+  .calc-actions{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:18px}
+  .calc-actions .btn{justify-content:center;text-align:center}
+  .wa-quote{background:#25d366;color:#07190d}
+  .calc-small{font-size:12px;color:var(--muted);margin-top:8px}
+  .calc-warning{
+    margin-top:16px;padding:14px 16px;border:1px solid rgba(212,168,83,.22);
+    background:var(--gold-dim);border-radius:var(--radius-sm);font-size:13px;color:var(--muted)
+  }
+  .timeline-box{
+    margin-top:14px;padding:14px 16px;background:rgba(255,255,255,.035);
+    border:1px solid var(--border);border-radius:var(--radius-sm);font-size:13px;color:var(--muted)
+  }
+  .calc-total{gap:18px}
+  .calc-total span:last-child{text-align:right}
+
   /* ============ CONTACT ============ */
   .contact-section{background:var(--bg)}
   .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
@@ -924,33 +942,36 @@
 <section class="section calc-section" id="calculator">
   <div class="wrap">
     <div class="section-head" style="text-align:center;margin-left:auto;margin-right:auto">
-      <span class="eyebrow">Plan your landed cost</span>
-      <h2>Import & Shipping Calculator.</h2>
-      <p style="margin:0 auto">Realistic estimate using current 2026 KRA / URA / TRA tax structures. Final quote provided personally by Elvis.</p>
+      <span class="eyebrow">Global CIF estimate tool</span>
+      <h2>Worldwide Vehicle CIF Calculator.</h2>
+      <p class="calc-subtitle">Choose the make first, then the exact model appears under it — Toyota, Nissan, Mercedes, BMW, Lexus, Land Rover, Porsche, Ferrari and more. Built for UAE stock exported worldwide.</p>
     </div>
+
     <div class="calc-box">
       <div class="calc-row">
         <div class="calc-field">
-          <label>Destination Country</label>
-          <select id="country">
-            <optgroup label="🌍 East Africa (CIF + cascading tax)">
-              <option value="KE">Kenya (Mombasa)</option>
-              <option value="UG">Uganda (via Mombasa)</option>
-              <option value="TZ">Tanzania (Dar es Salaam)</option>
-              <option value="RW">Rwanda (via Mombasa)</option>
+          <label>Destination / Port</label>
+          <select id="destination">
+            <optgroup label="🌍 East Africa">
+              <option value="TZ">Tanzania — Dar es Salaam</option>
+              <option value="KE">Kenya — Mombasa</option>
+              <option value="UG">Uganda — via Mombasa</option>
+              <option value="RW">Rwanda — via Mombasa</option>
             </optgroup>
             <optgroup label="🌍 Southern Africa">
-              <option value="ZM">Zambia (Dar)</option>
-              <option value="ZW">Zimbabwe (Beira/Durban)</option>
-              <option value="ZA">South Africa (Durban)</option>
-              <option value="BW">Botswana (Walvis Bay)</option>
+              <option value="ZM">Zambia — via Dar es Salaam</option>
+              <option value="ZW">Zimbabwe — via Beira/Durban</option>
+              <option value="ZA">South Africa — Durban</option>
+              <option value="BW">Botswana — via Durban/Walvis Bay</option>
             </optgroup>
             <optgroup label="🌍 West Africa">
-              <option value="NG">Nigeria (Lagos)</option>
-              <option value="GH">Ghana (Tema)</option>
+              <option value="NG">Nigeria — Lagos</option>
+              <option value="GH">Ghana — Tema</option>
+              <option value="SN">Senegal — Dakar</option>
+              <option value="CI">Ivory Coast — Abidjan</option>
             </optgroup>
-            <optgroup label="🕌 GCC (5% duty)">
-              <option value="AE">United Arab Emirates</option>
+            <optgroup label="🕌 GCC">
+              <option value="AE">UAE — Local</option>
               <option value="SA">Saudi Arabia</option>
               <option value="QA">Qatar</option>
               <option value="KW">Kuwait</option>
@@ -958,75 +979,108 @@
               <option value="BH">Bahrain</option>
             </optgroup>
             <optgroup label="🌐 Global">
-              <option value="GB">United Kingdom (10%)</option>
-              <option value="DE">Germany (10%)</option>
-              <option value="AU">Australia (5%)</option>
-              <option value="US">United States (2.5%)</option>
+              <option value="GB">United Kingdom</option>
+              <option value="DE">Germany</option>
+              <option value="AU">Australia</option>
+              <option value="US">United States</option>
+              <option value="CA">Canada</option>
             </optgroup>
           </select>
         </div>
         <div class="calc-field">
-          <label>Vehicle Value FOB (USD)</label>
-          <input type="number" id="value" placeholder="e.g. 18000" value="18000" min="1000" />
+          <label>Make</label>
+          <select id="make"></select>
         </div>
       </div>
+
       <div class="calc-row">
         <div class="calc-field">
-          <label>Engine Size</label>
-          <select id="engine">
-            <option value="small">Up to 1500cc (small)</option>
-            <option value="medium" selected>1501–2500cc (medium)</option>
-            <option value="large">2501–3000cc (large)</option>
-            <option value="xlarge">Over 3000cc (V8/V12)</option>
-            <option value="ev">Electric / Hybrid</option>
-          </select>
+          <label>Model / Sub-model</label>
+          <select id="model"></select>
+          <div class="calc-small">Example: choose Toyota → Land Cruiser, Prado, Fortuner, Harrier, Hilux, etc.</div>
         </div>
         <div class="calc-field">
-          <label>Vehicle Age</label>
-          <select id="age">
-            <option value="new">Brand new (0 km)</option>
-            <option value="0-3" selected>0–3 years</option>
-            <option value="3-8">3–8 years</option>
+          <label>Body / Shipping Size</label>
+          <select id="bodySize">
+            <option value="auto">Auto from selected model</option>
+            <option value="compact">Compact / hatchback</option>
+            <option value="sedan">Sedan / coupe</option>
+            <option value="smallSuv">Small SUV / crossover</option>
+            <option value="mediumSuv">Medium SUV</option>
+            <option value="largeSuv">Large SUV / 4x4</option>
+            <option value="pickup">Pickup / double cab</option>
+            <option value="van">Van / minibus</option>
+            <option value="luxury">Luxury / executive</option>
+            <option value="supercar">Supercar / exotic</option>
           </select>
         </div>
       </div>
+
+      <div class="calc-row">
+        <div class="calc-field">
+          <label>Year</label>
+          <input type="number" id="year" placeholder="e.g. 2012" min="1980" max="2027" />
+        </div>
+        <div class="calc-field">
+          <label>Mileage KM</label>
+          <input type="number" id="mileage" placeholder="e.g. 125000" min="0" />
+        </div>
+      </div>
+
+      <div class="calc-row">
+        <div class="calc-field">
+          <label>Condition</label>
+          <select id="condition">
+            <option value="excellent">Excellent / very clean</option>
+            <option value="good" selected>Good</option>
+            <option value="average">Average</option>
+            <option value="needsWork">Needs work</option>
+          </select>
+        </div>
+        <div class="calc-field">
+          <label>Known UAE Vehicle Price USD</label>
+          <input type="number" id="vehiclePrice" placeholder="Optional — enter exact stock price" min="500" />
+        </div>
+      </div>
+
       <div class="calc-row">
         <div class="calc-field">
           <label>Shipping Method</label>
-          <select id="method">
-            <option value="roro">RoRo (Roll-on/Roll-off) — Standard</option>
-            <option value="container20">Container 20ft — Sole Use</option>
-            <option value="shared" selected>Shared Container — Economical</option>
+          <select id="shippingMethod">
+            <option value="roro" selected>RoRo / shared shipping — best price</option>
+            <option value="shared">Shared container — safer</option>
+            <option value="container20">20ft container — priority</option>
+            <option value="air">Air freight — urgent / rare parts only</option>
           </select>
         </div>
         <div class="calc-field">
-          <label>Insurance</label>
-          <select id="insurance">
-            <option value="0.015" selected>Standard (1.5% of FOB)</option>
-            <option value="0.025">Full Coverage (2.5% of FOB)</option>
-            <option value="0">No Insurance</option>
+          <label>Marine Insurance</label>
+          <select id="insuranceRate">
+            <option value="0.015" selected>Standard — 1.5%</option>
+            <option value="0.01">Basic — 1%</option>
+            <option value="0.02">Higher cover — 2%</option>
+            <option value="0">No insurance</option>
           </select>
         </div>
       </div>
+
       <div class="calc-result">
-        <div class="calc-result-row"><span>FOB (Vehicle Value)</span><span id="rValue">$18,000</span></div>
-        <div class="calc-result-row"><span>Shipping (Dubai → Port)</span><span id="rShip">—</span></div>
-        <div class="calc-result-row"><span>Insurance</span><span id="rIns">—</span></div>
-        <div class="calc-result-row" style="font-weight:600;color:var(--gold-2)"><span>CIF Value</span><span id="rCif">—</span></div>
-        <div class="calc-result-row"><span id="lImport">Import Duty</span><span id="rImport">—</span></div>
-        <div class="calc-result-row" id="rowExcise"><span id="lExcise">Excise Duty</span><span id="rExcise">—</span></div>
-        <div class="calc-result-row" id="rowVat"><span id="lVat">VAT</span><span id="rVat">—</span></div>
-        <div class="calc-result-row" id="rowLevy"><span id="lLevy">IDF / Levies</span><span id="rLevy">—</span></div>
-        <div class="calc-result-row"><span>Port & Clearing (est.)</span><span id="rPort">—</span></div>
-        <div class="calc-result-row"><span>Auto by Elvis Service Fee (5% FOB)</span><span id="rFee">—</span></div>
+        <div class="calc-result-row"><span>Selected vehicle</span><span id="rVehicle">—</span></div>
+        <div class="calc-result-row"><span>Adjusted UAE vehicle estimate</span><span id="rVehicleValue">—</span></div>
+        <div class="calc-result-row"><span>Export docs / handling</span><span id="rExport">—</span></div>
+        <div class="calc-result-row"><span>Shipping / freight</span><span id="rShipping">—</span></div>
+        <div class="calc-result-row"><span>Marine insurance</span><span id="rInsurance">—</span></div>
         <div class="calc-total">
-          <span style="font-size:13px;color:var(--muted);letter-spacing:.06em;text-transform:uppercase">Estimated Landed Cost</span>
-          <strong id="rTotal">—</strong>
+          <span style="font-size:13px;color:var(--muted);letter-spacing:.06em;text-transform:uppercase">Estimated CIF</span>
+          <strong id="rCif">—</strong>
         </div>
-        <div class="calc-note">📌 Estimates based on 2026 KRA / URA / TRA / Customs published rates. Excise duty in EAC is calculated on (CIF + Import Duty) per cascading method. Final figures verified by Elvis using current FX, port handling, and CRSP values where applicable.</div>
+        <div class="timeline-box" id="rTimeline">Timeline will appear here.</div>
+        <div class="calc-warning">CIF means vehicle cost + export handling + freight + marine insurance to the destination port. It does not include import duty, clearing, port storage, registration, number plates, inspection fees, or local delivery unless quoted separately.</div>
       </div>
-      <div style="text-align:center;margin-top:24px">
-        <a href="https://wa.me/971521948311?text=I'd%20like%20a%20final%20landed%20cost%20quote" class="btn btn-primary">Get Verified Quote on WhatsApp</a>
+
+      <div class="calc-actions">
+        <button class="btn btn-primary" onclick="calculateCIF()">Calculate CIF</button>
+        <a id="whatsappQuote" href="https://wa.me/971521948311" class="btn wa-quote" target="_blank">Request exact quote on WhatsApp</a>
       </div>
     </div>
   </div>
@@ -1079,144 +1133,487 @@
     a.addEventListener('click',()=>document.getElementById('navLinks').classList.remove('open'));
   });
 
-  // ===== REALISTIC IMPORT CALCULATOR =====
-  // Tax structures based on 2026 KRA/URA/TRA/Customs published rates
-
-  // Country tax rules
-  const COUNTRY_RULES = {
-    // East African Community — cascading CIF method
-    KE: { name:'Kenya', port:'Mombasa', method:'eac', importDuty:0.25, vat:0.16, idf:0.035, rdl:0.02, port:1500,
-          excise:{small:0.20, medium:0.25, large:0.30, xlarge:0.35, ev:0.10}, ageLimit:8, currency:'USD' },
-    UG: { name:'Uganda', port:'Mombasa→Kampala', method:'eac', importDuty:0.25, vat:0.18, idf:0.015, rdl:0.02, port:1800,
-          excise:{small:0.05, medium:0.10, large:0.20, xlarge:0.30, ev:0.05}, currency:'USD' },
-    TZ: { name:'Tanzania', port:'Dar es Salaam', method:'eac', importDuty:0.25, vat:0.18, idf:0.006, rdl:0.015, port:1400,
-          excise:{small:0, medium:0.05, large:0.10, xlarge:0.30, ev:0.05}, currency:'USD' },
-    RW: { name:'Rwanda', port:'Mombasa→Kigali', method:'eac', importDuty:0.25, vat:0.18, idf:0.015, rdl:0.015, port:2000,
-          excise:{small:0.05, medium:0.10, large:0.15, xlarge:0.25, ev:0.05}, currency:'USD' },
-    // Southern Africa
-    ZM: { name:'Zambia', method:'flat', importDuty:0.30, vat:0.16, port:2200,
-          excise:{small:0.15, medium:0.20, large:0.25, xlarge:0.30, ev:0.05} },
-    ZW: { name:'Zimbabwe', method:'flat', importDuty:0.40, vat:0.15, port:2400, excise:{small:0.05, medium:0.10, large:0.20, xlarge:0.30, ev:0.05} },
-    ZA: { name:'South Africa', method:'flat', importDuty:0.25, vat:0.15, port:1800, excise:{small:0.04, medium:0.07, large:0.10, xlarge:0.15, ev:0.04} },
-    BW: { name:'Botswana', method:'flat', importDuty:0.27, vat:0.14, port:2200, excise:{small:0.05, medium:0.10, large:0.15, xlarge:0.20, ev:0.05} },
-    // West Africa
-    NG: { name:'Nigeria', method:'flat', importDuty:0.35, vat:0.075, port:2400, excise:{small:0, medium:0.10, large:0.15, xlarge:0.20, ev:0.05} },
-    GH: { name:'Ghana', method:'flat', importDuty:0.20, vat:0.15, port:2300, excise:{small:0, medium:0.10, large:0.20, xlarge:0.30, ev:0.05} },
-    // GCC — flat 5%
-    AE: { name:'UAE', method:'flat', importDuty:0.05, vat:0.05, port:0, excise:{small:0, medium:0, large:0, xlarge:0, ev:0} },
-    SA: { name:'Saudi Arabia', method:'flat', importDuty:0.05, vat:0.15, port:500, excise:{small:0, medium:0, large:0, xlarge:0, ev:0} },
-    QA: { name:'Qatar', method:'flat', importDuty:0.05, vat:0, port:600, excise:{small:0, medium:0, large:0, xlarge:0, ev:0} },
-    KW: { name:'Kuwait', method:'flat', importDuty:0.05, vat:0, port:700, excise:{small:0, medium:0, large:0, xlarge:0, ev:0} },
-    OM: { name:'Oman', method:'flat', importDuty:0.05, vat:0.05, port:400, excise:{small:0, medium:0, large:0, xlarge:0, ev:0} },
-    BH: { name:'Bahrain', method:'flat', importDuty:0.05, vat:0.10, port:600, excise:{small:0, medium:0, large:0, xlarge:0, ev:0} },
-    // Global
-    GB: { name:'United Kingdom', method:'flat', importDuty:0.10, vat:0.20, port:2200, excise:{small:0, medium:0, large:0, xlarge:0, ev:0} },
-    DE: { name:'Germany', method:'flat', importDuty:0.10, vat:0.19, port:2300, excise:{small:0, medium:0, large:0, xlarge:0, ev:0} },
-    AU: { name:'Australia', method:'flat', importDuty:0.05, vat:0.10, port:2800, excise:{small:0, medium:0, large:0, xlarge:0, ev:0} },
-    US: { name:'United States', method:'flat', importDuty:0.025, vat:0, port:2400, excise:{small:0, medium:0, large:0, xlarge:0, ev:0} },
+  // ===== WORLDWIDE MAKE / MODEL CIF CALCULATOR =====
+  const MAKE_MODELS = {
+    'Toyota': {
+      'Land Cruiser 70 / 76 / 78 / 79': {size:'largeSuv', price:[38000,85000]},
+      'Land Cruiser 100': {size:'largeSuv', price:[12000,28000]},
+      'Land Cruiser 200': {size:'largeSuv', price:[25000,65000]},
+      'Land Cruiser 300': {size:'largeSuv', price:[65000,115000]},
+      'Prado 90': {size:'mediumSuv', price:[5500,10500]},
+      'Prado 120': {size:'largeSuv', price:[11500,16000]},
+      'Prado 150': {size:'largeSuv', price:[20000,23500]},
+      'Prado 250': {size:'largeSuv', price:[48000,65000]},
+      'Fortuner': {size:'mediumSuv', price:[9000,38000]},
+      'Harrier': {size:'mediumSuv', price:[5500,24000]},
+      'RAV4': {size:'mediumSuv', price:[6500,36000]},
+      'Highlander / Kluger': {size:'mediumSuv', price:[9000,38000]},
+      'FJ Cruiser': {size:'mediumSuv', price:[18000,40000]},
+      'Hilux': {size:'pickup', price:[10000,48000]},
+      'Tacoma': {size:'pickup', price:[18000,52000]},
+      'Tundra': {size:'pickup', price:[22000,70000]},
+      'Hiace': {size:'van', price:[9000,52000]},
+      'Coaster': {size:'van', price:[18000,65000]},
+      'Corolla': {size:'sedan', price:[3500,24000]},
+      'Camry': {size:'sedan', price:[4500,32000]},
+      'Crown': {size:'luxury', price:[8000,45000]},
+      'Avalon': {size:'sedan', price:[9000,30000]},
+      'Yaris': {size:'compact', price:[2500,16000]},
+      'Aqua / Prius C': {size:'compact', price:[4000,14000]},
+      'Prius': {size:'sedan', price:[4500,22000]},
+      'Alphard / Vellfire': {size:'van', price:[12000,65000]},
+      'Sienna': {size:'van', price:[10000,55000]},
+      'Supra': {size:'supercar', price:[25000,85000]},
+      '86 / GR86': {size:'sedan', price:[12000,35000]},
+      'Other Toyota': {size:'mediumSuv', price:[7000,30000]}
+    },
+    'Nissan': {
+      'Patrol Safari Y61': {size:'largeSuv', price:[14000,45000]},
+      'Patrol Y62': {size:'largeSuv', price:[22000,85000]},
+      'Pathfinder': {size:'mediumSuv', price:[6000,35000]},
+      'X-Trail': {size:'mediumSuv', price:[5000,30000]},
+      'Qashqai': {size:'smallSuv', price:[4500,24000]},
+      'Juke': {size:'smallSuv', price:[4000,18000]},
+      'Murano': {size:'mediumSuv', price:[5500,22000]},
+      'Armada': {size:'largeSuv', price:[12000,55000]},
+      'Navara': {size:'pickup', price:[7000,32000]},
+      'Titan': {size:'pickup', price:[15000,48000]},
+      'Urvan': {size:'van', price:[7000,30000]},
+      'Tiida': {size:'compact', price:[1800,7000]},
+      'Sunny / Almera': {size:'sedan', price:[2500,15000]},
+      'Altima': {size:'sedan', price:[4500,23000]},
+      'Maxima': {size:'sedan', price:[6000,30000]},
+      'Skyline': {size:'luxury', price:[9000,45000]},
+      'GT-R': {size:'supercar', price:[55000,160000]},
+      '350Z / 370Z / Z': {size:'sedan', price:[9000,60000]},
+      'Leaf': {size:'compact', price:[4500,20000]},
+      'Other Nissan': {size:'sedan', price:[5000,28000]}
+    },
+    'Lexus': {
+      'LX 470': {size:'largeSuv', price:[14000,32000]},
+      'LX 570': {size:'largeSuv', price:[28000,85000]},
+      'LX 600': {size:'largeSuv', price:[90000,150000]},
+      'GX 460 / GX 550': {size:'largeSuv', price:[22000,85000]},
+      'RX': {size:'mediumSuv', price:[8500,55000]},
+      'NX': {size:'mediumSuv', price:[14000,52000]},
+      'UX': {size:'smallSuv', price:[16000,36000]},
+      'ES': {size:'luxury', price:[9000,45000]},
+      'GS': {size:'luxury', price:[7000,38000]},
+      'LS': {size:'luxury', price:[12000,95000]},
+      'IS': {size:'sedan', price:[7000,42000]},
+      'LC': {size:'supercar', price:[50000,110000]},
+      'RC': {size:'sedan', price:[18000,65000]},
+      'Other Lexus': {size:'luxury', price:[10000,60000]}
+    },
+    'Mercedes-Benz': {
+      'A-Class': {size:'compact', price:[8000,38000]},
+      'C-Class': {size:'sedan', price:[9000,60000]},
+      'E-Class': {size:'luxury', price:[10000,85000]},
+      'S-Class': {size:'luxury', price:[18000,160000]},
+      'CLA': {size:'sedan', price:[9000,42000]},
+      'CLS': {size:'luxury', price:[12000,70000]},
+      'GLA': {size:'smallSuv', price:[10000,42000]},
+      'GLB': {size:'mediumSuv', price:[20000,52000]},
+      'GLC': {size:'mediumSuv', price:[18000,70000]},
+      'GLE': {size:'largeSuv', price:[25000,110000]},
+      'GLS': {size:'largeSuv', price:[35000,150000]},
+      'G-Class / G-Wagon': {size:'largeSuv', price:[70000,260000]},
+      'Vito / V-Class': {size:'van', price:[18000,85000]},
+      'Sprinter': {size:'van', price:[18000,90000]},
+      'AMG GT': {size:'supercar', price:[60000,180000]},
+      'SL / SLC': {size:'supercar', price:[25000,160000]},
+      'Maybach': {size:'luxury', price:[90000,300000]},
+      'Other Mercedes-Benz': {size:'luxury', price:[12000,80000]}
+    },
+    'BMW': {
+      '1 Series': {size:'compact', price:[6000,30000]},
+      '2 Series': {size:'sedan', price:[9000,42000]},
+      '3 Series': {size:'sedan', price:[7000,55000]},
+      '4 Series': {size:'sedan', price:[12000,70000]},
+      '5 Series': {size:'luxury', price:[10000,75000]},
+      '7 Series': {size:'luxury', price:[15000,150000]},
+      '8 Series': {size:'luxury', price:[45000,150000]},
+      'X1': {size:'smallSuv', price:[8000,38000]},
+      'X3': {size:'mediumSuv', price:[12000,65000]},
+      'X4': {size:'mediumSuv', price:[18000,75000]},
+      'X5': {size:'largeSuv', price:[18000,105000]},
+      'X6': {size:'largeSuv', price:[22000,125000]},
+      'X7': {size:'largeSuv', price:[55000,150000]},
+      'M2 / M3 / M4': {size:'supercar', price:[35000,130000]},
+      'M5 / M8': {size:'supercar', price:[45000,180000]},
+      'Z4': {size:'sedan', price:[18000,75000]},
+      'i3 / i4 / i7 / iX': {size:'luxury', price:[12000,140000]},
+      'Other BMW': {size:'luxury', price:[10000,80000]}
+    },
+    'Audi': {
+      'A3': {size:'compact', price:[7000,35000]},
+      'A4': {size:'sedan', price:[7000,42000]},
+      'A5': {size:'sedan', price:[10000,55000]},
+      'A6': {size:'luxury', price:[10000,65000]},
+      'A7': {size:'luxury', price:[16000,85000]},
+      'A8': {size:'luxury', price:[18000,130000]},
+      'Q2 / Q3': {size:'smallSuv', price:[9000,42000]},
+      'Q5': {size:'mediumSuv', price:[12000,65000]},
+      'Q7': {size:'largeSuv', price:[17000,95000]},
+      'Q8': {size:'largeSuv', price:[45000,130000]},
+      'TT': {size:'sedan', price:[10000,45000]},
+      'R8': {size:'supercar', price:[60000,170000]},
+      'RS Models': {size:'supercar', price:[35000,160000]},
+      'e-tron': {size:'mediumSuv', price:[25000,100000]},
+      'Other Audi': {size:'luxury', price:[10000,75000]}
+    },
+    'Land Rover': {
+      'Defender 90 / 110 / 130': {size:'largeSuv', price:[35000,140000]},
+      'Range Rover Vogue / Autobiography': {size:'largeSuv', price:[25000,180000]},
+      'Range Rover Sport': {size:'largeSuv', price:[20000,140000]},
+      'Range Rover Velar': {size:'mediumSuv', price:[25000,90000]},
+      'Range Rover Evoque': {size:'mediumSuv', price:[14000,55000]},
+      'Discovery': {size:'largeSuv', price:[12000,85000]},
+      'Discovery Sport': {size:'mediumSuv', price:[10000,45000]},
+      'Freelander': {size:'mediumSuv', price:[4000,16000]},
+      'Other Land Rover': {size:'largeSuv', price:[15000,90000]}
+    },
+    'Porsche': {
+      'Cayenne': {size:'largeSuv', price:[18000,150000]},
+      'Macan': {size:'mediumSuv', price:[20000,90000]},
+      'Panamera': {size:'luxury', price:[25000,150000]},
+      '911': {size:'supercar', price:[50000,300000]},
+      '718 Cayman / Boxster': {size:'supercar', price:[35000,120000]},
+      'Taycan': {size:'luxury', price:[55000,180000]},
+      'Other Porsche': {size:'supercar', price:[35000,150000]}
+    },
+    'Mitsubishi': {
+      'Pajero': {size:'largeSuv', price:[6000,26000]},
+      'Montero Sport / Pajero Sport': {size:'mediumSuv', price:[9000,35000]},
+      'L200 / Triton': {size:'pickup', price:[7000,30000]},
+      'Outlander': {size:'mediumSuv', price:[6000,28000]},
+      'ASX': {size:'smallSuv', price:[5000,20000]},
+      'Lancer / Evolution': {size:'sedan', price:[3500,70000]},
+      'Attrage': {size:'sedan', price:[3500,14000]},
+      'Other Mitsubishi': {size:'mediumSuv', price:[6000,25000]}
+    },
+    'Honda': {
+      'Civic': {size:'sedan', price:[4500,35000]},
+      'Accord': {size:'sedan', price:[5000,38000]},
+      'City': {size:'sedan', price:[3500,18000]},
+      'CR-V': {size:'mediumSuv', price:[6500,38000]},
+      'HR-V / Vezel': {size:'smallSuv', price:[7000,30000]},
+      'Pilot': {size:'mediumSuv', price:[9000,45000]},
+      'Odyssey': {size:'van', price:[6000,32000]},
+      'Fit / Jazz': {size:'compact', price:[3000,15000]},
+      'S2000 / NSX': {size:'supercar', price:[25000,180000]},
+      'Other Honda': {size:'sedan', price:[5000,28000]}
+    },
+    'Mazda': {
+      'Mazda 2': {size:'compact', price:[3500,16000]},
+      'Mazda 3': {size:'sedan', price:[4500,24000]},
+      'Mazda 6': {size:'sedan', price:[4500,26000]},
+      'CX-3': {size:'smallSuv', price:[6000,23000]},
+      'CX-5': {size:'mediumSuv', price:[7000,32000]},
+      'CX-9': {size:'mediumSuv', price:[9000,40000]},
+      'MX-5 Miata': {size:'sedan', price:[9000,35000]},
+      'RX-7 / RX-8': {size:'supercar', price:[9000,80000]},
+      'Other Mazda': {size:'sedan', price:[5000,25000]}
+    },
+    'Ford': {
+      'F-150': {size:'pickup', price:[15000,90000]},
+      'Ranger': {size:'pickup', price:[9000,45000]},
+      'Explorer': {size:'largeSuv', price:[9000,55000]},
+      'Expedition': {size:'largeSuv', price:[15000,80000]},
+      'Everest': {size:'mediumSuv', price:[18000,55000]},
+      'Edge': {size:'mediumSuv', price:[7000,35000]},
+      'Escape': {size:'smallSuv', price:[6000,28000]},
+      'Mustang': {size:'supercar', price:[14000,90000]},
+      'Bronco': {size:'largeSuv', price:[35000,90000]},
+      'Transit': {size:'van', price:[12000,55000]},
+      'Other Ford': {size:'mediumSuv', price:[8000,45000]}
+    },
+    'Chevrolet': {
+      'Tahoe': {size:'largeSuv', price:[14000,85000]},
+      'Suburban': {size:'largeSuv', price:[16000,90000]},
+      'Silverado': {size:'pickup', price:[12000,80000]},
+      'Camaro': {size:'supercar', price:[15000,85000]},
+      'Corvette': {size:'supercar', price:[45000,180000]},
+      'Trailblazer': {size:'mediumSuv', price:[6000,35000]},
+      'Captiva': {size:'mediumSuv', price:[4500,23000]},
+      'Malibu': {size:'sedan', price:[5000,25000]},
+      'Spark / Aveo': {size:'compact', price:[2500,12000]},
+      'Other Chevrolet': {size:'mediumSuv', price:[7000,45000]}
+    },
+    'Jeep': {
+      'Wrangler': {size:'largeSuv', price:[18000,85000]},
+      'Grand Cherokee': {size:'largeSuv', price:[12000,75000]},
+      'Cherokee': {size:'mediumSuv', price:[7000,40000]},
+      'Compass': {size:'smallSuv', price:[7000,30000]},
+      'Gladiator': {size:'pickup', price:[35000,85000]},
+      'Other Jeep': {size:'mediumSuv', price:[8000,45000]}
+    },
+    'Hyundai': {
+      'Accent': {size:'sedan', price:[3000,16000]},
+      'Elantra': {size:'sedan', price:[4000,23000]},
+      'Sonata': {size:'sedan', price:[5000,30000]},
+      'Azera': {size:'luxury', price:[7000,35000]},
+      'Tucson': {size:'mediumSuv', price:[6500,32000]},
+      'Santa Fe': {size:'mediumSuv', price:[7000,42000]},
+      'Palisade': {size:'largeSuv', price:[25000,60000]},
+      'H1 / Staria': {size:'van', price:[8000,45000]},
+      'Kona': {size:'smallSuv', price:[7000,28000]},
+      'Other Hyundai': {size:'sedan', price:[5000,28000]}
+    },
+    'Kia': {
+      'Picanto': {size:'compact', price:[2500,14000]},
+      'Rio': {size:'compact', price:[3000,16000]},
+      'Cerato / Forte': {size:'sedan', price:[4000,22000]},
+      'Optima / K5': {size:'sedan', price:[5000,30000]},
+      'Sportage': {size:'mediumSuv', price:[6000,32000]},
+      'Sorento': {size:'mediumSuv', price:[7000,42000]},
+      'Telluride': {size:'largeSuv', price:[25000,60000]},
+      'Carnival': {size:'van', price:[8000,45000]},
+      'Stinger': {size:'luxury', price:[18000,50000]},
+      'Other Kia': {size:'sedan', price:[5000,28000]}
+    },
+    'Volkswagen': {
+      'Golf / GTI / R': {size:'compact', price:[6000,50000]},
+      'Polo': {size:'compact', price:[3500,18000]},
+      'Passat': {size:'sedan', price:[5000,28000]},
+      'Jetta': {size:'sedan', price:[4000,25000]},
+      'Tiguan': {size:'mediumSuv', price:[8000,40000]},
+      'Touareg': {size:'largeSuv', price:[12000,65000]},
+      'Teramont / Atlas': {size:'largeSuv', price:[18000,55000]},
+      'Transporter / Caravelle': {size:'van', price:[10000,55000]},
+      'Other Volkswagen': {size:'sedan', price:[5000,30000]}
+    },
+    'Ferrari': {
+      '458 / 488 / F8': {size:'supercar', price:[120000,360000]},
+      'California / Portofino / Roma': {size:'supercar', price:[90000,300000]},
+      '599 / F12 / 812': {size:'supercar', price:[100000,500000]},
+      'SF90 / 296': {size:'supercar', price:[280000,700000]},
+      'Purosangue': {size:'supercar', price:[500000,900000]},
+      'Other Ferrari': {size:'supercar', price:[100000,600000]}
+    },
+    'Lamborghini': {
+      'Gallardo / Huracan': {size:'supercar', price:[80000,350000]},
+      'Aventador / Revuelto': {size:'supercar', price:[220000,900000]},
+      'Urus': {size:'supercar', price:[150000,420000]},
+      'Other Lamborghini': {size:'supercar', price:[120000,600000]}
+    },
+    'Rolls-Royce': {
+      'Ghost': {size:'luxury', price:[90000,420000]},
+      'Phantom': {size:'luxury', price:[150000,700000]},
+      'Wraith': {size:'luxury', price:[120000,420000]},
+      'Dawn': {size:'luxury', price:[150000,450000]},
+      'Cullinan': {size:'luxury', price:[250000,650000]},
+      'Other Rolls-Royce': {size:'luxury', price:[120000,500000]}
+    },
+    'Bentley': {
+      'Continental GT': {size:'luxury', price:[60000,300000]},
+      'Flying Spur': {size:'luxury', price:[70000,320000]},
+      'Bentayga': {size:'largeSuv', price:[90000,350000]},
+      'Mulsanne': {size:'luxury', price:[90000,300000]},
+      'Other Bentley': {size:'luxury', price:[80000,300000]}
+    },
+    'Tesla': {
+      'Model 3': {size:'sedan', price:[18000,55000]},
+      'Model S': {size:'luxury', price:[25000,110000]},
+      'Model X': {size:'largeSuv', price:[35000,130000]},
+      'Model Y': {size:'mediumSuv', price:[25000,75000]},
+      'Cybertruck': {size:'pickup', price:[70000,160000]},
+      'Other Tesla': {size:'mediumSuv', price:[25000,90000]}
+    },
+    'BYD': {
+      'Atto 3': {size:'mediumSuv', price:[18000,36000]},
+      'Sealion 7': {size:'mediumSuv', price:[28000,48000]},
+      'Song Plus': {size:'mediumSuv', price:[22000,45000]},
+      'Han': {size:'luxury', price:[25000,55000]},
+      'Dolphin': {size:'compact', price:[12000,26000]},
+      'Seal': {size:'sedan', price:[22000,50000]},
+      'Other BYD': {size:'mediumSuv', price:[16000,45000]}
+    },
+    'Other Make': {
+      'Other compact / hatchback': {size:'compact', price:[3000,18000]},
+      'Other sedan': {size:'sedan', price:[5000,30000]},
+      'Other small SUV': {size:'smallSuv', price:[7000,32000]},
+      'Other medium SUV': {size:'mediumSuv', price:[8000,45000]},
+      'Other large SUV / 4x4': {size:'largeSuv', price:[12000,70000]},
+      'Other pickup': {size:'pickup', price:[9000,55000]},
+      'Other van / bus': {size:'van', price:[9000,60000]},
+      'Other luxury / exotic': {size:'luxury', price:[25000,150000]}
+    }
   };
 
-  // Shipping rates (USD) — Dubai/Jebel Ali to destination port
-  const SHIPPING_RATES = {
-    KE:{roro:1900, container20:3400, shared:2400},
-    UG:{roro:2400, container20:4000, shared:2900},
-    TZ:{roro:1900, container20:3400, shared:2400},
-    RW:{roro:2700, container20:4400, shared:3200},
-    ZM:{roro:2800, container20:4400, shared:3200},
-    ZW:{roro:2900, container20:4500, shared:3300},
-    ZA:{roro:2200, container20:3800, shared:2800},
-    BW:{roro:2700, container20:4300, shared:3100},
-    NG:{roro:3000, container20:4800, shared:3500},
-    GH:{roro:3100, container20:4900, shared:3600},
-    AE:{roro:0, container20:0, shared:0},
-    SA:{roro:600, container20:1200, shared:800},
-    QA:{roro:700, container20:1300, shared:900},
-    KW:{roro:800, container20:1400, shared:1000},
-    OM:{roro:500, container20:1100, shared:700},
-    BH:{roro:700, container20:1300, shared:900},
-    GB:{roro:2800, container20:4500, shared:3300},
-    DE:{roro:2900, container20:4600, shared:3400},
-    AU:{roro:3500, container20:5500, shared:4000},
-    US:{roro:3200, container20:5000, shared:3700},
+  const SIZE_SHIPPING = {
+    compact:{label:'Compact / hatchback', mult:0.85},
+    sedan:{label:'Sedan / coupe', mult:1.00},
+    smallSuv:{label:'Small SUV / crossover', mult:1.08},
+    mediumSuv:{label:'Medium SUV', mult:1.18},
+    largeSuv:{label:'Large SUV / 4x4', mult:1.35},
+    pickup:{label:'Pickup / double cab', mult:1.32},
+    van:{label:'Van / minibus', mult:1.45},
+    luxury:{label:'Luxury / executive', mult:1.20},
+    supercar:{label:'Supercar / exotic', mult:1.55}
   };
 
-  const country = document.getElementById('country');
-  const value = document.getElementById('value');
-  const engine = document.getElementById('engine');
-  const age = document.getElementById('age');
-  const method = document.getElementById('method');
-  const insurance = document.getElementById('insurance');
+  const DESTINATIONS = {
+    TZ:{name:'Dar es Salaam, Tanzania', baseShip:1500, export:[300,700], timeline:'3–5 weeks'},
+    KE:{name:'Mombasa, Kenya', baseShip:1500, export:[300,700], timeline:'3–5 weeks'},
+    UG:{name:'Kampala, Uganda via Mombasa', baseShip:2100, export:[400,800], timeline:'4–6 weeks'},
+    RW:{name:'Kigali, Rwanda via Mombasa', baseShip:2400, export:[400,900], timeline:'4–7 weeks'},
+    ZM:{name:'Zambia via Dar es Salaam', baseShip:2500, export:[400,900], timeline:'4–7 weeks'},
+    ZW:{name:'Zimbabwe via Beira/Durban', baseShip:2700, export:[500,1000], timeline:'5–8 weeks'},
+    ZA:{name:'Durban, South Africa', baseShip:2200, export:[400,900], timeline:'4–7 weeks'},
+    BW:{name:'Botswana via Durban/Walvis Bay', baseShip:2600, export:[500,1000], timeline:'5–8 weeks'},
+    NG:{name:'Lagos, Nigeria', baseShip:3000, export:[500,1100], timeline:'5–8 weeks'},
+    GH:{name:'Tema, Ghana', baseShip:3100, export:[500,1100], timeline:'5–8 weeks'},
+    SN:{name:'Dakar, Senegal', baseShip:3300, export:[600,1200], timeline:'5–9 weeks'},
+    CI:{name:'Abidjan, Ivory Coast', baseShip:3200, export:[600,1200], timeline:'5–9 weeks'},
+    AE:{name:'UAE local handover', baseShip:0, export:[0,250], timeline:'1–3 days'},
+    SA:{name:'Saudi Arabia', baseShip:700, export:[250,600], timeline:'1–3 weeks'},
+    QA:{name:'Qatar', baseShip:800, export:[250,600], timeline:'1–3 weeks'},
+    KW:{name:'Kuwait', baseShip:900, export:[250,650], timeline:'1–3 weeks'},
+    OM:{name:'Oman', baseShip:600, export:[200,550], timeline:'1–2 weeks'},
+    BH:{name:'Bahrain', baseShip:850, export:[250,650], timeline:'1–3 weeks'},
+    GB:{name:'United Kingdom', baseShip:2800, export:[500,1200], timeline:'5–8 weeks'},
+    DE:{name:'Germany', baseShip:2900, export:[500,1200], timeline:'5–8 weeks'},
+    AU:{name:'Australia', baseShip:3500, export:[600,1300], timeline:'6–10 weeks'},
+    US:{name:'United States', baseShip:3200, export:[600,1300], timeline:'6–10 weeks'},
+    CA:{name:'Canada', baseShip:3400, export:[600,1300], timeline:'6–10 weeks'}
+  };
+
+  const makeEl = document.getElementById('make');
+  const modelEl = document.getElementById('model');
+  const destinationEl = document.getElementById('destination');
+  const yearEl = document.getElementById('year');
+  const mileageEl = document.getElementById('mileage');
+  const conditionEl = document.getElementById('condition');
+  const vehiclePriceEl = document.getElementById('vehiclePrice');
+  const shippingMethodEl = document.getElementById('shippingMethod');
+  const insuranceRateEl = document.getElementById('insuranceRate');
+  const bodySizeEl = document.getElementById('bodySize');
+
   const fmt = n => '$' + Math.round(n).toLocaleString('en-US');
 
-  function calc(){
-    const code = country.value;
-    const rules = COUNTRY_RULES[code];
-    const fob = parseFloat(value.value) || 0;
-    const engineKey = engine.value;
-    const shipMethod = method.value;
-    const insPct = parseFloat(insurance.value);
-
-    // Shipping & insurance
-    const ship = (SHIPPING_RATES[code] && SHIPPING_RATES[code][shipMethod]) || 0;
-    const ins = fob * insPct;
-    const cif = fob + ship + ins;
-
-    // Cascading tax calculation
-    let importDuty = 0, exciseDuty = 0, vat = 0, levies = 0;
-
-    if (rules.method === 'eac') {
-      // EAC method: cascading
-      importDuty = cif * rules.importDuty;
-      exciseDuty = (cif + importDuty) * (rules.excise[engineKey] || 0);
-      vat = (cif + importDuty + exciseDuty) * rules.vat;
-      levies = cif * ((rules.idf || 0) + (rules.rdl || 0));
-    } else {
-      // Flat method
-      importDuty = cif * rules.importDuty;
-      exciseDuty = cif * (rules.excise[engineKey] || 0);
-      vat = (cif + importDuty + exciseDuty) * rules.vat;
-      levies = 0;
-    }
-
-    const portCharges = rules.port || 0;
-    const serviceFee = fob * 0.05;
-    const total = cif + importDuty + exciseDuty + vat + levies + portCharges + serviceFee;
-
-    // Update display
-    document.getElementById('rValue').textContent = fmt(fob);
-    document.getElementById('rShip').textContent = ship === 0 ? 'Local (n/a)' : fmt(ship);
-    document.getElementById('rIns').textContent = ins === 0 ? '—' : fmt(ins);
-    document.getElementById('rCif').textContent = fmt(cif);
-    document.getElementById('rImport').textContent = fmt(importDuty) + ' (' + (rules.importDuty*100).toFixed(1) + '%)';
-    document.getElementById('rExcise').textContent = exciseDuty === 0 ? '—' : fmt(exciseDuty) + ' (' + ((rules.excise[engineKey]||0)*100).toFixed(0) + '%)';
-    document.getElementById('rVat').textContent = vat === 0 ? '—' : fmt(vat) + ' (' + (rules.vat*100).toFixed(0) + '%)';
-    document.getElementById('rLevy').textContent = levies === 0 ? '—' : fmt(levies);
-    document.getElementById('rPort').textContent = fmt(portCharges);
-    document.getElementById('rFee').textContent = fmt(serviceFee);
-    document.getElementById('rTotal').textContent = fmt(total);
-
-    // Show/hide rows that don't apply
-    document.getElementById('rowExcise').style.display = exciseDuty === 0 ? 'none' : '';
-    document.getElementById('rowVat').style.display = vat === 0 ? 'none' : '';
-    document.getElementById('rowLevy').style.display = levies === 0 ? 'none' : '';
-
-    // Update labels for clarity
-    if (rules.method === 'eac') {
-      document.getElementById('lExcise').textContent = 'Excise (on CIF + Import Duty)';
-      document.getElementById('lVat').textContent = 'VAT (on CIF + Duty + Excise)';
-      document.getElementById('lLevy').textContent = 'IDF + RDL Levies';
-    } else {
-      document.getElementById('lExcise').textContent = 'Excise Duty';
-      document.getElementById('lVat').textContent = 'VAT';
-      document.getElementById('lLevy').textContent = 'Levies';
-    }
+  function populateMakes(){
+    makeEl.innerHTML = Object.keys(MAKE_MODELS).map(make => `<option value="${make}">${make}</option>`).join('');
+    makeEl.value = 'Toyota';
+    populateModels();
   }
 
-  [country, value, engine, age, method, insurance].forEach(el => {
-    el.addEventListener('input', calc);
-    el.addEventListener('change', calc);
+  function populateModels(){
+    const models = MAKE_MODELS[makeEl.value] || {};
+    modelEl.innerHTML = Object.keys(models).map(model => `<option value="${model}">${model}</option>`).join('');
+    const first = Object.keys(models)[0];
+    if(first) modelEl.value = first;
+    updateBodySize();
+    calculateCIF();
+  }
+
+  function updateBodySize(){
+    const meta = getMeta();
+    bodySizeEl.value = 'auto';
+    bodySizeEl.querySelector('option[value="auto"]').textContent = `Auto from selected model (${SIZE_SHIPPING[meta.size]?.label || 'Standard'})`;
+  }
+
+  function getMeta(){
+    const make = makeEl.value;
+    const model = modelEl.value;
+    return (MAKE_MODELS[make] && MAKE_MODELS[make][model]) || {size:'sedan', price:[5000,30000]};
+  }
+
+  function mileageAdj(km){
+    if(!km && km !== 0) return 0;
+    if(km <= 80000) return 0.08;
+    if(km <= 130000) return 0;
+    if(km <= 180000) return -0.07;
+    return -0.12;
+  }
+
+  function conditionAdj(condition){
+    return {excellent:0.08, good:0, average:-0.07, needsWork:-0.15}[condition] || 0;
+  }
+
+  function yearAdj(year){
+    if(!year) return 0;
+    const age = 2026 - year;
+    if(age <= 1) return 0.12;
+    if(age <= 3) return 0.07;
+    if(age <= 8) return 0;
+    if(age <= 15) return -0.08;
+    return -0.15;
+  }
+
+  function methodAdj(method, baseShipping){
+    if(method === 'roro') return [baseShipping * 0.90, baseShipping * 1.10];
+    if(method === 'shared') return [baseShipping * 1.15, baseShipping * 1.40];
+    if(method === 'container20') return [baseShipping * 1.55, baseShipping * 2.05];
+    if(method === 'air') return [baseShipping * 4.5, baseShipping * 7.5];
+    return [baseShipping, baseShipping * 1.2];
+  }
+
+  function calculateCIF(){
+    const meta = getMeta();
+    const dest = DESTINATIONS[destinationEl.value];
+    const year = parseInt(yearEl.value, 10);
+    const mileage = parseFloat(mileageEl.value);
+    const knownPrice = parseFloat(vehiclePriceEl.value);
+    const insuranceRate = parseFloat(insuranceRateEl.value);
+    const selectedSize = bodySizeEl.value === 'auto' ? meta.size : bodySizeEl.value;
+    const sizeMult = (SIZE_SHIPPING[selectedSize] || SIZE_SHIPPING.sedan).mult;
+
+    const adjustment = Math.max(0.45, 1 + mileageAdj(mileage) + conditionAdj(conditionEl.value) + yearAdj(year));
+    let vehicleLow, vehicleHigh;
+    if(knownPrice > 0){
+      vehicleLow = knownPrice;
+      vehicleHigh = knownPrice;
+    } else {
+      vehicleLow = meta.price[0] * adjustment;
+      vehicleHigh = meta.price[1] * adjustment;
+    }
+
+    const exportLow = dest.export[0];
+    const exportHigh = dest.export[1];
+    const adjustedBaseShipping = dest.baseShip * sizeMult;
+    let [shipLow, shipHigh] = methodAdj(shippingMethodEl.value, adjustedBaseShipping);
+    if(destinationEl.value === 'AE'){
+      shipLow = 0; shipHigh = 0;
+    }
+
+    const insLow = vehicleLow * insuranceRate;
+    const insHigh = vehicleHigh * insuranceRate;
+
+    const cifLow = vehicleLow + exportLow + shipLow + insLow;
+    const cifHigh = vehicleHigh + exportHigh + shipHigh + insHigh;
+
+    const vehicleName = `${makeEl.value} ${modelEl.value}`;
+    document.getElementById('rVehicle').textContent = vehicleName;
+    document.getElementById('rVehicleValue').textContent = `${fmt(vehicleLow)} - ${fmt(vehicleHigh)}`;
+    document.getElementById('rExport').textContent = `${fmt(exportLow)} - ${fmt(exportHigh)}`;
+    document.getElementById('rShipping').textContent = `${fmt(shipLow)} - ${fmt(shipHigh)}`;
+    document.getElementById('rInsurance').textContent = `${fmt(insLow)} - ${fmt(insHigh)}`;
+    document.getElementById('rCif').textContent = `${fmt(cifLow)} - ${fmt(cifHigh)}`;
+    document.getElementById('rTimeline').innerHTML = `<strong>Estimated export time:</strong> ${dest.timeline}. Inspection 1–2 days · export documents 2–5 days · vessel booking/loading 5–10 days · transit depends on destination and vessel schedule.`;
+
+    const msg = encodeURIComponent(
+      `Hi Elvis, I need an exact CIF quote.\n\n` +
+      `Vehicle: ${vehicleName}\n` +
+      `Year: ${year || 'not entered'}\n` +
+      `Mileage: ${mileage || 'not entered'} km\n` +
+      `Condition: ${conditionEl.options[conditionEl.selectedIndex].text}\n` +
+      `Destination: ${dest.name}\n` +
+      `Known UAE price: ${knownPrice ? fmt(knownPrice) : 'estimate needed'}\n` +
+      `Estimated CIF: ${fmt(cifLow)} - ${fmt(cifHigh)}`
+    );
+    document.getElementById('whatsappQuote').href = `https://wa.me/971521948311?text=${msg}`;
+  }
+
+  makeEl.addEventListener('change', populateModels);
+  modelEl.addEventListener('change', () => { updateBodySize(); calculateCIF(); });
+  [destinationEl, yearEl, mileageEl, conditionEl, vehiclePriceEl, shippingMethodEl, insuranceRateEl, bodySizeEl].forEach(el => {
+    el.addEventListener('input', calculateCIF);
+    el.addEventListener('change', calculateCIF);
   });
-  calc();
+
+  populateMakes();
+
 </script>
 </body>
 </html>
