@@ -926,83 +926,107 @@
     <div class="section-head" style="text-align:center;margin-left:auto;margin-right:auto">
       <span class="eyebrow">Plan your landed cost</span>
       <h2>Import & Shipping Calculator.</h2>
-      <p style="margin:0 auto">Estimate your shipping and duty costs before enquiring. Final quote provided personally by Elvis.</p>
+      <p style="margin:0 auto">Realistic estimate using current 2026 KRA / URA / TRA tax structures. Final quote provided personally by Elvis.</p>
     </div>
     <div class="calc-box">
       <div class="calc-row">
         <div class="calc-field">
           <label>Destination Country</label>
           <select id="country">
-            <optgroup label="🌍 Africa">
-              <option value="KE" data-duty="35" data-ship="2200">Kenya</option>
-              <option value="UG" data-duty="35" data-ship="2400">Uganda</option>
-              <option value="TZ" data-duty="30" data-ship="2200">Tanzania</option>
-              <option value="RW" data-duty="30" data-ship="2600">Rwanda</option>
-              <option value="ZM" data-duty="30" data-ship="2800">Zambia</option>
-              <option value="ZW" data-duty="40" data-ship="2900">Zimbabwe</option>
-              <option value="ZA" data-duty="25" data-ship="2500">South Africa</option>
-              <option value="BW" data-duty="27" data-ship="2700">Botswana</option>
-              <option value="NG" data-duty="35" data-ship="3000">Nigeria</option>
-              <option value="GH" data-duty="35" data-ship="3100">Ghana</option>
+            <optgroup label="🌍 East Africa (CIF + cascading tax)">
+              <option value="KE">Kenya (Mombasa)</option>
+              <option value="UG">Uganda (via Mombasa)</option>
+              <option value="TZ">Tanzania (Dar es Salaam)</option>
+              <option value="RW">Rwanda (via Mombasa)</option>
             </optgroup>
-            <optgroup label="🕌 GCC">
-              <option value="AE" data-duty="5" data-ship="0">United Arab Emirates</option>
-              <option value="SA" data-duty="5" data-ship="600">Saudi Arabia</option>
-              <option value="QA" data-duty="5" data-ship="700">Qatar</option>
-              <option value="KW" data-duty="5" data-ship="800">Kuwait</option>
-              <option value="OM" data-duty="5" data-ship="500">Oman</option>
-              <option value="BH" data-duty="5" data-ship="700">Bahrain</option>
+            <optgroup label="🌍 Southern Africa">
+              <option value="ZM">Zambia (Dar)</option>
+              <option value="ZW">Zimbabwe (Beira/Durban)</option>
+              <option value="ZA">South Africa (Durban)</option>
+              <option value="BW">Botswana (Walvis Bay)</option>
+            </optgroup>
+            <optgroup label="🌍 West Africa">
+              <option value="NG">Nigeria (Lagos)</option>
+              <option value="GH">Ghana (Tema)</option>
+            </optgroup>
+            <optgroup label="🕌 GCC (5% duty)">
+              <option value="AE">United Arab Emirates</option>
+              <option value="SA">Saudi Arabia</option>
+              <option value="QA">Qatar</option>
+              <option value="KW">Kuwait</option>
+              <option value="OM">Oman</option>
+              <option value="BH">Bahrain</option>
             </optgroup>
             <optgroup label="🌐 Global">
-              <option value="GB" data-duty="10" data-ship="2800">United Kingdom</option>
-              <option value="DE" data-duty="10" data-ship="2900">Germany</option>
-              <option value="NL" data-duty="10" data-ship="2900">Netherlands</option>
-              <option value="CA" data-duty="6" data-ship="3400">Canada</option>
-              <option value="US" data-duty="2" data-ship="3200">United States</option>
-              <option value="AU" data-duty="5" data-ship="3500">Australia</option>
-              <option value="JP" data-duty="0" data-ship="2000">Japan</option>
-              <option value="SG" data-duty="20" data-ship="2400">Singapore</option>
-              <option value="IN" data-duty="110" data-ship="2600">India</option>
+              <option value="GB">United Kingdom (10%)</option>
+              <option value="DE">Germany (10%)</option>
+              <option value="AU">Australia (5%)</option>
+              <option value="US">United States (2.5%)</option>
             </optgroup>
           </select>
         </div>
         <div class="calc-field">
-          <label>Vehicle Value (USD)</label>
-          <input type="number" id="value" placeholder="e.g. 45000" value="45000" min="1000" />
+          <label>Vehicle Value FOB (USD)</label>
+          <input type="number" id="value" placeholder="e.g. 18000" value="18000" min="1000" />
+        </div>
+      </div>
+      <div class="calc-row">
+        <div class="calc-field">
+          <label>Engine Size</label>
+          <select id="engine">
+            <option value="small">Up to 1500cc (small)</option>
+            <option value="medium" selected>1501–2500cc (medium)</option>
+            <option value="large">2501–3000cc (large)</option>
+            <option value="xlarge">Over 3000cc (V8/V12)</option>
+            <option value="ev">Electric / Hybrid</option>
+          </select>
+        </div>
+        <div class="calc-field">
+          <label>Vehicle Age</label>
+          <select id="age">
+            <option value="new">Brand new (0 km)</option>
+            <option value="0-3" selected>0–3 years</option>
+            <option value="3-8">3–8 years</option>
+          </select>
         </div>
       </div>
       <div class="calc-row">
         <div class="calc-field">
           <label>Shipping Method</label>
           <select id="method">
-            <option value="1">RoRo (Roll-on/Roll-off) — Standard</option>
-            <option value="1.4">Container (20ft) — Secure</option>
-            <option value="1.15">Shared Container — Economical</option>
+            <option value="roro">RoRo (Roll-on/Roll-off) — Standard</option>
+            <option value="container20">Container 20ft — Sole Use</option>
+            <option value="shared" selected>Shared Container — Economical</option>
           </select>
         </div>
         <div class="calc-field">
           <label>Insurance</label>
           <select id="insurance">
-            <option value="0.015">Standard (1.5%)</option>
-            <option value="0.025">Full Coverage (2.5%)</option>
+            <option value="0.015" selected>Standard (1.5% of FOB)</option>
+            <option value="0.025">Full Coverage (2.5% of FOB)</option>
             <option value="0">No Insurance</option>
           </select>
         </div>
       </div>
       <div class="calc-result">
-        <div class="calc-result-row"><span>Vehicle Value</span><span id="rValue">$45,000</span></div>
-        <div class="calc-result-row"><span>Shipping (Dubai → Destination)</span><span id="rShip">$2,200</span></div>
-        <div class="calc-result-row"><span>Insurance</span><span id="rIns">$675</span></div>
-        <div class="calc-result-row"><span>Import Duty</span><span id="rDuty">$15,750</span></div>
-        <div class="calc-result-row"><span>Service Fee (5%)</span><span id="rFee">$2,250</span></div>
+        <div class="calc-result-row"><span>FOB (Vehicle Value)</span><span id="rValue">$18,000</span></div>
+        <div class="calc-result-row"><span>Shipping (Dubai → Port)</span><span id="rShip">—</span></div>
+        <div class="calc-result-row"><span>Insurance</span><span id="rIns">—</span></div>
+        <div class="calc-result-row" style="font-weight:600;color:var(--gold-2)"><span>CIF Value</span><span id="rCif">—</span></div>
+        <div class="calc-result-row"><span id="lImport">Import Duty</span><span id="rImport">—</span></div>
+        <div class="calc-result-row" id="rowExcise"><span id="lExcise">Excise Duty</span><span id="rExcise">—</span></div>
+        <div class="calc-result-row" id="rowVat"><span id="lVat">VAT</span><span id="rVat">—</span></div>
+        <div class="calc-result-row" id="rowLevy"><span id="lLevy">IDF / Levies</span><span id="rLevy">—</span></div>
+        <div class="calc-result-row"><span>Port & Clearing (est.)</span><span id="rPort">—</span></div>
+        <div class="calc-result-row"><span>Auto by Elvis Service Fee (5% FOB)</span><span id="rFee">—</span></div>
         <div class="calc-total">
           <span style="font-size:13px;color:var(--muted);letter-spacing:.06em;text-transform:uppercase">Estimated Landed Cost</span>
-          <strong id="rTotal">$65,875</strong>
+          <strong id="rTotal">—</strong>
         </div>
-        <div class="calc-note">Estimates only. Exact duty & shipping confirmed by Elvis based on current rates, vehicle spec & destination port.</div>
+        <div class="calc-note">📌 Estimates based on 2026 KRA / URA / TRA / Customs published rates. Excise duty in EAC is calculated on (CIF + Import Duty) per cascading method. Final figures verified by Elvis using current FX, port handling, and CRSP values where applicable.</div>
       </div>
       <div style="text-align:center;margin-top:24px">
-        <a href="https://wa.me/971521948311?text=I'd%20like%20a%20shipping%20quote" class="btn btn-primary">Get Final Quote on WhatsApp</a>
+        <a href="https://wa.me/971521948311?text=I'd%20like%20a%20final%20landed%20cost%20quote" class="btn btn-primary">Get Verified Quote on WhatsApp</a>
       </div>
     </div>
   </div>
@@ -1055,35 +1079,143 @@
     a.addEventListener('click',()=>document.getElementById('navLinks').classList.remove('open'));
   });
 
-  // Calculator
+  // ===== REALISTIC IMPORT CALCULATOR =====
+  // Tax structures based on 2026 KRA/URA/TRA/Customs published rates
+
+  // Country tax rules
+  const COUNTRY_RULES = {
+    // East African Community — cascading CIF method
+    KE: { name:'Kenya', port:'Mombasa', method:'eac', importDuty:0.25, vat:0.16, idf:0.035, rdl:0.02, port:1500,
+          excise:{small:0.20, medium:0.25, large:0.30, xlarge:0.35, ev:0.10}, ageLimit:8, currency:'USD' },
+    UG: { name:'Uganda', port:'Mombasa→Kampala', method:'eac', importDuty:0.25, vat:0.18, idf:0.015, rdl:0.02, port:1800,
+          excise:{small:0.05, medium:0.10, large:0.20, xlarge:0.30, ev:0.05}, currency:'USD' },
+    TZ: { name:'Tanzania', port:'Dar es Salaam', method:'eac', importDuty:0.25, vat:0.18, idf:0.006, rdl:0.015, port:1400,
+          excise:{small:0, medium:0.05, large:0.10, xlarge:0.30, ev:0.05}, currency:'USD' },
+    RW: { name:'Rwanda', port:'Mombasa→Kigali', method:'eac', importDuty:0.25, vat:0.18, idf:0.015, rdl:0.015, port:2000,
+          excise:{small:0.05, medium:0.10, large:0.15, xlarge:0.25, ev:0.05}, currency:'USD' },
+    // Southern Africa
+    ZM: { name:'Zambia', method:'flat', importDuty:0.30, vat:0.16, port:2200,
+          excise:{small:0.15, medium:0.20, large:0.25, xlarge:0.30, ev:0.05} },
+    ZW: { name:'Zimbabwe', method:'flat', importDuty:0.40, vat:0.15, port:2400, excise:{small:0.05, medium:0.10, large:0.20, xlarge:0.30, ev:0.05} },
+    ZA: { name:'South Africa', method:'flat', importDuty:0.25, vat:0.15, port:1800, excise:{small:0.04, medium:0.07, large:0.10, xlarge:0.15, ev:0.04} },
+    BW: { name:'Botswana', method:'flat', importDuty:0.27, vat:0.14, port:2200, excise:{small:0.05, medium:0.10, large:0.15, xlarge:0.20, ev:0.05} },
+    // West Africa
+    NG: { name:'Nigeria', method:'flat', importDuty:0.35, vat:0.075, port:2400, excise:{small:0, medium:0.10, large:0.15, xlarge:0.20, ev:0.05} },
+    GH: { name:'Ghana', method:'flat', importDuty:0.20, vat:0.15, port:2300, excise:{small:0, medium:0.10, large:0.20, xlarge:0.30, ev:0.05} },
+    // GCC — flat 5%
+    AE: { name:'UAE', method:'flat', importDuty:0.05, vat:0.05, port:0, excise:{small:0, medium:0, large:0, xlarge:0, ev:0} },
+    SA: { name:'Saudi Arabia', method:'flat', importDuty:0.05, vat:0.15, port:500, excise:{small:0, medium:0, large:0, xlarge:0, ev:0} },
+    QA: { name:'Qatar', method:'flat', importDuty:0.05, vat:0, port:600, excise:{small:0, medium:0, large:0, xlarge:0, ev:0} },
+    KW: { name:'Kuwait', method:'flat', importDuty:0.05, vat:0, port:700, excise:{small:0, medium:0, large:0, xlarge:0, ev:0} },
+    OM: { name:'Oman', method:'flat', importDuty:0.05, vat:0.05, port:400, excise:{small:0, medium:0, large:0, xlarge:0, ev:0} },
+    BH: { name:'Bahrain', method:'flat', importDuty:0.05, vat:0.10, port:600, excise:{small:0, medium:0, large:0, xlarge:0, ev:0} },
+    // Global
+    GB: { name:'United Kingdom', method:'flat', importDuty:0.10, vat:0.20, port:2200, excise:{small:0, medium:0, large:0, xlarge:0, ev:0} },
+    DE: { name:'Germany', method:'flat', importDuty:0.10, vat:0.19, port:2300, excise:{small:0, medium:0, large:0, xlarge:0, ev:0} },
+    AU: { name:'Australia', method:'flat', importDuty:0.05, vat:0.10, port:2800, excise:{small:0, medium:0, large:0, xlarge:0, ev:0} },
+    US: { name:'United States', method:'flat', importDuty:0.025, vat:0, port:2400, excise:{small:0, medium:0, large:0, xlarge:0, ev:0} },
+  };
+
+  // Shipping rates (USD) — Dubai/Jebel Ali to destination port
+  const SHIPPING_RATES = {
+    KE:{roro:1900, container20:3400, shared:2400},
+    UG:{roro:2400, container20:4000, shared:2900},
+    TZ:{roro:1900, container20:3400, shared:2400},
+    RW:{roro:2700, container20:4400, shared:3200},
+    ZM:{roro:2800, container20:4400, shared:3200},
+    ZW:{roro:2900, container20:4500, shared:3300},
+    ZA:{roro:2200, container20:3800, shared:2800},
+    BW:{roro:2700, container20:4300, shared:3100},
+    NG:{roro:3000, container20:4800, shared:3500},
+    GH:{roro:3100, container20:4900, shared:3600},
+    AE:{roro:0, container20:0, shared:0},
+    SA:{roro:600, container20:1200, shared:800},
+    QA:{roro:700, container20:1300, shared:900},
+    KW:{roro:800, container20:1400, shared:1000},
+    OM:{roro:500, container20:1100, shared:700},
+    BH:{roro:700, container20:1300, shared:900},
+    GB:{roro:2800, container20:4500, shared:3300},
+    DE:{roro:2900, container20:4600, shared:3400},
+    AU:{roro:3500, container20:5500, shared:4000},
+    US:{roro:3200, container20:5000, shared:3700},
+  };
+
   const country = document.getElementById('country');
   const value = document.getElementById('value');
+  const engine = document.getElementById('engine');
+  const age = document.getElementById('age');
   const method = document.getElementById('method');
   const insurance = document.getElementById('insurance');
   const fmt = n => '$' + Math.round(n).toLocaleString('en-US');
 
   function calc(){
-    const opt = country.options[country.selectedIndex];
-    const dutyPct = parseFloat(opt.dataset.duty) / 100;
-    const baseShip = parseFloat(opt.dataset.ship);
-    const val = parseFloat(value.value) || 0;
-    const methodMult = parseFloat(method.value);
+    const code = country.value;
+    const rules = COUNTRY_RULES[code];
+    const fob = parseFloat(value.value) || 0;
+    const engineKey = engine.value;
+    const shipMethod = method.value;
     const insPct = parseFloat(insurance.value);
 
-    const ship = baseShip * methodMult;
-    const ins = val * insPct;
-    const duty = val * dutyPct;
-    const fee = val * 0.05;
-    const total = val + ship + ins + duty + fee;
+    // Shipping & insurance
+    const ship = (SHIPPING_RATES[code] && SHIPPING_RATES[code][shipMethod]) || 0;
+    const ins = fob * insPct;
+    const cif = fob + ship + ins;
 
-    document.getElementById('rValue').textContent = fmt(val);
-    document.getElementById('rShip').textContent = fmt(ship);
-    document.getElementById('rIns').textContent = fmt(ins);
-    document.getElementById('rDuty').textContent = fmt(duty);
-    document.getElementById('rFee').textContent = fmt(fee);
+    // Cascading tax calculation
+    let importDuty = 0, exciseDuty = 0, vat = 0, levies = 0;
+
+    if (rules.method === 'eac') {
+      // EAC method: cascading
+      importDuty = cif * rules.importDuty;
+      exciseDuty = (cif + importDuty) * (rules.excise[engineKey] || 0);
+      vat = (cif + importDuty + exciseDuty) * rules.vat;
+      levies = cif * ((rules.idf || 0) + (rules.rdl || 0));
+    } else {
+      // Flat method
+      importDuty = cif * rules.importDuty;
+      exciseDuty = cif * (rules.excise[engineKey] || 0);
+      vat = (cif + importDuty + exciseDuty) * rules.vat;
+      levies = 0;
+    }
+
+    const portCharges = rules.port || 0;
+    const serviceFee = fob * 0.05;
+    const total = cif + importDuty + exciseDuty + vat + levies + portCharges + serviceFee;
+
+    // Update display
+    document.getElementById('rValue').textContent = fmt(fob);
+    document.getElementById('rShip').textContent = ship === 0 ? 'Local (n/a)' : fmt(ship);
+    document.getElementById('rIns').textContent = ins === 0 ? '—' : fmt(ins);
+    document.getElementById('rCif').textContent = fmt(cif);
+    document.getElementById('rImport').textContent = fmt(importDuty) + ' (' + (rules.importDuty*100).toFixed(1) + '%)';
+    document.getElementById('rExcise').textContent = exciseDuty === 0 ? '—' : fmt(exciseDuty) + ' (' + ((rules.excise[engineKey]||0)*100).toFixed(0) + '%)';
+    document.getElementById('rVat').textContent = vat === 0 ? '—' : fmt(vat) + ' (' + (rules.vat*100).toFixed(0) + '%)';
+    document.getElementById('rLevy').textContent = levies === 0 ? '—' : fmt(levies);
+    document.getElementById('rPort').textContent = fmt(portCharges);
+    document.getElementById('rFee').textContent = fmt(serviceFee);
     document.getElementById('rTotal').textContent = fmt(total);
+
+    // Show/hide rows that don't apply
+    document.getElementById('rowExcise').style.display = exciseDuty === 0 ? 'none' : '';
+    document.getElementById('rowVat').style.display = vat === 0 ? 'none' : '';
+    document.getElementById('rowLevy').style.display = levies === 0 ? 'none' : '';
+
+    // Update labels for clarity
+    if (rules.method === 'eac') {
+      document.getElementById('lExcise').textContent = 'Excise (on CIF + Import Duty)';
+      document.getElementById('lVat').textContent = 'VAT (on CIF + Duty + Excise)';
+      document.getElementById('lLevy').textContent = 'IDF + RDL Levies';
+    } else {
+      document.getElementById('lExcise').textContent = 'Excise Duty';
+      document.getElementById('lVat').textContent = 'VAT';
+      document.getElementById('lLevy').textContent = 'Levies';
+    }
   }
-  [country, value, method, insurance].forEach(el => el.addEventListener('input', calc));
+
+  [country, value, engine, age, method, insurance].forEach(el => {
+    el.addEventListener('input', calc);
+    el.addEventListener('change', calc);
+  });
   calc();
 </script>
 </body>
