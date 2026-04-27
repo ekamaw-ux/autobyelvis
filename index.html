@@ -944,7 +944,7 @@
     <div class="section-head" style="text-align:center;margin-left:auto;margin-right:auto">
       <span class="eyebrow">Global all-in estimate tool</span>
       <h2>Worldwide Vehicle Final Cost Calculator.</h2>
-      <p class="calc-subtitle">Choose the make first, then the exact model appears under it. The calculator shows CIF first, then adds estimated import duty, VAT/tax, levies, clearing, registration, and local delivery to show a final all-in estimate.</p>
+      <p class="calc-subtitle">Choose the make first, then the exact model appears under it. The calculator shows CIF first, then adds import duty / customs duty, VAT/tax, levies, clearing, registration, and local delivery to show a final all-in estimate.</p>
     </div>
 
     <div class="calc-box">
@@ -1093,7 +1093,7 @@
         <div class="calc-result-row"><span>Shipping / freight</span><span id="rShipping">—</span></div>
         <div class="calc-result-row"><span>Marine insurance</span><span id="rInsurance">—</span></div>
         <div class="calc-result-row" style="font-weight:600;color:var(--gold-2)"><span>CIF subtotal</span><span id="rCif">—</span></div>
-        <div class="calc-result-row"><span>Import duty estimate</span><span id="rDuty">—</span></div>
+        <div class="calc-result-row"><span>Import duty / customs duty estimate</span><span id="rDuty">—</span></div>
         <div class="calc-result-row"><span>Excise / environmental tax estimate</span><span id="rExcise">—</span></div>
         <div class="calc-result-row"><span>VAT / sales tax estimate</span><span id="rVat">—</span></div>
         <div class="calc-result-row"><span>Customs levies / IDF / RDL estimate</span><span id="rLevies">—</span></div>
@@ -1103,7 +1103,7 @@
           <strong id="rTotal">—</strong>
         </div>
         <div class="timeline-box" id="rTimeline">Timeline will appear here.</div>
-        <div class="calc-warning">This final estimate includes vehicle value, UAE export handling, freight, marine insurance, estimated destination duty/taxes, customs levies, clearing, registration, and local delivery buffer. Exact final cost depends on official customs valuation, engine size, vehicle age rules, inspection, port charges, FX rate, and confirmed freight quote.</div>
+        <div class="calc-warning">This final estimate includes vehicle value, UAE export handling, freight, marine insurance, import duty / customs duty, estimated destination taxes, customs levies, clearing, registration, and local delivery buffer. Exact final cost depends on official customs valuation, engine size, vehicle age rules, inspection, port charges, FX rate, and confirmed freight quote.</div>
       </div>
 
       <div class="calc-actions">
@@ -1685,6 +1685,7 @@
       `Destination: ${dest.name}\n` +
       `Known UAE price: ${knownPrice ? fmt(knownPrice) : 'estimate needed'}\n` +
       `CIF subtotal: ${fmt(cifLow)} - ${fmt(cifHigh)}\n` +
+      `Import duty / customs duty: ${fmt(landed.low.duty)} - ${fmt(landed.high.duty)}\n` +
       `Final estimated cost all-in: ${fmt(landed.low.total)} - ${fmt(landed.high.total)}`
     );
     document.getElementById('whatsappQuote').href = `https://wa.me/971521948311?text=${msg}`;
