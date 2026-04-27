@@ -942,9 +942,9 @@
 <section class="section calc-section" id="calculator">
   <div class="wrap">
     <div class="section-head" style="text-align:center;margin-left:auto;margin-right:auto">
-      <span class="eyebrow">Global CIF estimate tool</span>
-      <h2>Worldwide Vehicle CIF Calculator.</h2>
-      <p class="calc-subtitle">Choose the make first, then the exact model appears under it — Toyota, Nissan, Mercedes, BMW, Lexus, Land Rover, Porsche, Ferrari and more. Built for UAE stock exported worldwide.</p>
+      <span class="eyebrow">Global all-in estimate tool</span>
+      <h2>Worldwide Vehicle Final Cost Calculator.</h2>
+      <p class="calc-subtitle">Choose the make first, then the exact model appears under it. The calculator shows CIF first, then adds estimated import duty, VAT/tax, levies, clearing, registration, and local delivery to show a final all-in estimate.</p>
     </div>
 
     <div class="calc-box">
@@ -1045,6 +1045,28 @@
 
       <div class="calc-row">
         <div class="calc-field">
+          <label>Engine / Tax Category</label>
+          <select id="engineTax">
+            <option value="small">Up to 1500cc</option>
+            <option value="medium" selected>1501–2500cc</option>
+            <option value="large">2501–3000cc</option>
+            <option value="xlarge">Over 3000cc / V8 / V12</option>
+            <option value="ev">EV / Hybrid</option>
+          </select>
+          <div class="calc-small">Used for duty, excise and destination tax estimates.</div>
+        </div>
+        <div class="calc-field">
+          <label>Local Delivery / Registration</label>
+          <select id="localPackage">
+            <option value="standard" selected>Standard estimate included</option>
+            <option value="low">Lowest estimate</option>
+            <option value="premium">Premium / upcountry buffer</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="calc-row">
+        <div class="calc-field">
           <label>Shipping Method</label>
           <select id="shippingMethod">
             <option value="roro" selected>RoRo / shared shipping — best price</option>
@@ -1070,17 +1092,23 @@
         <div class="calc-result-row"><span>Export docs / handling</span><span id="rExport">—</span></div>
         <div class="calc-result-row"><span>Shipping / freight</span><span id="rShipping">—</span></div>
         <div class="calc-result-row"><span>Marine insurance</span><span id="rInsurance">—</span></div>
+        <div class="calc-result-row" style="font-weight:600;color:var(--gold-2)"><span>CIF subtotal</span><span id="rCif">—</span></div>
+        <div class="calc-result-row"><span>Import duty estimate</span><span id="rDuty">—</span></div>
+        <div class="calc-result-row"><span>Excise / environmental tax estimate</span><span id="rExcise">—</span></div>
+        <div class="calc-result-row"><span>VAT / sales tax estimate</span><span id="rVat">—</span></div>
+        <div class="calc-result-row"><span>Customs levies / IDF / RDL estimate</span><span id="rLevies">—</span></div>
+        <div class="calc-result-row"><span>Port, clearing, registration & local delivery</span><span id="rLocal">—</span></div>
         <div class="calc-total">
-          <span style="font-size:13px;color:var(--muted);letter-spacing:.06em;text-transform:uppercase">Estimated CIF</span>
-          <strong id="rCif">—</strong>
+          <span style="font-size:13px;color:var(--muted);letter-spacing:.06em;text-transform:uppercase">Final estimated cost — all included</span>
+          <strong id="rTotal">—</strong>
         </div>
         <div class="timeline-box" id="rTimeline">Timeline will appear here.</div>
-        <div class="calc-warning">CIF means vehicle cost + export handling + freight + marine insurance to the destination port. It does not include import duty, clearing, port storage, registration, number plates, inspection fees, or local delivery unless quoted separately.</div>
+        <div class="calc-warning">This final estimate includes vehicle value, UAE export handling, freight, marine insurance, estimated destination duty/taxes, customs levies, clearing, registration, and local delivery buffer. Exact final cost depends on official customs valuation, engine size, vehicle age rules, inspection, port charges, FX rate, and confirmed freight quote.</div>
       </div>
 
       <div class="calc-actions">
-        <button class="btn btn-primary" onclick="calculateCIF()">Calculate CIF</button>
-        <a id="whatsappQuote" href="https://wa.me/971521948311" class="btn wa-quote" target="_blank">Request exact quote on WhatsApp</a>
+        <button class="btn btn-primary" onclick="calculateCIF()">Calculate Final Cost</button>
+        <a id="whatsappQuote" href="https://wa.me/971521948311" class="btn wa-quote" target="_blank">Request exact final quote on WhatsApp</a>
       </div>
     </div>
   </div>
@@ -1479,6 +1507,53 @@
     CA:{name:'Canada', baseShip:3400, export:[600,1300], timeline:'6–10 weeks'}
   };
 
+  const LANDING_RULES = {
+    TZ:{duty:0.25, vat:0.18, levies:0.021, clearing:1500, registration:450, delivery:350, excise:{small:0, medium:0.05, large:0.10, xlarge:0.30, ev:0.05}},
+    KE:{duty:0.25, vat:0.16, levies:0.055, clearing:1700, registration:550, delivery:350, excise:{small:0.20, medium:0.25, large:0.30, xlarge:0.35, ev:0.10}},
+    UG:{duty:0.25, vat:0.18, levies:0.035, clearing:1900, registration:600, delivery:500, excise:{small:0.05, medium:0.10, large:0.20, xlarge:0.30, ev:0.05}},
+    RW:{duty:0.25, vat:0.18, levies:0.030, clearing:2100, registration:650, delivery:600, excise:{small:0.05, medium:0.10, large:0.15, xlarge:0.25, ev:0.05}},
+    ZM:{duty:0.30, vat:0.16, levies:0.020, clearing:2300, registration:700, delivery:700, excise:{small:0.15, medium:0.20, large:0.25, xlarge:0.30, ev:0.05}},
+    ZW:{duty:0.40, vat:0.15, levies:0.020, clearing:2500, registration:750, delivery:800, excise:{small:0.05, medium:0.10, large:0.20, xlarge:0.30, ev:0.05}},
+    ZA:{duty:0.25, vat:0.15, levies:0.015, clearing:1900, registration:650, delivery:500, excise:{small:0.04, medium:0.07, large:0.10, xlarge:0.15, ev:0.04}},
+    BW:{duty:0.27, vat:0.14, levies:0.015, clearing:2300, registration:650, delivery:650, excise:{small:0.05, medium:0.10, large:0.15, xlarge:0.20, ev:0.05}},
+    NG:{duty:0.35, vat:0.075, levies:0.020, clearing:2600, registration:800, delivery:700, excise:{small:0, medium:0.10, large:0.15, xlarge:0.20, ev:0.05}},
+    GH:{duty:0.20, vat:0.15, levies:0.025, clearing:2500, registration:750, delivery:650, excise:{small:0, medium:0.10, large:0.20, xlarge:0.30, ev:0.05}},
+    SN:{duty:0.20, vat:0.18, levies:0.025, clearing:2600, registration:800, delivery:700, excise:{small:0.05, medium:0.10, large:0.15, xlarge:0.25, ev:0.05}},
+    CI:{duty:0.20, vat:0.18, levies:0.025, clearing:2600, registration:800, delivery:700, excise:{small:0.05, medium:0.10, large:0.15, xlarge:0.25, ev:0.05}},
+    AE:{duty:0.05, vat:0.05, levies:0, clearing:250, registration:900, delivery:150, excise:{small:0, medium:0, large:0, xlarge:0, ev:0}},
+    SA:{duty:0.05, vat:0.15, levies:0, clearing:800, registration:700, delivery:250, excise:{small:0, medium:0, large:0, xlarge:0, ev:0}},
+    QA:{duty:0.05, vat:0, levies:0, clearing:800, registration:650, delivery:250, excise:{small:0, medium:0, large:0, xlarge:0, ev:0}},
+    KW:{duty:0.05, vat:0, levies:0, clearing:900, registration:650, delivery:250, excise:{small:0, medium:0, large:0, xlarge:0, ev:0}},
+    OM:{duty:0.05, vat:0.05, levies:0, clearing:700, registration:600, delivery:250, excise:{small:0, medium:0, large:0, xlarge:0, ev:0}},
+    BH:{duty:0.05, vat:0.10, levies:0, clearing:800, registration:650, delivery:250, excise:{small:0, medium:0, large:0, xlarge:0, ev:0}},
+    GB:{duty:0.10, vat:0.20, levies:0.005, clearing:2300, registration:800, delivery:600, excise:{small:0, medium:0, large:0, xlarge:0, ev:0}},
+    DE:{duty:0.10, vat:0.19, levies:0.005, clearing:2400, registration:800, delivery:600, excise:{small:0, medium:0, large:0, xlarge:0, ev:0}},
+    AU:{duty:0.05, vat:0.10, levies:0.005, clearing:3000, registration:900, delivery:800, excise:{small:0, medium:0, large:0, xlarge:0, ev:0}},
+    US:{duty:0.025, vat:0, levies:0.005, clearing:2500, registration:800, delivery:700, excise:{small:0, medium:0, large:0, xlarge:0, ev:0}},
+    CA:{duty:0.061, vat:0.05, levies:0.005, clearing:2600, registration:800, delivery:700, excise:{small:0, medium:0, large:0, xlarge:0, ev:0}}
+  };
+
+  function localMultiplier(packageType){
+    if(packageType === 'low') return 0.75;
+    if(packageType === 'premium') return 1.35;
+    return 1;
+  }
+
+  function landedCosts(cifLow, cifHigh, code, engineCategory, localPackage){
+    const r = LANDING_RULES[code] || LANDING_RULES.TZ;
+    const exciseRate = (r.excise && r.excise[engineCategory]) || 0;
+    const calcOne = cif => {
+      const duty = cif * r.duty;
+      const excise = (cif + duty) * exciseRate;
+      const vat = (cif + duty + excise) * r.vat;
+      const levies = cif * r.levies;
+      const local = (r.clearing + r.registration + r.delivery) * localMultiplier(localPackage);
+      const total = cif + duty + excise + vat + levies + local;
+      return {duty, excise, vat, levies, local, total};
+    };
+    return {low:calcOne(cifLow), high:calcOne(cifHigh)};
+  }
+
   const makeEl = document.getElementById('make');
   const modelEl = document.getElementById('model');
   const destinationEl = document.getElementById('destination');
@@ -1488,6 +1563,8 @@
   const vehiclePriceEl = document.getElementById('vehiclePrice');
   const shippingMethodEl = document.getElementById('shippingMethod');
   const insuranceRateEl = document.getElementById('insuranceRate');
+  const engineTaxEl = document.getElementById('engineTax');
+  const localPackageEl = document.getElementById('localPackage');
   const bodySizeEl = document.getElementById('bodySize');
 
   const fmt = n => '$' + Math.round(n).toLocaleString('en-US');
@@ -1582,6 +1659,7 @@
 
     const cifLow = vehicleLow + exportLow + shipLow + insLow;
     const cifHigh = vehicleHigh + exportHigh + shipHigh + insHigh;
+    const landed = landedCosts(cifLow, cifHigh, destinationEl.value, engineTaxEl.value, localPackageEl.value);
 
     const vehicleName = `${makeEl.value} ${modelEl.value}`;
     document.getElementById('rVehicle').textContent = vehicleName;
@@ -1590,24 +1668,31 @@
     document.getElementById('rShipping').textContent = `${fmt(shipLow)} - ${fmt(shipHigh)}`;
     document.getElementById('rInsurance').textContent = `${fmt(insLow)} - ${fmt(insHigh)}`;
     document.getElementById('rCif').textContent = `${fmt(cifLow)} - ${fmt(cifHigh)}`;
-    document.getElementById('rTimeline').innerHTML = `<strong>Estimated export time:</strong> ${dest.timeline}. Inspection 1–2 days · export documents 2–5 days · vessel booking/loading 5–10 days · transit depends on destination and vessel schedule.`;
+    document.getElementById('rDuty').textContent = `${fmt(landed.low.duty)} - ${fmt(landed.high.duty)}`;
+    document.getElementById('rExcise').textContent = `${fmt(landed.low.excise)} - ${fmt(landed.high.excise)}`;
+    document.getElementById('rVat').textContent = `${fmt(landed.low.vat)} - ${fmt(landed.high.vat)}`;
+    document.getElementById('rLevies').textContent = `${fmt(landed.low.levies)} - ${fmt(landed.high.levies)}`;
+    document.getElementById('rLocal').textContent = `${fmt(landed.low.local)} - ${fmt(landed.high.local)}`;
+    document.getElementById('rTotal').textContent = `${fmt(landed.low.total)} - ${fmt(landed.high.total)}`;
+    document.getElementById('rTimeline').innerHTML = `<strong>Estimated full process time:</strong> ${dest.timeline}. Inspection 1–2 days · export documents 2–5 days · vessel booking/loading 5–10 days · transit and clearing depend on destination, customs and vessel schedule.`;
 
     const msg = encodeURIComponent(
-      `Hi Elvis, I need an exact CIF quote.\n\n` +
+      `Hi Elvis, I need an exact final all-in quote.\n\n` +
       `Vehicle: ${vehicleName}\n` +
       `Year: ${year || 'not entered'}\n` +
       `Mileage: ${mileage || 'not entered'} km\n` +
       `Condition: ${conditionEl.options[conditionEl.selectedIndex].text}\n` +
       `Destination: ${dest.name}\n` +
       `Known UAE price: ${knownPrice ? fmt(knownPrice) : 'estimate needed'}\n` +
-      `Estimated CIF: ${fmt(cifLow)} - ${fmt(cifHigh)}`
+      `CIF subtotal: ${fmt(cifLow)} - ${fmt(cifHigh)}\n` +
+      `Final estimated cost all-in: ${fmt(landed.low.total)} - ${fmt(landed.high.total)}`
     );
     document.getElementById('whatsappQuote').href = `https://wa.me/971521948311?text=${msg}`;
   }
 
   makeEl.addEventListener('change', populateModels);
   modelEl.addEventListener('change', () => { updateBodySize(); calculateCIF(); });
-  [destinationEl, yearEl, mileageEl, conditionEl, vehiclePriceEl, shippingMethodEl, insuranceRateEl, bodySizeEl].forEach(el => {
+  [destinationEl, yearEl, mileageEl, conditionEl, vehiclePriceEl, shippingMethodEl, insuranceRateEl, engineTaxEl, localPackageEl, bodySizeEl].forEach(el => {
     el.addEventListener('input', calculateCIF);
     el.addEventListener('change', calculateCIF);
   });
