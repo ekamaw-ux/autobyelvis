@@ -439,6 +439,225 @@
 
   .more-cta{text-align:center;margin-top:36px}
 
+  /* ============ V0 POLISH ADDITIONS ============ */
+
+  /* Inline SVG icons */
+  .icon{width:16px;height:16px;flex-shrink:0;display:inline-block;vertical-align:middle}
+  .icon-sm{width:13px;height:13px}
+  .icon-lg{width:20px;height:20px}
+
+  /* Pulsing live status dot */
+  @keyframes pulse-dot{
+    0%,100%{opacity:1;transform:scale(1)}
+    50%{opacity:.5;transform:scale(1.2)}
+  }
+  .pulse-dot{
+    width:8px;height:8px;border-radius:50%;
+    background:var(--green);
+    animation:pulse-dot 2s ease-in-out infinite;
+    flex-shrink:0;
+  }
+  .live-eyebrow{
+    display:inline-flex;align-items:center;gap:10px;
+    padding:6px 14px;border:1px solid var(--border-2);
+    background:var(--gold-dim);border-radius:999px;
+    font-size:12px;font-weight:500;letter-spacing:.04em;
+    margin-bottom:20px;
+  }
+  .live-eyebrow .divider{width:1px;height:12px;background:var(--border-2)}
+  .live-eyebrow .live-text{color:var(--gold-2)}
+  .live-eyebrow .ctx-text{color:var(--brass-2)}
+
+  /* Hero stat counters */
+  .hero-stats{
+    display:flex;flex-wrap:wrap;gap:28px;margin-top:36px;
+  }
+  .hero-stat{display:flex;align-items:center;gap:12px}
+  .hero-stat-icon{
+    width:40px;height:40px;border-radius:50%;
+    background:var(--gold-dim);
+    display:grid;place-items:center;
+    color:var(--gold);
+    flex-shrink:0;
+  }
+  .hero-stat-num{
+    font-family:'Fraunces',serif;font-size:24px;font-weight:700;
+    color:var(--gold);letter-spacing:-.02em;line-height:1;
+  }
+  .hero-stat-label{font-size:12px;color:var(--muted);margin-top:2px}
+
+  /* Hero CTA arrow alignment */
+  .btn .icon{margin-left:2px}
+
+  /* Spec chips on inventory cards */
+  .deal-specs{
+    display:flex;flex-wrap:wrap;gap:6px;margin-bottom:8px;
+  }
+  .deal-spec{
+    display:inline-flex;align-items:center;gap:5px;
+    background:var(--bg-2);border:1px solid var(--border);
+    padding:3px 9px;border-radius:6px;
+    font-size:11px;color:var(--text);font-weight:500;
+  }
+  .deal-spec .icon{color:var(--brass-2)}
+
+  /* Price label above price */
+  .deal-price-block{display:flex;flex-direction:column;gap:2px}
+  .deal-price-label{
+    font-size:10px;color:var(--muted);
+    letter-spacing:.06em;text-transform:uppercase;
+  }
+
+  /* ============ PROCESS SECTION ============ */
+  .process-section{background:var(--bg);padding:80px 0 40px}
+  .process-grid{
+    display:grid;grid-template-columns:repeat(4,1fr);gap:24px;
+    margin-top:32px;position:relative;
+  }
+  .process-step{
+    display:flex;flex-direction:column;gap:14px;
+    padding:24px;background:var(--panel);
+    border:1px solid var(--border);border-radius:var(--radius);
+    position:relative;
+  }
+  .process-step-header{display:flex;align-items:center;gap:12px}
+  .process-num{
+    font-family:'Fraunces',serif;font-size:14px;
+    color:var(--brass-2);font-weight:600;
+    letter-spacing:.06em;
+  }
+  .process-icon{
+    width:36px;height:36px;border-radius:10px;
+    background:var(--gold-dim);
+    display:grid;place-items:center;
+    color:var(--gold);
+  }
+  .process-step h3{font-size:18px;line-height:1.2}
+  .process-step p{color:var(--muted);font-size:13px;line-height:1.5}
+  .process-arrow{
+    position:absolute;top:50%;right:-16px;
+    transform:translateY(-50%);
+    color:var(--brass-2);opacity:.5;z-index:1;
+    pointer-events:none;
+  }
+
+  /* ============ TESTIMONIALS ============ */
+  .testimonials-section{background:var(--bg-2);padding:80px 0}
+  .testimonial-grid{
+    display:grid;grid-template-columns:repeat(3,1fr);gap:20px;
+    margin-top:32px;
+  }
+  .testimonial-card{
+    background:var(--panel);
+    border:1px solid var(--border);
+    border-radius:var(--radius);
+    padding:28px;
+    display:flex;flex-direction:column;gap:14px;
+    position:relative;
+  }
+  .testimonial-quote-mark{
+    position:absolute;top:18px;right:24px;
+    color:var(--brass-2);opacity:.35;
+  }
+  .testimonial-text{
+    font-family:'Fraunces',serif;font-size:17px;
+    color:var(--text);line-height:1.4;font-style:italic;
+    font-weight:500;
+  }
+  .testimonial-meta{
+    display:flex;align-items:center;gap:10px;
+    padding-top:14px;border-top:1px solid var(--border);
+  }
+  .testimonial-avatar{
+    width:32px;height:32px;border-radius:50%;
+    background:var(--gold-dim);color:var(--gold);
+    display:grid;place-items:center;font-size:14px;font-weight:600;
+    font-family:'Fraunces',serif;flex-shrink:0;
+  }
+  .testimonial-name{font-size:13px;font-weight:600;color:var(--text)}
+  .testimonial-loc{font-size:12px;color:var(--muted)}
+
+  /* ============ STEPPED CALCULATOR ============ */
+  .calc-stepper{
+    display:flex;align-items:center;gap:8px;
+    margin-bottom:32px;padding:16px 20px;
+    background:var(--bg);border:1px solid var(--border);
+    border-radius:var(--radius-sm);
+    overflow-x:auto;
+  }
+  .calc-step-item{
+    display:flex;align-items:center;gap:8px;
+    flex-shrink:0;cursor:pointer;
+    transition:.2s;
+  }
+  .calc-step-num{
+    width:26px;height:26px;border-radius:50%;
+    background:var(--bg-2);border:1px solid var(--border-2);
+    color:var(--muted);
+    display:grid;place-items:center;
+    font-size:12px;font-weight:700;
+    transition:.2s;
+  }
+  .calc-step-label{
+    font-size:13px;color:var(--muted);
+    font-weight:500;letter-spacing:.02em;
+    white-space:nowrap;
+  }
+  .calc-step-item.active .calc-step-num{
+    background:var(--gold);color:#fff;border-color:var(--gold);
+  }
+  .calc-step-item.active .calc-step-label{color:var(--text);font-weight:600}
+  .calc-step-item.completed .calc-step-num{
+    background:var(--gold-dim);color:var(--gold);border-color:var(--gold);
+  }
+  .calc-step-item.completed .calc-step-label{color:var(--gold-2)}
+  .calc-step-divider{
+    flex:1;height:1px;background:var(--border-2);min-width:20px;
+  }
+  .calc-step-divider.completed{background:var(--gold)}
+
+  .calc-panel{display:none}
+  .calc-panel.active{display:block;animation:fade-in .3s ease}
+  @keyframes fade-in{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+
+  .calc-nav{
+    display:flex;justify-content:space-between;align-items:center;
+    margin-top:24px;padding-top:24px;
+    border-top:1px solid var(--border);
+  }
+  .calc-nav-btn{
+    background:none;border:1px solid var(--border-2);
+    padding:10px 20px;border-radius:999px;
+    font-size:14px;font-weight:600;color:var(--text);
+    display:inline-flex;align-items:center;gap:6px;
+    transition:.2s;
+  }
+  .calc-nav-btn:hover{background:var(--bg-2);border-color:var(--gold)}
+  .calc-nav-btn.primary{background:var(--gold);color:#fff;border-color:var(--gold)}
+  .calc-nav-btn.primary:hover{background:var(--gold-2);border-color:var(--gold-2)}
+  .calc-nav-btn:disabled{opacity:.4;cursor:not-allowed}
+
+  /* Final cost hero block */
+  .calc-final-block{
+    background:var(--gold);color:#fff;
+    border-radius:var(--radius);padding:32px;
+    margin-top:24px;
+    display:flex;justify-content:space-between;align-items:center;gap:24px;
+    flex-wrap:wrap;
+  }
+  .calc-final-label{
+    font-size:13px;letter-spacing:.08em;text-transform:uppercase;
+    opacity:.85;margin-bottom:6px;
+  }
+  .calc-final-amount{
+    font-family:'Fraunces',serif;font-size:36px;font-weight:700;
+    line-height:1;letter-spacing:-.02em;
+  }
+  .calc-final-block .btn{
+    background:#fff;color:var(--gold);
+  }
+  .calc-final-block .btn:hover{background:var(--bg)}
+
   /* ============ MOBILE ============ */
   @media (max-width:900px){
     .nav-links{
@@ -462,11 +681,23 @@
     .wrap{padding:0 20px}
     .nav-inner{padding:14px 20px}
     .calc-box,.contact-card{padding:24px}
+    .process-grid{grid-template-columns:repeat(2,1fr);gap:16px}
+    .process-arrow{display:none}
+    .testimonial-grid{grid-template-columns:1fr;gap:14px}
+    .hero-stats{gap:18px}
+    .hero-stat-num{font-size:20px}
+    .calc-final-amount{font-size:28px}
+    .calc-stepper{padding:12px 14px;gap:6px}
+    .calc-step-label{font-size:12px}
   }
   @media (max-width:600px){
     .trust-grid{grid-template-columns:1fr}
     .hero-ctas{flex-direction:column;align-items:stretch}
     .btn{justify-content:center}
+    .process-grid{grid-template-columns:1fr}
+    .hero-stats{flex-direction:column;gap:14px}
+    .calc-step-label{display:none}
+    .calc-final-block{flex-direction:column;align-items:flex-start}
   }
 </style>
 </head>
@@ -497,12 +728,54 @@
 <section class="hero" id="home">
   <div class="wrap hero-grid">
     <div>
-      <span class="eyebrow">Trusted sourcing · Dubai to the world</span>
+      <span class="live-eyebrow">
+        <span style="display:inline-flex;align-items:center;gap:6px">
+          <span class="pulse-dot"></span>
+          <span class="live-text">Sourcing live in Dubai</span>
+        </span>
+        <span class="divider"></span>
+        <span class="ctx-text">Trusted sourcing · Dubai to the world</span>
+      </span>
       <h1>Where <em>Rare</em> Becomes Reality.</h1>
       <p class="hero-sub">RHD export-ready vehicles, LHD luxury, classics, and rare OEM parts — sourced directly from Dubai. No call centres. No middlemen. Every deal handled personally by Elvis.</p>
       <div class="hero-ctas">
-        <a href="#rhd" class="btn btn-primary">View Inventory</a>
-        <a href="https://wa.me/971521948311" class="btn btn-secondary">💬 Talk to Elvis</a>
+        <a href="#rhd" class="btn btn-primary">View Inventory
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+        <a href="https://wa.me/971521948311" class="btn btn-secondary">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+          Talk to Elvis
+        </a>
+      </div>
+      <!-- Stat counters: replace numbers with real ones once tracking is in place -->
+      <div class="hero-stats">
+        <div class="hero-stat">
+          <div class="hero-stat-icon">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 16H9m10 0h3v-3.15a1 1 0 0 0-.84-.99L16 11l-2.7-3.6a1 1 0 0 0-.8-.4H5.24a2 2 0 0 0-1.8 1.1l-.8 1.63A6 6 0 0 0 2 12.42V16h2"/><circle cx="6.5" cy="16.5" r="2.5"/><circle cx="16.5" cy="16.5" r="2.5"/></svg>
+          </div>
+          <div>
+            <div class="hero-stat-num">23</div>
+            <div class="hero-stat-label">Countries served</div>
+          </div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-icon">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+          </div>
+          <div>
+            <div class="hero-stat-num">2–3 wk</div>
+            <div class="hero-stat-label">Dubai → Mombasa</div>
+          </div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-icon">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          </div>
+          <div>
+            <div class="hero-stat-num">&lt;2h</div>
+            <div class="hero-stat-label">Avg WhatsApp reply</div>
+          </div>
+        </div>
       </div>
     </div>
     <div class="hero-visual">
@@ -525,6 +798,62 @@
     <div class="trust-item"><div class="trust-check">✓</div> Direct deals with Elvis</div>
   </div>
 </div>
+
+<!-- ============ PROCESS ============ -->
+<section class="process-section">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">How it works</span>
+      <h2>From WhatsApp to your driveway.</h2>
+      <p class="muted">Every deal follows the same simple, transparent process — no surprises, no hand-offs.</p>
+    </div>
+    <div class="process-grid">
+      <div class="process-step">
+        <div class="process-step-header">
+          <div class="process-icon">
+            <svg class="icon icon-lg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          </div>
+          <span class="process-num">01</span>
+        </div>
+        <h3>Source</h3>
+        <p>Tell Elvis the spec on WhatsApp. He hunts the Dubai market — auctions, dealers, private sellers — until the right car is found.</p>
+        <svg class="icon process-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </div>
+      <div class="process-step">
+        <div class="process-step-header">
+          <div class="process-icon">
+            <svg class="icon icon-lg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+          </div>
+          <span class="process-num">02</span>
+        </div>
+        <h3>Verify</h3>
+        <p>Full inspection, real photos, complete spec sheet sent to your phone before any money moves. Zero surprises.</p>
+        <svg class="icon process-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </div>
+      <div class="process-step">
+        <div class="process-step-header">
+          <div class="process-icon">
+            <svg class="icon icon-lg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17h18M5 17V8a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v9"/><circle cx="7" cy="17" r="2"/><circle cx="17" cy="17" r="2"/></svg>
+          </div>
+          <span class="process-num">03</span>
+        </div>
+        <h3>Ship</h3>
+        <p>Jebel Ali RoRo or container booking, marine insurance, full export documentation handled in-house.</p>
+        <svg class="icon process-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </div>
+      <div class="process-step">
+        <div class="process-step-header">
+          <div class="process-icon">
+            <svg class="icon icon-lg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+          </div>
+          <span class="process-num">04</span>
+        </div>
+        <h3>Deliver</h3>
+        <p>Local clearing, registration support, and final delivery to your address. Elvis stays available until the keys are in your hand.</p>
+      </div>
+    </div>
+  </div>
+</section>
 
 <!-- ============ RHD EXPORT ============ -->
 <section class="section rhd-section" id="rhd">
@@ -940,6 +1269,60 @@
   </div>
 </section>
 
+<!-- ============ TESTIMONIALS ============ -->
+<!--
+  ⚠️ ELVIS — REPLACE THESE PLACEHOLDERS BEFORE PUBLIC LAUNCH ⚠️
+  These are sample quotes to show the section structure.
+  Replace with real customer quotes you have permission to publish.
+  Use first-name + city only, no full names.
+  If you don't have testimonials yet, hide this section by commenting it out
+  until you do — never ship fabricated quotes.
+-->
+<section class="testimonials-section">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Past deliveries · Real buyers</span>
+      <h2>Trusted from Dubai to Dar.</h2>
+      <p class="muted">A few words from buyers who've taken delivery. Names shortened for privacy — full references on request.</p>
+    </div>
+    <div class="testimonial-grid">
+      <div class="testimonial-card">
+        <svg class="icon icon-lg testimonial-quote-mark" viewBox="0 0 24 24" fill="currentColor"><path d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2H4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1-1 2-2 2s-1 .008-1 1.031V20c0 1 0 1 1 1z"/><path d="M15 21c3 0 7-1 7-8V5c0-1.25-.757-2.017-2-2h-4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2h.75c0 2.25.25 4-2.75 4v3c0 1 0 1 1 1z"/></svg>
+        <p class="testimonial-text">[ Sample placeholder — replace with real quote ] Elvis sourced exactly the LC78 build I needed for our medical fleet. Photos before payment, shipped from Jebel Ali, in Nairobi in 18 days door-to-door.</p>
+        <div class="testimonial-meta">
+          <div class="testimonial-avatar">D</div>
+          <div>
+            <div class="testimonial-name">[Name placeholder]</div>
+            <div class="testimonial-loc">Mombasa · LC78 Ambulance</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <svg class="icon icon-lg testimonial-quote-mark" viewBox="0 0 24 24" fill="currentColor"><path d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2H4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1-1 2-2 2s-1 .008-1 1.031V20c0 1 0 1 1 1z"/><path d="M15 21c3 0 7-1 7-8V5c0-1.25-.757-2.017-2-2h-4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2h.75c0 2.25.25 4-2.75 4v3c0 1 0 1 1 1z"/></svg>
+        <p class="testimonial-text">[ Sample placeholder — replace with real quote ] Tried Japan auctions for a year before finding Elvis. Same Land Cruiser, 25% cheaper, and he answered WhatsApp at 2am.</p>
+        <div class="testimonial-meta">
+          <div class="testimonial-avatar">J</div>
+          <div>
+            <div class="testimonial-name">[Name placeholder]</div>
+            <div class="testimonial-loc">Kampala · LC200</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <svg class="icon icon-lg testimonial-quote-mark" viewBox="0 0 24 24" fill="currentColor"><path d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2H4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1-1 2-2 2s-1 .008-1 1.031V20c0 1 0 1 1 1z"/><path d="M15 21c3 0 7-1 7-8V5c0-1.25-.757-2.017-2-2h-4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2h.75c0 2.25.25 4-2.75 4v3c0 1 0 1 1 1z"/></svg>
+        <p class="testimonial-text">[ Sample placeholder — replace with real quote ] I needed an OEM Ferrari V12 block for a restoration. Elvis found one in three days and arranged the paperwork. Discreet and professional.</p>
+        <div class="testimonial-meta">
+          <div class="testimonial-avatar">M</div>
+          <div>
+            <div class="testimonial-name">[Name placeholder]</div>
+            <div class="testimonial-loc">Restorer · Ferrari V12</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ============ CALCULATOR ============ -->
 <section class="section calc-section" id="calculator">
   <div class="wrap">
@@ -950,167 +1333,215 @@
     </div>
 
     <div class="calc-box">
-      <div class="calc-row">
-        <div class="calc-field">
-          <label>Destination / Port</label>
-          <select id="destination">
-            <optgroup label="🌍 East Africa">
-              <option value="TZ">Tanzania — Dar es Salaam</option>
-              <option value="KE">Kenya — Mombasa</option>
-              <option value="UG">Uganda — via Mombasa</option>
-              <option value="RW">Rwanda — via Mombasa</option>
-            </optgroup>
-            <optgroup label="🌍 Southern Africa">
-              <option value="ZM">Zambia — via Dar es Salaam</option>
-              <option value="ZW">Zimbabwe — via Beira/Durban</option>
-              <option value="ZA">South Africa — Durban</option>
-              <option value="BW">Botswana — via Durban/Walvis Bay</option>
-            </optgroup>
-            <optgroup label="🌍 West Africa">
-              <option value="NG">Nigeria — Lagos</option>
-              <option value="GH">Ghana — Tema</option>
-              <option value="SN">Senegal — Dakar</option>
-              <option value="CI">Ivory Coast — Abidjan</option>
-            </optgroup>
-            <optgroup label="🕌 GCC">
-              <option value="AE">UAE — Local</option>
-              <option value="SA">Saudi Arabia</option>
-              <option value="QA">Qatar</option>
-              <option value="KW">Kuwait</option>
-              <option value="OM">Oman</option>
-              <option value="BH">Bahrain</option>
-            </optgroup>
-            <optgroup label="🌐 Global">
-              <option value="GB">United Kingdom</option>
-              <option value="DE">Germany</option>
-              <option value="AU">Australia</option>
-              <option value="US">United States</option>
-              <option value="CA">Canada</option>
-            </optgroup>
-          </select>
+      <!-- Stepper -->
+      <div class="calc-stepper">
+        <div class="calc-step-item active" data-step="1">
+          <span class="calc-step-num">1</span>
+          <span class="calc-step-label">Destination</span>
         </div>
-        <div class="calc-field">
-          <label>Make</label>
-          <select id="make"></select>
+        <div class="calc-step-divider"></div>
+        <div class="calc-step-item" data-step="2">
+          <span class="calc-step-num">2</span>
+          <span class="calc-step-label">Vehicle</span>
+        </div>
+        <div class="calc-step-divider"></div>
+        <div class="calc-step-item" data-step="3">
+          <span class="calc-step-num">3</span>
+          <span class="calc-step-label">Specs</span>
+        </div>
+        <div class="calc-step-divider"></div>
+        <div class="calc-step-item" data-step="4">
+          <span class="calc-step-num">4</span>
+          <span class="calc-step-label">Result</span>
         </div>
       </div>
 
-      <div class="calc-row">
-        <div class="calc-field">
-          <label>Model / Sub-model</label>
-          <select id="model"></select>
-          <div class="calc-small">Example: choose Toyota → Land Cruiser, Prado, Fortuner, Harrier, Hilux, etc.</div>
-        </div>
-        <div class="calc-field">
-          <label>Body / Shipping Size</label>
-          <select id="bodySize">
-            <option value="auto">Auto from selected model</option>
-            <option value="compact">Compact / hatchback</option>
-            <option value="sedan">Sedan / coupe</option>
-            <option value="smallSuv">Small SUV / crossover</option>
-            <option value="mediumSuv">Medium SUV</option>
-            <option value="largeSuv">Large SUV / 4x4</option>
-            <option value="pickup">Pickup / double cab</option>
-            <option value="van">Van / minibus</option>
-            <option value="luxury">Luxury / executive</option>
-            <option value="supercar">Supercar / exotic</option>
-          </select>
-        </div>
-      </div>
-
-      <div class="calc-row">
-        <div class="calc-field">
-          <label>Year</label>
-          <input type="number" id="year" placeholder="e.g. 2012" min="1980" max="2027" />
-        </div>
-        <div class="calc-field">
-          <label>Mileage KM</label>
-          <input type="number" id="mileage" placeholder="e.g. 125000" min="0" />
-        </div>
-      </div>
-
-      <div class="calc-row">
-        <div class="calc-field">
-          <label>Condition</label>
-          <select id="condition">
-            <option value="excellent">Excellent / very clean</option>
-            <option value="good" selected>Good</option>
-            <option value="average">Average</option>
-            <option value="needsWork">Needs work</option>
-          </select>
-        </div>
-        <div class="calc-field">
-          <label>Known UAE Vehicle Price USD</label>
-          <input type="number" id="vehiclePrice" placeholder="Optional — enter exact stock price" min="500" />
+      <!-- Step 1: Destination -->
+      <div class="calc-panel active" data-panel="1">
+        <div class="calc-row">
+          <div class="calc-field" style="grid-column:1 / -1">
+            <label>Destination / Port</label>
+            <select id="destination">
+              <optgroup label="🌍 East Africa">
+                <option value="TZ">Tanzania — Dar es Salaam</option>
+                <option value="KE">Kenya — Mombasa</option>
+                <option value="UG">Uganda — via Mombasa</option>
+                <option value="RW">Rwanda — via Mombasa</option>
+              </optgroup>
+              <optgroup label="🌍 Southern Africa">
+                <option value="ZM">Zambia — via Dar es Salaam</option>
+                <option value="ZW">Zimbabwe — via Beira/Durban</option>
+                <option value="ZA">South Africa — Durban</option>
+                <option value="BW">Botswana — via Durban/Walvis Bay</option>
+              </optgroup>
+              <optgroup label="🌍 West Africa">
+                <option value="NG">Nigeria — Lagos</option>
+                <option value="GH">Ghana — Tema</option>
+                <option value="SN">Senegal — Dakar</option>
+                <option value="CI">Ivory Coast — Abidjan</option>
+              </optgroup>
+              <optgroup label="🕌 GCC">
+                <option value="AE">UAE — Local</option>
+                <option value="SA">Saudi Arabia</option>
+                <option value="QA">Qatar</option>
+                <option value="KW">Kuwait</option>
+                <option value="OM">Oman</option>
+                <option value="BH">Bahrain</option>
+              </optgroup>
+              <optgroup label="🌐 Global">
+                <option value="GB">United Kingdom</option>
+                <option value="DE">Germany</option>
+                <option value="AU">Australia</option>
+                <option value="US">United States</option>
+                <option value="CA">Canada</option>
+              </optgroup>
+            </select>
+            <div class="calc-small">Where is the vehicle being delivered? Tax rules and shipping cost depend on this.</div>
+          </div>
         </div>
       </div>
 
-      <div class="calc-row">
-        <div class="calc-field">
-          <label>Engine / Tax Category</label>
-          <select id="engineTax">
-            <option value="small">Up to 1500cc</option>
-            <option value="medium" selected>1501–2500cc</option>
-            <option value="large">2501–3000cc</option>
-            <option value="xlarge">Over 3000cc / V8 / V12</option>
-            <option value="ev">EV / Hybrid</option>
-          </select>
-          <div class="calc-small">Used for duty, excise and destination tax estimates.</div>
+      <!-- Step 2: Vehicle -->
+      <div class="calc-panel" data-panel="2">
+        <div class="calc-row">
+          <div class="calc-field">
+            <label>Make</label>
+            <select id="make"></select>
+          </div>
+          <div class="calc-field">
+            <label>Body / Shipping Size</label>
+            <select id="bodySize">
+              <option value="auto">Auto from selected model</option>
+              <option value="compact">Compact / hatchback</option>
+              <option value="sedan">Sedan / coupe</option>
+              <option value="smallSuv">Small SUV / crossover</option>
+              <option value="mediumSuv">Medium SUV</option>
+              <option value="largeSuv">Large SUV / 4x4</option>
+              <option value="pickup">Pickup / double cab</option>
+              <option value="van">Van / minibus</option>
+              <option value="luxury">Luxury / executive</option>
+              <option value="supercar">Supercar / exotic</option>
+            </select>
+          </div>
         </div>
-        <div class="calc-field">
-          <label>Local Delivery / Registration</label>
-          <select id="localPackage">
-            <option value="standard" selected>Standard estimate included</option>
-            <option value="low">Lowest estimate</option>
-            <option value="premium">Premium / upcountry buffer</option>
-          </select>
-        </div>
-      </div>
-
-      <div class="calc-row">
-        <div class="calc-field">
-          <label>Shipping Method</label>
-          <select id="shippingMethod">
-            <option value="roro" selected>RoRo / shared shipping — best price</option>
-            <option value="shared">Shared container — safer</option>
-            <option value="container20">20ft container — priority</option>
-            <option value="air">Air freight — urgent / rare parts only</option>
-          </select>
-        </div>
-        <div class="calc-field">
-          <label>Marine Insurance</label>
-          <select id="insuranceRate">
-            <option value="0.015" selected>Standard — 1.5%</option>
-            <option value="0.01">Basic — 1%</option>
-            <option value="0.02">Higher cover — 2%</option>
-            <option value="0">No insurance</option>
-          </select>
+        <div class="calc-row">
+          <div class="calc-field" style="grid-column:1 / -1">
+            <label>Model / Sub-model</label>
+            <select id="model"></select>
+            <div class="calc-small">Example: choose Toyota → Land Cruiser, Prado, Fortuner, Harrier, Hilux, etc.</div>
+          </div>
         </div>
       </div>
 
-      <div class="calc-result">
-        <div class="calc-result-row"><span>Selected vehicle</span><span id="rVehicle">—</span></div>
-        <div class="calc-result-row"><span>Adjusted UAE vehicle estimate</span><span id="rVehicleValue">—</span></div>
-        <div class="calc-result-row"><span>Export docs / handling</span><span id="rExport">—</span></div>
-        <div class="calc-result-row"><span>Shipping / freight</span><span id="rShipping">—</span></div>
-        <div class="calc-result-row"><span>Marine insurance</span><span id="rInsurance">—</span></div>
-        <div class="calc-result-row" style="font-weight:600;color:var(--brass-2)"><span>CIF subtotal</span><span id="rCif">—</span></div>
-        <div class="calc-result-row"><span>Import duty / customs duty estimate</span><span id="rDuty">—</span></div>
-        <div class="calc-result-row"><span>Excise / environmental tax estimate</span><span id="rExcise">—</span></div>
-        <div class="calc-result-row"><span>VAT / sales tax estimate</span><span id="rVat">—</span></div>
-        <div class="calc-result-row"><span>Customs levies / IDF / RDL estimate</span><span id="rLevies">—</span></div>
-        <div class="calc-result-row"><span>Port, clearing, registration & local delivery</span><span id="rLocal">—</span></div>
-        <div class="calc-total">
-          <span style="font-size:13px;color:var(--muted);letter-spacing:.06em;text-transform:uppercase">Final estimated cost — all included</span>
-          <strong id="rTotal">—</strong>
+      <!-- Step 3: Specs -->
+      <div class="calc-panel" data-panel="3">
+        <div class="calc-row">
+          <div class="calc-field">
+            <label>Year</label>
+            <input type="number" id="year" placeholder="e.g. 2012" min="1980" max="2027" />
+          </div>
+          <div class="calc-field">
+            <label>Mileage KM</label>
+            <input type="number" id="mileage" placeholder="e.g. 125000" min="0" />
+          </div>
         </div>
-        <div class="timeline-box" id="rTimeline">Timeline will appear here.</div>
-        <div class="calc-warning">This final estimate includes vehicle value, UAE export handling, freight, marine insurance, import duty / customs duty, estimated destination taxes, customs levies, clearing, registration, and local delivery buffer. Exact final cost depends on official customs valuation, engine size, vehicle age rules, inspection, port charges, FX rate, and confirmed freight quote.</div>
+        <div class="calc-row">
+          <div class="calc-field">
+            <label>Condition</label>
+            <select id="condition">
+              <option value="excellent">Excellent / very clean</option>
+              <option value="good" selected>Good</option>
+              <option value="average">Average</option>
+              <option value="needsWork">Needs work</option>
+            </select>
+          </div>
+          <div class="calc-field">
+            <label>Known UAE Vehicle Price USD</label>
+            <input type="number" id="vehiclePrice" placeholder="Optional — enter exact stock price" min="500" />
+          </div>
+        </div>
+        <div class="calc-row">
+          <div class="calc-field">
+            <label>Engine / Tax Category</label>
+            <select id="engineTax">
+              <option value="small">Up to 1500cc</option>
+              <option value="medium" selected>1501–2500cc</option>
+              <option value="large">2501–3000cc</option>
+              <option value="xlarge">Over 3000cc / V8 / V12</option>
+              <option value="ev">EV / Hybrid</option>
+            </select>
+            <div class="calc-small">Used for duty, excise and destination tax estimates.</div>
+          </div>
+          <div class="calc-field">
+            <label>Local Delivery / Registration</label>
+            <select id="localPackage">
+              <option value="standard" selected>Standard estimate included</option>
+              <option value="low">Lowest estimate</option>
+              <option value="premium">Premium / upcountry buffer</option>
+            </select>
+          </div>
+        </div>
+        <div class="calc-row">
+          <div class="calc-field">
+            <label>Shipping Method</label>
+            <select id="shippingMethod">
+              <option value="roro" selected>RoRo / shared shipping — best price</option>
+              <option value="shared">Shared container — safer</option>
+              <option value="container20">20ft container — priority</option>
+              <option value="air">Air freight — urgent / rare parts only</option>
+            </select>
+          </div>
+          <div class="calc-field">
+            <label>Marine Insurance</label>
+            <select id="insuranceRate">
+              <option value="0.015" selected>Standard — 1.5%</option>
+              <option value="0.01">Basic — 1%</option>
+              <option value="0.02">Higher cover — 2%</option>
+              <option value="0">No insurance</option>
+            </select>
+          </div>
+        </div>
       </div>
 
-      <div class="calc-actions">
-        <button class="btn btn-primary" onclick="calculateCIF()">Calculate Final Cost</button>
-        <a id="whatsappQuote" href="https://wa.me/971521948311" class="btn wa-quote" target="_blank">Request exact final quote on WhatsApp</a>
+      <!-- Step 4: Result -->
+      <div class="calc-panel" data-panel="4">
+        <div class="calc-final-block">
+          <div>
+            <div class="calc-final-label">Final estimated cost — all included</div>
+            <div class="calc-final-amount" id="rTotal">—</div>
+          </div>
+          <a id="whatsappQuote" href="https://wa.me/971521948311" class="btn" target="_blank">
+            Get exact quote
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
+        </div>
+        <div class="calc-result">
+          <div class="calc-result-row"><span>Selected vehicle</span><span id="rVehicle">—</span></div>
+          <div class="calc-result-row"><span>Adjusted UAE vehicle estimate</span><span id="rVehicleValue">—</span></div>
+          <div class="calc-result-row"><span>Export docs / handling</span><span id="rExport">—</span></div>
+          <div class="calc-result-row"><span>Shipping / freight</span><span id="rShipping">—</span></div>
+          <div class="calc-result-row"><span>Marine insurance</span><span id="rInsurance">—</span></div>
+          <div class="calc-result-row" style="font-weight:600;color:var(--brass-2)"><span>CIF subtotal</span><span id="rCif">—</span></div>
+          <div class="calc-result-row"><span>Import duty / customs duty estimate</span><span id="rDuty">—</span></div>
+          <div class="calc-result-row"><span>Excise / environmental tax estimate</span><span id="rExcise">—</span></div>
+          <div class="calc-result-row"><span>VAT / sales tax estimate</span><span id="rVat">—</span></div>
+          <div class="calc-result-row"><span>Customs levies / IDF / RDL estimate</span><span id="rLevies">—</span></div>
+          <div class="calc-result-row"><span>Port, clearing, registration & local delivery</span><span id="rLocal">—</span></div>
+          <div class="timeline-box" id="rTimeline">Timeline will appear here.</div>
+          <div class="calc-warning">This final estimate includes vehicle value, UAE export handling, freight, marine insurance, import duty / customs duty, estimated destination taxes, customs levies, clearing, registration, and local delivery buffer. Exact final cost depends on official customs valuation, engine size, vehicle age rules, inspection, port charges, FX rate, and confirmed freight quote.</div>
+        </div>
+      </div>
+
+      <!-- Navigation -->
+      <div class="calc-nav">
+        <button class="calc-nav-btn" id="calcBack" onclick="calcStep(-1)" disabled>
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+          Back
+        </button>
+        <button class="calc-nav-btn primary" id="calcNext" onclick="calcStep(1)">
+          Next
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </button>
       </div>
     </div>
   </div>
@@ -1161,6 +1592,66 @@
   // Mobile menu close on link click
   document.querySelectorAll('#navLinks a').forEach(a=>{
     a.addEventListener('click',()=>document.getElementById('navLinks').classList.remove('open'));
+  });
+
+  // ===== STEPPED CALCULATOR NAVIGATION =====
+  let currentStep = 1;
+  const totalSteps = 4;
+
+  function calcStep(direction){
+    const newStep = currentStep + direction;
+    if(newStep < 1 || newStep > totalSteps) return;
+    currentStep = newStep;
+    renderStep();
+    // Auto-calculate when entering Step 4
+    if(currentStep === 4){
+      calculateCIF();
+    }
+  }
+
+  function goToStep(step){
+    if(step < 1 || step > totalSteps) return;
+    currentStep = step;
+    renderStep();
+    if(currentStep === 4){
+      calculateCIF();
+    }
+  }
+
+  function renderStep(){
+    // Update panels
+    document.querySelectorAll('.calc-panel').forEach(p=>{
+      p.classList.toggle('active', parseInt(p.dataset.panel) === currentStep);
+    });
+    // Update stepper visual state
+    document.querySelectorAll('.calc-step-item').forEach(item=>{
+      const s = parseInt(item.dataset.step);
+      item.classList.remove('active','completed');
+      if(s === currentStep) item.classList.add('active');
+      else if(s < currentStep) item.classList.add('completed');
+    });
+    document.querySelectorAll('.calc-step-divider').forEach((div, idx)=>{
+      div.classList.toggle('completed', idx + 1 < currentStep);
+    });
+    // Update Back/Next buttons
+    const backBtn = document.getElementById('calcBack');
+    const nextBtn = document.getElementById('calcNext');
+    backBtn.disabled = (currentStep === 1);
+    if(currentStep === totalSteps){
+      nextBtn.style.display = 'none';
+    } else {
+      nextBtn.style.display = '';
+      nextBtn.innerHTML = currentStep === totalSteps - 1
+        ? 'Calculate <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>'
+        : 'Next <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>';
+    }
+    // Smooth scroll into view if not visible
+    document.querySelector('.calc-box').scrollIntoView({behavior:'smooth', block:'nearest'});
+  }
+
+  // Wire up stepper item clicks for direct navigation
+  document.querySelectorAll('.calc-step-item').forEach(item=>{
+    item.addEventListener('click',()=>goToStep(parseInt(item.dataset.step)));
   });
 
   // ===== WORLDWIDE MAKE / MODEL CIF CALCULATOR =====
