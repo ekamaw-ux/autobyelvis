@@ -1,17 +1,684 @@
-<!doctype html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Auto by Elvis | UAE Car Sourcing & Export</title>
-<meta name="description" content="UAE-based car sourcing and export support for luxury cars, rare engines, gearboxes and OEM auto parts from Dubai and Sharjah.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo+Narrow:wght@600;700&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>AUTO BY ELVIS | Dubai's Rare Car &amp; Engine Plug</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Narrow:wght@400;600;700&amp;family=Hanken+Grotesk:wght@300;400;600&amp;family=JetBrains+Mono:wght@500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary-fixed-dim": "#ffb4a8",
+                        "on-secondary": "#3c2f00",
+                        "surface-tint": "#ffb4a8",
+                        "on-tertiary-container": "#fdfff8",
+                        "on-surface": "#e5e2e1",
+                        "chrome-silver": "#E2E2E2",
+                        "on-tertiary-fixed": "#002109",
+                        "secondary-fixed": "#ffe088",
+                        "inverse-primary": "#c00003",
+                        "primary": "#ffb4a8",
+                        "on-secondary-fixed-variant": "#574500",
+                        "surface-container": "#201f1f",
+                        "surface-container-high": "#2a2a2a",
+                        "tertiary-fixed": "#66ff8e",
+                        "on-secondary-container": "#342800",
+                        "secondary-fixed-dim": "#e9c349",
+                        "surface-dim": "#131313",
+                        "surface-variant": "#353534",
+                        "on-background": "#e5e2e1",
+                        "on-primary-fixed": "#410000",
+                        "outline-variant": "#5e3f3b",
+                        "on-error": "#690005",
+                        "engine-red": "#BC1C14",
+                        "on-surface-variant": "#e7bdb6",
+                        "error": "#ffb4ab",
+                        "surface-container-highest": "#353534",
+                        "surface-container-low": "#1c1b1b",
+                        "inverse-on-surface": "#313030",
+                        "primary-fixed": "#ffdad5",
+                        "outline": "#ae8882",
+                        "secondary": "#e9c349",
+                        "primary-container": "#e62117",
+                        "on-tertiary": "#003915",
+                        "inverse-surface": "#e5e2e1",
+                        "tertiary-container": "#00883c",
+                        "surface": "#131313",
+                        "on-error-container": "#ffdad6",
+                        "background": "#131313",
+                        "on-primary-container": "#fffeff",
+                        "on-primary-fixed-variant": "#930002",
+                        "carbon-black": "#050505",
+                        "error-container": "#93000a",
+                        "tertiary-fixed-dim": "#3de273",
+                        "surface-container-lowest": "#0e0e0e",
+                        "on-tertiary-fixed-variant": "#005322",
+                        "surface-bright": "#3a3939",
+                        "asphalt-gray": "#1A1A1A",
+                        "secondary-container": "#af8d11",
+                        "on-secondary-fixed": "#241a00",
+                        "tertiary": "#3de273",
+                        "on-primary": "#690001"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "gutter": "24px",
+                        "margin-mobile": "20px",
+                        "section-gap": "120px",
+                        "margin-desktop": "64px",
+                        "unit": "8px",
+                        "container-max": "1440px"
+                    },
+                    "fontFamily": {
+                        "display-xl": ["Archivo Narrow"],
+                        "body-sm": ["Hanken Grotesk"],
+                        "headline-lg-mobile": ["Archivo Narrow"],
+                        "label-caps": ["JetBrains Mono"],
+                        "headline-lg": ["Archivo Narrow"],
+                        "title-md": ["Hanken Grotesk"],
+                        "body-lg": ["Hanken Grotesk"],
+                        "price-display": ["JetBrains Mono"]
+                    },
+                    "fontSize": {
+                        "display-xl": ["72px", {"lineHeight": "76px", "letterSpacing": "-0.04em", "fontWeight": "700"}],
+                        "body-sm": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                        "headline-lg-mobile": ["32px", {"lineHeight": "36px", "fontWeight": "700"}],
+                        "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "700"}],
+                        "headline-lg": ["40px", {"lineHeight": "48px", "fontWeight": "700"}],
+                        "title-md": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "price-display": ["24px", {"lineHeight": "32px", "fontWeight": "600"}]
+                    }
+                },
+            },
+        }
+    </script>
 <style>
-:root{--bg:#050505;--panel:#141414;--panel2:#1f1f1f;--text:#f4f1ee;--muted:#c6aaa5;--red:#bc1c14;--green:#3de273;--line:#4b3430;--silver:#e2e2e2}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--text);font-family:"Hanken Grotesk",Arial,sans-serif}a{text-decoration:none;color:inherit}.wrap{max-width:1220px;margin:auto;padding:0 22px}.nav{position:fixed;inset:0 0 auto 0;height:68px;z-index:20;background:rgba(5,5,5,.82);backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}.nav .wrap{height:100%;display:flex;align-items:center;justify-content:space-between}.brand{font-family:"Archivo Narrow";font-size:34px;font-weight:700;letter-spacing:-.03em;text-transform:uppercase}.links{display:flex;gap:28px;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:14px 20px;border:1px solid var(--green);color:var(--green);font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:700;transition:.25s}.btn:hover{background:var(--green);color:#031006;transform:translateY(-2px)}.btn.red{border-color:var(--red);color:#fff;background:var(--red)}.btn.dark{border-color:var(--silver);color:#fff;background:transparent}.hero{min-height:94vh;display:flex;align-items:end;position:relative;overflow:hidden;padding:140px 0 90px}.hero:before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#050505 0%,rgba(5,5,5,.75) 45%,rgba(5,5,5,.15)),url("https://lh3.googleusercontent.com/aida/ADBb0ug7Qv7W8DInaQucJoIy95-ZwLJQIUBGu-4Yv0P83aYfZU2_NGtKKIvVADkRy9lf8Wk7nmNKQwgF6fKEQkzyKe04RGaX7EWN0cRzGCkhk2Vj-5iQVxyyNiyeVwT6NkGurlZG3bQQbIZrR957xLHyZMSdy6qZ-wDYThflbWl-_XvpFfpESyf5sd0ZLQAuhF0LHplA2bH3IgmVsUIgr53ZXB_t3QZeVoRLMOeTFHgREp6yD2Y16qA3TWJTsg") center/cover;transform:scale(1.04)}.hero:after{content:"";position:absolute;inset:auto 0 0;height:35%;background:linear-gradient(transparent,var(--bg))}.hero .wrap{position:relative;z-index:2}.tag{display:inline-block;background:var(--red);padding:8px 12px;font-size:12px;letter-spacing:.16em;text-transform:uppercase;font-weight:700;margin-bottom:24px}.hero h1{font-family:"Archivo Narrow";font-size:clamp(58px,10vw,120px);line-height:.92;margin:0 0 24px;max-width:900px;text-transform:uppercase;letter-spacing:-.055em}.hero h1 em{color:var(--red);text-decoration:underline;text-underline-offset:10px}.lead{font-size:20px;line-height:1.45;color:var(--muted);max-width:660px;margin:0 0 32px}.actions{display:flex;gap:14px;flex-wrap:wrap}.section{padding:105px 0}.section.alt{background:var(--panel);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}.eyebrow{color:var(--red);font-size:12px;font-weight:700;letter-spacing:.18em;text-transform:uppercase}.title{font-family:"Archivo Narrow";font-size:clamp(42px,6vw,72px);line-height:.96;text-transform:uppercase;letter-spacing:-.04em;margin:10px 0 18px}.grid{display:grid;gap:20px}.cards{grid-template-columns:repeat(4,1fr);margin-top:34px}.card{background:var(--panel);border:1px solid var(--line);padding:26px;min-height:220px;transition:.25s}.card:hover{border-color:var(--red);transform:translateY(-4px)}.card .icon{font-size:34px;color:var(--red);margin-bottom:38px}.card h3{font-family:"Archivo Narrow";font-size:32px;text-transform:uppercase;margin:0 0 10px}.card p,.muted{color:var(--muted);line-height:1.55}.bento{grid-template-columns:2fr 1fr;margin-top:34px}.photo{min-height:420px;position:relative;overflow:hidden;border:1px solid var(--line);background:var(--panel2);display:flex;align-items:end;padding:30px}.photo:before{content:"";position:absolute;inset:0;background:linear-gradient(transparent,#050505),var(--img) center/cover;opacity:.55;transition:.7s}.photo:hover:before{transform:scale(1.06);opacity:.7}.photo div{position:relative;z-index:1}.photo h3{font-family:"Archivo Narrow";font-size:48px;line-height:1;text-transform:uppercase;margin:7px 0}.side{display:grid;gap:20px}.side .photo{min-height:200px}.side .photo h3{font-size:34px}.inventory{display:flex;gap:22px;overflow:auto;padding:34px 22px 10px;scroll-snap-type:x mandatory}.listing{min-width:330px;max-width:390px;background:var(--panel);border:1px solid var(--line);scroll-snap-align:start}.listing img{width:100%;height:235px;object-fit:cover;display:block}.listing .body{padding:22px}.listing h3{margin:0;font-size:22px}.chips{display:flex;gap:7px;flex-wrap:wrap;margin:18px 0}.chip{border:1px solid var(--line);color:var(--muted);padding:5px 8px;font-size:11px;text-transform:uppercase}.price{border-top:1px solid var(--line);padding-top:16px;display:flex;justify-content:space-between;align-items:center}.price strong{font-size:24px;font-family:"Archivo Narrow"}.steps{grid-template-columns:repeat(4,1fr);margin-top:34px}.step{border:1px solid var(--line);background:#070707;padding:24px}.num{color:var(--red);font-weight:700;margin-bottom:50px}.step h3{font-family:"Archivo Narrow";font-size:30px;text-transform:uppercase;margin:0 0 10px}.quote{grid-template-columns:1fr 1fr;align-items:start}.form{background:#080808;border:1px solid var(--line);padding:26px;display:grid;grid-template-columns:1fr 1fr;gap:14px}.form label{font-size:12px;color:var(--muted);letter-spacing:.12em;text-transform:uppercase;font-weight:700}.form input,.form textarea{width:100%;margin-top:8px;background:var(--panel);border:1px solid var(--line);color:#fff;padding:14px;font:inherit}.form textarea,.form .full{grid-column:1/-1}.footer{padding:45px 0 95px;border-top:1px solid var(--line);color:var(--muted)}.footer .wrap{display:flex;justify-content:space-between;gap:30px;flex-wrap:wrap}.fab{position:fixed;right:22px;bottom:24px;z-index:30;background:var(--green);color:#041006;width:64px;height:64px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:900;box-shadow:0 0 35px rgba(61,226,115,.3)}.mobile{display:none}@media(max-width:900px){.links{display:none}.hero{padding-bottom:80px}.cards,.steps,.quote,.bento{grid-template-columns:1fr}.hero h1{font-size:58px}.section{padding:78px 0}.form{grid-template-columns:1fr}.mobile{display:grid;position:fixed;bottom:0;left:0;right:0;z-index:25;background:#050505;border-top:1px solid var(--line);grid-template-columns:repeat(4,1fr)}.mobile a{padding:11px 6px;text-align:center;font-size:11px;color:var(--muted)}.footer{padding-bottom:110px}.fab{bottom:78px}}
-</style>
+        body { background-color: #050505; color: #e5e2e1; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .custom-scrollbar::-webkit-scrollbar { height: 4px; }
+        .custom-scrollbar::-webkit-scrollbar-track { background: #1A1A1A; }
+        .custom-scrollbar::-webkit-scrollbar-thumb { background: #BC1C14; }
+        .carbon-texture {
+            background-image: radial-gradient(#1a1a1a 1px, transparent 1px);
+            background-size: 20px 20px;
+        }
+        .hero-gradient {
+            background: linear-gradient(180deg, rgba(5,5,5,0) 0%, rgba(5,5,5,1) 90%);
+        }
+
+        /* Animations — restrained, luxury */
+        @keyframes subtle-fade {
+            0% { opacity: 0.88; }
+            50% { opacity: 1; }
+            100% { opacity: 0.88; }
+        }
+        .animate-shimmer {
+            animation: subtle-fade 4s infinite ease-in-out;
+        }
+
+        .cta-refined {
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            box-shadow: 0 1px 0 0 rgba(188, 28, 20, 0.15);
+        }
+        .cta-refined:hover {
+            box-shadow: 0 8px 30px -8px rgba(188, 28, 20, 0.4);
+            transform: translateY(-2px);
+        }
+        .animate-cta-glow {
+            /* glow retired for luxury restraint — kept as no-op for legacy hooks */
+        }
+
+        .reveal-up {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .reveal-up.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .hero-reveal {
+            clip-path: inset(100% 0 0 0);
+            animation: hero-reveal-anim 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+        @keyframes hero-reveal-anim {
+            to { clip-path: inset(0 0 0 0); }
+        }
+
+        .parallax-hero {
+            transition: transform 0.1s ease-out;
+        }
+    </style>
 </head>
-<body>
-<header class="nav"><div class="wrap"><a class="brand" href="#home">Auto by Elvis</a><nav class="links"><a href="#inventory">Inventory</a><a href="#sourcing">Sourcing</a><a href="#process">Process</a><a href="#quote">Request</a></nav><a class="btn" href="#quote">WhatsApp Elvis</a></div></header>
-<main id="home"><section class="hero"><div class="wrap"><span class="tag">Live in Dubai & Sharjah</span><h1>UAE car sourcing, export & rare parts <em>plug.</em></h1><p class="lead">Auto by Elvis helps international buyers source luxury cars, GCC-spec vehicles, export units, engines, gearboxes and OEM parts directly from the UAE market.</p><div class="actions"><a class="btn" href="#quote">Tell Elvis what you need</a><a class="btn dark" href="#inventory">View inventory</a></div></div></section><section class="section" id="sourcing"><div class="wrap"><span class="eyebrow">What we source</span><h2 class="title">Not just a dealership.</h2><p class="lead">A UAE-based sourcing desk for buyers who need access, verification, negotiation help and export guidance.</p><div class="grid cards"><article class="card"><div class="icon">◆</div><h3>Luxury Cars</h3><p>GCC, USA, Japan, Korea and Europe spec vehicles sourced from Dubai and Sharjah.</p></article><article class="card"><div class="icon">⚡</div><h3>Rare Engines</h3><p>Ferrari, AMG, Rolls-Royce, performance engines, gearboxes, ECUs and project powertrains.</p></article><article class="card"><div class="icon">◈</div><h3>OEM Parts</h3><p>Headlights, bumpers, carbon parts, nose cuts, body panels and special-order components.</p></article><article class="card"><div class="icon">↗</div><h3>Export Deals</h3><p>Support for individual buyers, dealers, African resellers, project builders and bulk requests.</p></article></div></div></section><section class="section"><div class="wrap"><div class="grid bento"><a class="photo" href="#quote" style="--img:url('https://lh3.googleusercontent.com/aida/ADBb0ujLKOgcMSKhjQd5N-2YaTQK0I5bbaQ6eaDpUJQJQPBsMjFmQsfZTL-LfLNyLHlTLwRQ_r2eWMeqPoCXIDQjJO4Cxa87ygPF2ryNqcuvNvXXYBws1HHsIMbX94FxpovZQisU2rdcsEjUXvCFjrIdsowTUTt6itZYnLQFnNR2T4qNogo6CWZF74RXX_4h-2kEDU72nBDeAzkU9_Mdse4SxC0NtVp7EHs7ZOehEHdqOSSEx3eKZiAuJGT0')"><div><span class="eyebrow">Global buyers</span><h3>GCC, LHD, RHD & export stock</h3><p class="muted">Verified options with photos, videos, document checks and export support.</p></div></a><div class="side"><a class="photo" href="#quote" style="--img:url('https://lh3.googleusercontent.com/aida-public/AB6AXuBlzdXwyYK9OhhIWAy9uMvn8Qyfa7NPB0BOlddQ8cZrFal_kBF_d094NMF_gnyxgSEbNS06NKhhhPreAxpMGpsAX5lVz9kOQICantMt9O-lGq6gGzfS_1bpLegBKiVJQfi7_b-adLVvjFKK7MBj-CmXkpO3RDzYoV4ZKIujs0MNQNO_SeudoZVMJSnE6pjfQO8gY2QJyv0IU2Q2N8RKrkWypFscN4MRPgEABoJRy_44WZzxbqZdzzTn3jne-CDvnag9bOuIzU6wxA')"><div><span class="eyebrow">Exotic power</span><h3>Engines & gearboxes</h3></div></a><a class="photo" href="#quote" style="--img:url('https://lh3.googleusercontent.com/aida-public/AB6AXuDkKX31AMRVEEk_HDuQavK7V_joMCsKCPU9wbo1Zz2KwCDvEFyua4Ct0uYHhfTAzJi0L1-xmckPJwqbo06oTr_Wv1R1qVScG6Q-gw5f1uFweSdnW3pdfK44LjGSzbwrlcyyHRoGrrXTCZECAKnbWAqMUCMfwc5-yGa_dAtLQvQ2kAsC2TbdYWYW0sL8Nn5cUX6ZwylL8yFo-XRNRUwlhNoawUzw8TLXIC1D-BsvSqOIEXKz4BK_vksyzqMgoJmEdMI7c77gLVv2Jg')"><div><span class="eyebrow">Special requests</span><h3>Classics & projects</h3></div></a></div></div></div></section><section class="section alt" id="inventory"><div class="wrap"><span class="eyebrow">Featured inventory</span><h2 class="title">Current opportunities.</h2><p class="muted">Browse a few examples. If you need a different model, engine or part, send a request.</p></div><div class="inventory"><article class="listing"><img src="https://lh3.googleusercontent.com/aida/ADBb0ug7Qv7W8DInaQucJoIy95-ZwLJQIUBGu-4Yv0P83aYfZU2_NGtKKIvVADkRy9lf8Wk7nmNKQwgF6fKEQkzyKe04RGaX7EWN0cRzGCkhk2Vj-5iQVxyyNiyeVwT6NkGurlZG3bQQbIZrR957xLHyZMSdy6qZ-wDYThflbWl-_XvpFfpESyf5sd0ZLQAuhF0LHplA2bH3IgmVsUIgr53ZXB_t3QZeVoRLMOeTFHgREp6yD2Y16qA3TWJTsg" alt="GMC Yukon Denali"><div class="body"><h3>GMC Yukon Denali 2026</h3><div class="chips"><span class="chip">6.2L V8</span><span class="chip">7-Seater</span><span class="chip">Export ready</span></div><div class="price"><span>Price</span><strong>AED 325K</strong></div></div></article><article class="listing"><img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCv21LOHJA_ACFhoN7dAIhVZe7w2MbN3lDqrIvc0MDrk_PVywOoNvrBb9PyMFLHRQFNbz12O8Z8LSAGM-A4tmb4fRPd5tT1byEOUV9JwPv4M6dHw7_AVSns2K8QgNwwik_73rCc_h001CARsceTbugsn_RuRDKQZNkklaSg19j4oxkwEzIJL0gpe9NlfXaGfc7C62zfWHZLVSNMByegAw2TimpxwanKkrSfGxCQ7xt3IT1d5Qx2_COGK5XXvMOXWe22rBjF1nVrWA" alt="Land Cruiser 79"><div class="body"><h3>Land Cruiser 79 Double Cab</h3><div class="chips"><span class="chip">V8 Diesel</span><span class="chip">RHD / LHD</span><span class="chip">Bulk orders</span></div><div class="price"><span>Price</span><strong>POA</strong></div></div></article><article class="listing"><img src="https://lh3.googleusercontent.com/aida/ADBb0ujLKOgcMSKhjQd5N-2YaTQK0I5bbaQ6eaDpUJQJQPBsMjFmQsfZTL-LfLNyLHlTLwRQ_r2eWMeqPoCXIDQjJO4Cxa87ygPF2ryNqcuvNvXXYBws1HHsIMbX94FxpovZQisU2rdcsEjUXvCFjrIdsowTUTt6itZYnLQFnNR2T4qNogo6CWZF74RXX_4h-2kEDU72nBDeAzkU9_Mdse4SxC0NtVp7EHs7ZOehEHdqOSSEx3eKZiAuJGT0" alt="BMW 430i"><div class="body"><h3>BMW 430i M Sport Coupe</h3><div class="chips"><span class="chip">Dravit Grey</span><span class="chip">GCC Spec</span><span class="chip">Coupe</span></div><div class="price"><span>Price</span><strong>AED 90K</strong></div></div></article></div></section><section class="section" id="process"><div class="wrap"><span class="eyebrow">How it works</span><h2 class="title">From request to export.</h2><div class="grid steps"><article class="step"><div class="num">01</div><h3>Send request</h3><p class="muted">Share model, part number, engine code, budget, country and preferred specs.</p></article><article class="step"><div class="num">02</div><h3>Source options</h3><p class="muted">We search UAE markets, suppliers, dismantlers and seller networks.</p></article><article class="step"><div class="num">03</div><h3>Verify details</h3><p class="muted">Photos, videos, documents, inspection support and condition checks.</p></article><article class="step"><div class="num">04</div><h3>Export support</h3><p class="muted">Guidance on packing, shipping routes, documents and freight coordination.</p></article></div></div></section><section class="section alt" id="quote"><div class="wrap grid quote"><div><span class="eyebrow">Request a quote</span><h2 class="title">Looking for a specific car or part?</h2><p class="lead">Fill this out and it will prepare your request. Replace the WhatsApp link with your live number in the site code if needed.</p><div class="actions"><a class="btn red" href="mailto:e.kamaw@gmail.com?subject=Auto%20by%20Elvis%20Sourcing%20Request">Email request</a></div></div><form class="form" action="mailto:e.kamaw@gmail.com" method="post" enctype="text/plain"><label>Name<input name="name" required placeholder="Your name"></label><label>Country<input name="country" required placeholder="Kenya, USA, UAE..."></label><label>Budget<input name="budget" placeholder="AED / USD"></label><label>Quantity<input name="quantity" placeholder="1, 5, 50..."></label><label class="full">Vehicle or part needed<input name="request" required placeholder="LC79 diesel, Ferrari gearbox, BMW headlights..."></label><label class="full">Message<textarea name="message" rows="5" placeholder="Specs, destination, timeline..."></textarea></label><button class="btn full" type="submit">Send sourcing request</button></form></div></section><section class="section"><div class="wrap" style="text-align:center;max-width:850px"><span class="eyebrow">Ready to source?</span><h2 class="title">Talk to Elvis directly.</h2><p class="lead" style="margin-left:auto;margin-right:auto">Send the model, VIN, engine code, part number, quantity, country and target budget. We’ll source the best available options from the UAE market.</p><a class="btn" href="#quote">Start request</a></div></section></main><footer class="footer"><div class="wrap"><div><div class="brand">Auto by Elvis</div><p>UAE-based car sourcing, export support and rare auto parts plug.</p></div><div><strong>Contact</strong><p>@autobyelvis<br>Dubai / Sharjah, UAE<br>e.kamaw@gmail.com</p></div></div></footer><nav class="mobile"><a href="#home">Home</a><a href="#inventory">Cars</a><a href="#process">Export</a><a href="#quote">Quote</a></nav><a class="fab" href="#quote">↗</a></body></html>
+<body class="font-body-lg overflow-x-hidden">
+<!-- TopAppBar -->
+<header class="fixed top-0 left-0 w-full z-[100] flex justify-between items-center px-margin-mobile md:px-margin-desktop h-16 bg-asphalt-gray dark:bg-carbon-black border-b border-outline-variant">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-engine-red cursor-pointer">menu</span>
+<span class="font-display-xl text-headline-lg-mobile md:text-headline-lg tracking-tighter text-chrome-silver">AUTO BY ELVIS</span>
+</div>
+<div class="hidden md:flex gap-8 items-center">
+<a class="font-label-caps text-label-caps text-engine-red hover:text-primary transition-colors duration-200" href="#">HOME</a>
+<a class="font-label-caps text-label-caps text-chrome-silver hover:text-primary transition-colors duration-200" href="#">ENGINES</a>
+<a class="font-label-caps text-label-caps text-chrome-silver hover:text-primary transition-colors duration-200" href="#">EXPORT</a>
+<a class="font-label-caps text-label-caps text-chrome-silver hover:text-primary transition-colors duration-200" href="#">CLASSICS</a>
+</div>
+<a class="font-label-caps text-label-caps text-engine-red border border-engine-red px-4 py-2 hover:bg-engine-red hover:text-white transition-all active:scale-95" href="https://wa.me/971521948311">
+            WHATSAPP ELVIS
+        </a>
+</header>
+<main class="pt-16">
+<!-- Hero Section -->
+<section class="relative h-[90vh] w-full flex items-end overflow-hidden">
+<div class="absolute inset-0 z-0 overflow-hidden">
+<img alt="Auto by Elvis hero" class="w-full h-full object-cover scale-105 parallax-hero" id="heroImage" src="/Hero.png"/>
+<div class="absolute inset-0 hero-gradient"></div>
+</div>
+<div class="relative z-10 px-margin-mobile md:px-margin-desktop pb-24 max-w-4xl">
+<div class="inline-block px-3 py-1 bg-engine-red text-white font-label-caps text-label-caps mb-6 hero-reveal">LIVE IN DUBAI</div>
+<h1 class="font-display-xl text-display-xl text-white mb-6 uppercase hero-reveal" style="animation-delay: 0.2s;">
+                    Dubai's <span class="italic text-engine-red underline decoration-1 underline-offset-8 animate-shimmer inline-block">plug</span> for rare cars, engines &amp; export deals.
+                </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-8 max-w-2xl hero-reveal" style="animation-delay: 0.4s;">
+                    Source RHD export vehicles, LHD GCC stock, classics, and exotic powertrains directly from the heart of the Dubai automotive market.
+                </p>
+<div class="flex flex-wrap gap-4 hero-reveal" style="animation-delay: 0.6s;">
+<a class="bg-engine-red text-white px-8 py-4 font-label-caps text-label-caps flex items-center gap-2 transition-all cta-refined" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">chat</span> TELL ELVIS WHAT YOU NEED
+                    </a>
+<a class="border border-chrome-silver text-white px-8 py-4 font-label-caps text-label-caps hover:bg-white hover:text-carbon-black transition-all hover:-translate-y-1" href="#">
+                        VIEW RARE ENGINES
+                    </a>
+</div>
+</div>
+</section>
+<!-- Category Shortcuts (Bento Style) -->
+<section class="px-margin-mobile md:px-margin-desktop py-section-gap carbon-texture reveal-up">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-6 h-auto md:h-[600px]">
+<a class="group relative md:col-span-8 overflow-hidden bg-asphalt-gray border border-outline-variant p-8 flex flex-col justify-end" href="#">
+<div class="absolute inset-0 opacity-40 group-hover:scale-105 transition-transform duration-1000 ease-out">
+<img class="w-full h-full object-cover" alt="GMC Yukon Denali LHD stock" src="/gmc-yukon-denali-2026.jpg"/>
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-carbon-black to-transparent"></div>
+<div class="relative z-10 transition-transform duration-500 group-hover:-translate-y-2">
+<span class="font-label-caps text-label-caps text-engine-red">GLOBAL SHIPPING</span>
+<h3 class="font-display-xl text-headline-lg mt-2 text-white">LHD · AFRICA &amp; EUROPE</h3>
+<p class="text-on-surface-variant mt-2 max-w-md">Left-hand-drive luxury and export stock shipped to our most-served markets across Africa and Europe.</p>
+</div>
+</a>
+<div class="md:col-span-4 flex flex-col gap-6">
+<a class="group relative h-1/2 overflow-hidden bg-asphalt-gray border border-outline-variant p-6 flex flex-col justify-end" href="#">
+<div class="absolute inset-0 opacity-40 group-hover:scale-110 transition-transform duration-1000 ease-out">
+<img class="w-full h-full object-cover" alt="Land Cruiser 79 RHD export" src="/lc79-double-cab-anniversary.jpg"/>
+</div>
+<div class="relative z-10 transition-transform duration-500 group-hover:-translate-y-2">
+<span class="font-label-caps text-label-caps text-engine-red">AFRICA EXPORT</span>
+<h3 class="font-display-xl text-headline-lg-mobile mt-2 text-white">RHD FOR AFRICA</h3>
+</div>
+</a>
+<a class="group relative h-1/2 overflow-hidden bg-asphalt-gray border border-outline-variant p-6 flex flex-col justify-end" href="#">
+<div class="absolute inset-0 opacity-30 group-hover:scale-110 transition-transform duration-1000 ease-out">
+<img class="w-full h-full object-cover" alt="Ferrari F140C V12 engine" src="/engine-ferrari-f140c-v12.jpg"/>
+</div>
+<div class="relative z-10 transition-transform duration-500 group-hover:-translate-y-2">
+<span class="font-label-caps text-label-caps text-engine-red">EXOTIC POWER</span>
+<h3 class="font-display-xl text-headline-lg-mobile mt-2 text-white">RARE PARTS</h3>
+</div>
+</a>
+</div>
+</div>
+</section>
+<!-- Featured Inventory (Horizontal Scroll) -->
+<section class="py-section-gap bg-carbon-black overflow-hidden reveal-up">
+<div class="px-margin-mobile md:px-margin-desktop flex justify-between items-end mb-12">
+<div>
+<span class="font-label-caps text-label-caps text-engine-red">NEW ARRIVALS</span>
+<h2 class="font-display-xl text-headline-lg text-white mt-2">FEATURED INVENTORY.</h2>
+</div>
+<div class="flex gap-4">
+<button class="w-12 h-12 border border-outline-variant flex items-center justify-center hover:border-engine-red hover:text-engine-red transition-all active:scale-90">
+<span class="material-symbols-outlined">chevron_left</span>
+</button>
+<button class="w-12 h-12 border border-outline-variant flex items-center justify-center hover:border-engine-red hover:text-engine-red transition-all active:scale-90">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+</div>
+<div class="flex gap-gutter overflow-x-auto px-margin-mobile md:px-margin-desktop custom-scrollbar pb-8 snap-x">
+<!-- Card 1 -->
+<div class="min-w-[320px] md:min-w-[420px] bg-asphalt-gray border border-outline-variant group snap-start transition-all duration-300 hover:border-engine-red/50 hover:shadow-2xl">
+<div class="relative h-64 overflow-hidden">
+<img alt="GMC Yukon Denali" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="/gmc-yukon-denali-2026.jpg"/>
+<div class="absolute top-4 right-4 bg-engine-red text-white px-2 py-1 font-label-caps text-label-caps z-10">0 KM · DENALI</div>
+</div>
+<div class="p-6">
+<div class="flex justify-between items-start mb-2">
+<h4 class="font-title-md text-title-md text-white group-hover:text-engine-red transition-colors">GMC Yukon Denali 2026</h4>
+</div>
+<div class="flex gap-2 mb-6">
+<span class="font-label-caps text-[10px] border border-outline-variant px-2 py-0.5 text-on-surface-variant uppercase">6.2L V8</span>
+<span class="font-label-caps text-[10px] border border-outline-variant px-2 py-0.5 text-on-surface-variant uppercase">7-SEATER</span>
+<span class="font-label-caps text-[10px] border border-outline-variant px-2 py-0.5 text-on-surface-variant uppercase">PETROL</span>
+</div>
+<div class="flex justify-between items-center pt-4 border-t border-outline-variant">
+<div>
+<p class="font-label-caps text-label-caps text-on-surface-variant">PRICE</p>
+<p class="font-price-display text-price-display text-white">AED 325,000</p>
+</div>
+<a class="bg-chrome-silver text-carbon-black p-3 hover:bg-engine-red hover:text-white transition-all transform group-hover:translate-x-1" href="#">
+<span class="material-symbols-outlined">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="min-w-[320px] md:min-w-[420px] bg-asphalt-gray border border-outline-variant group snap-start transition-all duration-300 hover:border-engine-red/50 hover:shadow-2xl">
+<div class="relative h-64 overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" alt="Land Cruiser 79 Double Cab" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20420%20256%22%3E%3Crect%20width%3D%22420%22%20height%3D%22256%22%20fill%3D%22%231A1A1A%22/%3E%3Crect%20x%3D%220.5%22%20y%3D%220.5%22%20width%3D%22419%22%20height%3D%22255%22%20fill%3D%22none%22%20stroke%3D%22%23BC1C14%22%20stroke-opacity%3D%220.3%22/%3E%3Ctext%20x%3D%22210%22%20y%3D%22120%22%20font-family%3D%22monospace%22%20font-size%3D%2213%22%20letter-spacing%3D%222%22%20fill%3D%22%23BC1C14%22%20text-anchor%3D%22middle%22%3EREPLACE%20IMAGE%3C/text%3E%3Ctext%20x%3D%22210%22%20y%3D%22142%22%20font-family%3D%22monospace%22%20font-size%3D%2211%22%20letter-spacing%3D%221%22%20fill%3D%22%23ae8882%22%20text-anchor%3D%22middle%22%3ELAND%20CRUISER%2079%3C/text%3E%3C/svg%3E"/>
+<div class="absolute top-4 right-4 bg-engine-red text-white px-2 py-1 font-label-caps text-label-caps z-10">ANNIVERSARY ED.</div>
+</div>
+<div class="p-6">
+<div class="flex justify-between items-start mb-2">
+<h4 class="font-title-md text-title-md text-white group-hover:text-engine-red transition-colors">Land Cruiser 79 Double Cab</h4>
+</div>
+<div class="flex gap-2 mb-6">
+<span class="font-label-caps text-[10px] border border-outline-variant px-2 py-0.5 text-on-surface-variant uppercase">4.5L V8 Diesel</span>
+<span class="font-label-caps text-[10px] border border-outline-variant px-2 py-0.5 text-on-surface-variant uppercase">Collector Spec</span>
+</div>
+<div class="flex justify-between items-center pt-4 border-t border-outline-variant">
+<div>
+<p class="font-label-caps text-label-caps text-on-surface-variant">PRICE</p>
+<p class="font-price-display text-price-display text-white">POA</p>
+</div>
+<a class="bg-chrome-silver text-carbon-black p-3 hover:bg-engine-red hover:text-white transition-all transform group-hover:translate-x-1" href="#">
+<span class="material-symbols-outlined">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="min-w-[320px] md:min-w-[420px] bg-asphalt-gray border border-outline-variant group snap-start transition-all duration-300 hover:border-engine-red/50 hover:shadow-2xl">
+<div class="relative h-64 overflow-hidden">
+<img alt="BMW 430i" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20420%20256%22%3E%3Crect%20width%3D%22420%22%20height%3D%22256%22%20fill%3D%22%231A1A1A%22/%3E%3Crect%20x%3D%220.5%22%20y%3D%220.5%22%20width%3D%22419%22%20height%3D%22255%22%20fill%3D%22none%22%20stroke%3D%22%23BC1C14%22%20stroke-opacity%3D%220.3%22/%3E%3Ctext%20x%3D%22210%22%20y%3D%22120%22%20font-family%3D%22monospace%22%20font-size%3D%2213%22%20letter-spacing%3D%222%22%20fill%3D%22%23BC1C14%22%20text-anchor%3D%22middle%22%3EREPLACE%20IMAGE%3C/text%3E%3Ctext%20x%3D%22210%22%20y%3D%22142%22%20font-family%3D%22monospace%22%20font-size%3D%2211%22%20letter-spacing%3D%221%22%20fill%3D%22%23ae8882%22%20text-anchor%3D%22middle%22%3EBMW%20430i%20M%20SPORT%3C/text%3E%3C/svg%3E"/>
+<div class="absolute top-4 right-4 bg-engine-red text-white px-2 py-1 font-label-caps text-label-caps z-10">M SPORT</div>
+</div>
+<div class="p-6">
+<div class="flex justify-between items-start mb-2">
+<h4 class="font-title-md text-title-md text-white group-hover:text-engine-red transition-colors">BMW 430i M Sport Coupe</h4>
+</div>
+<div class="flex gap-2 mb-6">
+<span class="font-label-caps text-[10px] border border-outline-variant px-2 py-0.5 text-on-surface-variant uppercase">Dravit Grey</span>
+<span class="font-label-caps text-[10px] border border-outline-variant px-2 py-0.5 text-on-surface-variant uppercase">GCC Spec</span>
+</div>
+<div class="flex justify-between items-center pt-4 border-t border-outline-variant">
+<div>
+<p class="font-label-caps text-label-caps text-on-surface-variant">PRICE</p>
+<p class="font-price-display text-price-display text-white">AED 90,000</p>
+</div>
+<a class="bg-chrome-silver text-carbon-black p-3 hover:bg-engine-red hover:text-white transition-all transform group-hover:translate-x-1" href="#">
+<span class="material-symbols-outlined">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Sourcing Advantage Section -->
+<section class="px-margin-mobile md:px-margin-desktop py-section-gap border-y border-outline-variant bg-asphalt-gray reveal-up">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+<div class="space-y-4 group">
+<h5 class="font-display-xl text-headline-lg-mobile text-engine-red transition-transform duration-300 group-hover:translate-x-2">CHEAPER THAN JAPAN</h5>
+<p class="font-body-lg text-body-lg text-on-surface-variant">Direct sourcing from Dubai markets often beats Japan auction prices by up to 30% for high-demand African export models.</p>
+</div>
+<div class="space-y-4 group">
+<h5 class="font-display-xl text-headline-lg-mobile text-engine-red transition-transform duration-300 group-hover:translate-x-2">2-3 WEEK DELIVERY</h5>
+<p class="font-body-lg text-body-lg text-on-surface-variant">Express shipping routes from Jebel Ali to Mombasa, Dar es Salaam, and Durban compared to 6-8 weeks from the UK or Japan.</p>
+</div>
+<div class="space-y-4 group">
+<h5 class="font-display-xl text-headline-lg-mobile text-engine-red transition-transform duration-300 group-hover:translate-x-2">DIRECT WITH ELVIS</h5>
+<p class="font-body-lg text-body-lg text-on-surface-variant">No middleman bots or generic sales desks. Every message goes directly to the sourcing specialist for a personal reply.</p>
+</div>
+</div>
+</section>
+<!-- Import Duty Calculator Section -->
+<section id="calculator" class="px-margin-mobile md:px-margin-desktop py-section-gap border-y border-outline-variant carbon-texture reveal-up scroll-mt-20">
+<div class="max-w-container-max mx-auto">
+<div class="mb-12 max-w-2xl">
+<span class="font-label-caps text-label-caps text-engine-red">LANDED COST</span>
+<h2 class="font-display-xl text-headline-lg text-white mt-2">AFRICA IMPORT DUTY CALCULATOR</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mt-3">Cascading landed-cost estimate for East &amp; West Africa — pick your country and it loads that market's duty, VAT and levy structure. Adjust any field to match the latest schedule.</p>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
+<!-- Inputs -->
+<div class="bg-asphalt-gray border border-outline-variant p-6 md:p-8 space-y-6">
+<div>
+<label class="font-label-caps text-label-caps text-on-surface-variant block mb-2">DESTINATION COUNTRY</label>
+<select id="calc-country" class="w-full bg-carbon-black border border-outline-variant text-white font-body-lg px-4 py-3 focus:border-engine-red focus:ring-0 outline-none">
+<optgroup label="East Africa (EAC)">
+<option value="KE" selected>Kenya (KES)</option>
+<option value="TZ">Tanzania (TZS)</option>
+<option value="UG">Uganda (UGX)</option>
+<option value="RW">Rwanda (RWF)</option>
+</optgroup>
+<optgroup label="West Africa (ECOWAS)">
+<option value="NG">Nigeria (NGN)</option>
+<option value="GH">Ghana (GHS)</option>
+</optgroup>
+<option value="OTHER">Other / custom rates</option>
+</select>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1 opacity-70">Loads typical rates for that market — edit any field to fine-tune.</p>
+</div>
+<div>
+<label class="font-label-caps text-label-caps text-on-surface-variant block mb-2"><span id="lbl-crsp">CRSP</span> / VEHICLE VALUE (<span id="lbl-cur">KES</span>)</label>
+<input id="calc-crsp" type="number" value="3500000" class="w-full bg-carbon-black border border-outline-variant text-white font-price-display text-price-display px-4 py-3 focus:border-engine-red focus:ring-0 outline-none"/>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1 opacity-70">Customs authorities use the higher of the official schedule value or your invoice.</p>
+</div>
+<div>
+<label class="font-label-caps text-label-caps text-on-surface-variant block mb-2">YEAR OF MANUFACTURE</label>
+<select id="calc-yom" class="w-full bg-carbon-black border border-outline-variant text-white font-body-lg px-4 py-3 focus:border-engine-red focus:ring-0 outline-none">
+<option value="2025">2025</option>
+<option value="2024">2024</option>
+<option value="2023">2023</option>
+<option value="2022">2022</option>
+<option value="2021">2021</option>
+<option value="2020">2020</option>
+<option value="2019" selected>2019 (oldest allowed in 2026)</option>
+</select>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1 opacity-70">8-year rule: nothing older than 2019 in 2026.</p>
+</div>
+<div id="excise-wrap">
+<label class="font-label-caps text-label-caps text-on-surface-variant block mb-2">ENGINE SIZE (EXCISE BAND)</label>
+<select id="calc-engine" class="w-full bg-carbon-black border border-outline-variant text-white font-body-lg px-4 py-3 focus:border-engine-red focus:ring-0 outline-none">
+<option value="20">Under 1500cc — lower excise</option>
+<option value="25" selected>1500–2000cc — mid excise</option>
+<option value="35">2000–3000cc — higher excise</option>
+<option value="35">Over 3000cc — highest excise</option>
+</select>
+</div>
+<div class="grid grid-cols-2 gap-4 pt-2 border-t border-outline-variant">
+<div>
+<label class="font-label-caps text-[10px] text-on-surface-variant block mb-1">IMPORT DUTY %</label>
+<input id="calc-duty" type="number" value="35" class="w-full bg-carbon-black border border-outline-variant text-white font-body-lg px-3 py-2 focus:border-engine-red outline-none"/>
+</div>
+<div>
+<label class="font-label-caps text-[10px] text-on-surface-variant block mb-1">VAT %</label>
+<input id="calc-vat" type="number" value="16" class="w-full bg-carbon-black border border-outline-variant text-white font-body-lg px-3 py-2 focus:border-engine-red outline-none"/>
+</div>
+<div>
+<label id="lbl-idf" class="font-label-caps text-[10px] text-on-surface-variant block mb-1">IDF %</label>
+<input id="calc-idf" type="number" value="2.5" step="0.1" class="w-full bg-carbon-black border border-outline-variant text-white font-body-lg px-3 py-2 focus:border-engine-red outline-none"/>
+</div>
+<div>
+<label id="lbl-rdl" class="font-label-caps text-[10px] text-on-surface-variant block mb-1">RDL %</label>
+<input id="calc-rdl" type="number" value="2" step="0.1" class="w-full bg-carbon-black border border-outline-variant text-white font-body-lg px-3 py-2 focus:border-engine-red outline-none"/>
+</div>
+</div>
+</div>
+<!-- Results -->
+<div class="bg-carbon-black border border-engine-red/40 p-6 md:p-8 flex flex-col">
+<div class="space-y-3 flex-1">
+<div class="flex justify-between items-center py-2 border-b border-outline-variant/40">
+<span class="font-body-lg text-on-surface-variant">Customs Value</span>
+<span id="r-customs" class="font-price-display text-white">—</span>
+</div>
+<div class="flex justify-between items-center py-2 border-b border-outline-variant/40">
+<span class="font-body-lg text-on-surface-variant">Import Duty</span>
+<span id="r-duty" class="font-price-display text-white">—</span>
+</div>
+<div id="row-excise" class="flex justify-between items-center py-2 border-b border-outline-variant/40">
+<span class="font-body-lg text-on-surface-variant">Excise Duty</span>
+<span id="r-excise" class="font-price-display text-white">—</span>
+</div>
+<div class="flex justify-between items-center py-2 border-b border-outline-variant/40">
+<span class="font-body-lg text-on-surface-variant">VAT</span>
+<span id="r-vat" class="font-price-display text-white">—</span>
+</div>
+<div class="flex justify-between items-center py-2 border-b border-outline-variant/40">
+<span class="font-body-lg text-on-surface-variant">Levies &amp; fees</span>
+<span id="r-levies" class="font-price-display text-white">—</span>
+</div>
+</div>
+<div class="mt-6 pt-6 border-t border-engine-red/40">
+<div class="flex justify-between items-baseline">
+<span class="font-label-caps text-label-caps text-engine-red">TOTAL TAXES PAYABLE</span>
+</div>
+<div id="r-total" class="font-display-xl text-headline-lg text-white mt-1">—</div>
+<div class="flex justify-between items-center mt-4">
+<span class="font-body-sm text-body-sm text-on-surface-variant">Est. landed (taxes + clearing/port)</span>
+<span id="r-landed" class="font-price-display text-engine-red">—</span>
+</div>
+</div>
+<a id="calc-wa" href="https://wa.me/971521948311" class="mt-6 bg-engine-red text-white px-6 py-4 font-label-caps text-label-caps flex items-center justify-center gap-2 cta-refined">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">chat</span> SEND THIS ESTIMATE TO ELVIS
+</a>
+</div>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant opacity-60 mt-6 max-w-3xl">Estimate only. Customs authorities appraise each vehicle individually and rates change — always confirm with a licensed clearing agent in the destination country before committing. Clearing/port charges are approximate.</p>
+</div>
+</section>
+<!-- Final CTA Section -->
+<section class="px-margin-mobile md:px-margin-desktop py-section-gap flex flex-col items-center text-center reveal-up">
+<div class="max-w-3xl">
+<span class="font-label-caps text-label-caps text-engine-red mb-4 block">READY TO SOURCE?</span>
+<h2 class="font-display-xl text-display-xl text-white mb-8">TALK TO ELVIS DIRECTLY.</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-12">
+                    Looking for a specific VIN, engine code, or collector-grade JDM? Send the details, your country, and your target budget now.
+                </p>
+<a class="inline-flex items-center gap-4 bg-engine-red text-white px-12 py-6 font-display-xl text-headline-lg-mobile transition-all active:scale-95 group cta-refined relative overflow-hidden" href="https://wa.me/971521948311">
+<span class="material-symbols-outlined text-4xl" style="font-variation-settings: 'FILL' 1;">chat</span>
+                    START ON WHATSAPP
+                    <span class="material-symbols-outlined transition-transform group-hover:translate-x-3">arrow_right_alt</span>
+</a>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full px-margin-mobile py-12 flex flex-col items-center gap-8 border-t border-outline-variant bg-carbon-black">
+<div class="w-full flex flex-col md:flex-row justify-between items-start gap-12 max-w-container-max mx-auto px-margin-desktop">
+<div class="max-w-xs">
+<span class="font-display-xl text-headline-lg-mobile text-chrome-silver">AUTO BY ELVIS</span>
+<p class="mt-4 font-body-sm text-body-sm text-on-surface-variant">Dubai-based luxury car sourcing and global export. Classics, RHD, LHD, and rare OEM parts.</p>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-3 gap-12">
+<div>
+<h6 class="font-label-caps text-label-caps text-chrome-silver mb-4">INVENTORY</h6>
+<ul class="space-y-2 font-body-sm text-body-sm text-on-surface-variant">
+<li><a class="hover:text-engine-red transition-colors" href="#">RHD Export</a></li>
+<li><a class="hover:text-engine-red transition-colors" href="#">LHD Inventory</a></li>
+<li><a class="hover:text-engine-red transition-colors" href="#">Classics</a></li>
+</ul>
+</div>
+<div>
+<h6 class="font-label-caps text-label-caps text-chrome-silver mb-4">COMPANY</h6>
+<ul class="space-y-2 font-body-sm text-body-sm text-on-surface-variant">
+<li><a class="hover:text-engine-red transition-colors" href="#">About</a></li>
+<li><a class="hover:text-engine-red transition-colors" href="#">Process</a></li>
+<li><a class="hover:text-engine-red transition-colors" href="#calculator">Calculator</a></li>
+</ul>
+</div>
+<div class="col-span-2 md:col-span-1">
+<h6 class="font-label-caps text-label-caps text-chrome-silver mb-4">CONTACT</h6>
+<ul class="space-y-2 font-body-sm text-body-sm text-on-surface-variant">
+<li>@autobyelvis</li>
+<li>+971 52 194 8311</li>
+<li>Ekamaw@gmail.com</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="w-full border-t border-outline-variant pt-8 flex flex-col md:flex-row justify-between items-center gap-4 max-w-container-max mx-auto px-margin-desktop">
+<p class="font-body-sm text-body-sm text-on-surface-variant opacity-60">© 2026 AUTO BY ELVIS. DUBAI, UAE.</p>
+<div class="flex gap-6">
+<a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary" href="#">Terms</a>
+<a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary" href="#">Privacy</a>
+<a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary" href="#">Shipping Policy</a>
+</div>
+</div>
+</footer>
+<!-- Bottom Mobile Nav -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full z-[100] flex justify-around items-center px-4 py-2 bg-asphalt-gray dark:bg-carbon-black border-t border-outline-variant">
+<a class="flex flex-col items-center justify-center text-engine-red font-bold bg-surface-container-high rounded-full p-2 scale-90 transition-transform" href="#">
+<span class="material-symbols-outlined">home</span>
+<span class="font-label-caps text-[10px]">HOME</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant" href="#">
+<span class="material-symbols-outlined">earth_engine</span>
+<span class="font-label-caps text-[10px]">ENGINES</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant" href="#">
+<span class="material-symbols-outlined">sailing</span>
+<span class="font-label-caps text-[10px]">EXPORT</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant" href="#">
+<span class="material-symbols-outlined">history_edu</span>
+<span class="font-label-caps text-[10px]">CLASSICS</span>
+</a>
+</nav>
+<!-- FAB for WhatsApp -->
+<a class="fixed bottom-24 right-6 md:bottom-8 md:right-8 z-[100] w-14 h-14 bg-engine-red text-white rounded-full flex items-center justify-center shadow-lg hover:scale-110 active:scale-95 transition-all" href="https://wa.me/971521948311">
+<span class="material-symbols-outlined text-3xl" style="font-variation-settings: 'FILL' 1;">chat</span>
+</a>
+<script>
+    // Intersection Observer for Reveal Animations
+    const observerOptions = {
+        threshold: 0.15,
+        rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('active');
+            }
+        });
+    }, observerOptions);
+
+    document.querySelectorAll('.reveal-up').forEach((el) => {
+        observer.observe(el);
+    });
+
+    // Parallax Hero Effect
+    window.addEventListener('scroll', () => {
+        const scrolled = window.pageYOffset;
+        const heroImage = document.getElementById('heroImage');
+        if (heroImage && scrolled < window.innerHeight) {
+            heroImage.style.transform = `scale(1.05) translateY(${scrolled * 0.3}px)`;
+        }
+    });
+
+    // ===== Import Duty Calculator (Africa-wide, region-aware) =====
+    (function(){
+        // region: 'EAC' uses engine-size excise + levies on customs value.
+        // 'WA' (West Africa/ECOWAS): no engine excise; levy1/levy2 are region-specific,
+        //   and (for NG-style) they stack into the VAT base.
+        // All rates editable. duty/vat/levy1/levy2 are %, clearing flat add-on, cur = currency.
+        const COUNTRIES = {
+            KE: { region:'EAC', cur:'KES', duty:35, vat:16, l1:2.5, l2:2,   clearing:160800, valLabel:'CRSP', l1Name:'IDF %', l2Name:'RDL %' },
+            TZ: { region:'EAC', cur:'TZS', duty:25, vat:18, l1:0.6, l2:1.5, clearing:3500000, valLabel:'CIF', l1Name:'INSPECT %', l2Name:'RDL %' },
+            UG: { region:'EAC', cur:'UGX', duty:25, vat:18, l1:0,   l2:1.5, clearing:4500000, valLabel:'CIF', l1Name:'IDF %', l2Name:'INFRA %' },
+            RW: { region:'EAC', cur:'RWF', duty:25, vat:18, l1:0,   l2:1.5, clearing:900000,  valLabel:'CIF', l1Name:'IDF %', l2Name:'INFRA %' },
+            // West Africa — levies stack INTO the VAT base (ECOWAS/NCS style)
+            NG: { region:'WA', cur:'NGN', duty:20, vat:7.5, l1:15, l2:1.5, clearing:350000, valLabel:'CIF', l1Name:'NAC LEVY %', l2Name:'ETLS+CISS %' },
+            GH: { region:'WA', cur:'GHS', duty:20, vat:15,  l1:5,  l2:1.75,clearing:8000,   valLabel:'CIF', l1Name:'NHIL+GETF %', l2Name:'ECOWAS+EXIM %' },
+            OTHER: { region:'EAC', cur:'USD', duty:25, vat:16, l1:1, l2:2, clearing:1500, valLabel:'CIF', l1Name:'LEVY 1 %', l2Name:'LEVY 2 %' }
+        };
+        let cfg = COUNTRIES.KE;
+        const money = n => cfg.cur + ' ' + Math.round(n).toLocaleString('en-US');
+        const depByYom = { '2025':0.05,'2024':0.10,'2023':0.20,'2022':0.30,'2021':0.40,'2020':0.55,'2019':0.65 };
+
+        const ids = ['calc-crsp','calc-yom','calc-engine','calc-duty','calc-vat','calc-idf','calc-rdl'];
+        const el = {}; ids.forEach(i => el[i] = document.getElementById(i));
+        const countrySel = document.getElementById('calc-country');
+        const lblCur = document.getElementById('lbl-cur');
+        const lblCrsp = document.getElementById('lbl-crsp');
+        const lblIdf = document.getElementById('lbl-idf');
+        const lblRdl = document.getElementById('lbl-rdl');
+        const exciseWrap = document.getElementById('excise-wrap');
+        const rowExcise = document.getElementById('row-excise');
+        const out = {
+            customs: document.getElementById('r-customs'),
+            duty: document.getElementById('r-duty'),
+            excise: document.getElementById('r-excise'),
+            vat: document.getElementById('r-vat'),
+            levies: document.getElementById('r-levies'),
+            total: document.getElementById('r-total'),
+            landed: document.getElementById('r-landed'),
+            wa: document.getElementById('calc-wa')
+        };
+        function loadCountry(code){
+            cfg = COUNTRIES[code] || COUNTRIES.OTHER;
+            el['calc-duty'].value = cfg.duty;
+            el['calc-vat'].value = cfg.vat;
+            el['calc-idf'].value = cfg.l1;
+            el['calc-rdl'].value = cfg.l2;
+            if (lblCur) lblCur.textContent = cfg.cur;
+            if (lblCrsp) lblCrsp.textContent = cfg.valLabel;
+            if (lblIdf) lblIdf.textContent = cfg.l1Name;
+            if (lblRdl) lblRdl.textContent = cfg.l2Name;
+            const showExcise = cfg.region === 'EAC';
+            if (exciseWrap) exciseWrap.style.display = showExcise ? '' : 'none';
+            if (rowExcise) rowExcise.style.display = showExcise ? '' : 'none';
+            calc();
+        }
+        function calc(){
+            const val = parseFloat(el['calc-crsp'].value) || 0;
+            const dep = depByYom[el['calc-yom'].value] ?? 0.05;
+            const exciseRate = parseFloat(el['calc-engine'].value)/100;
+            const dutyRate = (parseFloat(el['calc-duty'].value)||0)/100;
+            const vatRate = (parseFloat(el['calc-vat'].value)||0)/100;
+            const l1Rate = (parseFloat(el['calc-idf'].value)||0)/100;
+            const l2Rate = (parseFloat(el['calc-rdl'].value)||0)/100;
+
+            const customs = val * (1 - dep);
+            const duty = customs * dutyRate;
+            const levies = customs * l1Rate + customs * l2Rate;
+            let excise = 0, vat = 0;
+
+            if (cfg.region === 'EAC'){
+                // excise on (customs+duty); VAT on (customs+duty+excise); levies separate on customs
+                excise = (customs + duty) * exciseRate;
+                vat = (customs + duty + excise) * vatRate;
+            } else {
+                // West Africa: no engine excise; VAT applied on (customs + duty + levies)
+                excise = 0;
+                vat = (customs + duty + levies) * vatRate;
+            }
+            const total = duty + excise + vat + levies;
+            const landed = total + cfg.clearing;
+
+            out.customs.textContent = money(customs);
+            out.duty.textContent = money(duty);
+            out.excise.textContent = money(excise);
+            out.vat.textContent = money(vat);
+            out.levies.textContent = money(levies);
+            out.total.textContent = money(total);
+            out.landed.textContent = money(landed);
+
+            const country = countrySel ? countrySel.options[countrySel.selectedIndex].text : '';
+            const msg = `Hi Elvis, I used the import calculator for ${country}. Vehicle value ${money(val)}, YOM ${el['calc-yom'].value}. Estimated total taxes ${money(total)}, landed ~${money(landed)}. Can you confirm?`;
+            out.wa.href = 'https://wa.me/971521948311?text=' + encodeURIComponent(msg);
+        }
+        ids.forEach(i => { if(el[i]){ el[i].addEventListener('input', calc); el[i].addEventListener('change', calc);} });
+        if (countrySel) countrySel.addEventListener('change', e => loadCountry(e.target.value));
+        loadCountry('KE');
+    })();
+    const buttons = document.querySelectorAll('a, button');
+    buttons.forEach(btn => {
+        btn.addEventListener('mouseenter', () => {
+            // Future-proofing for Web Audio API "engine rev" or "mechanical click" sounds
+        });
+    });
+</script>
+</body></html>
